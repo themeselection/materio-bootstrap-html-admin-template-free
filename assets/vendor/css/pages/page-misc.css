@@ -1,0 +1,28 @@
+.misc-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+  position: relative;
+  padding: 1.25rem;
+}
+
+.misc-bg {
+  inline-size: 100%;
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: 0;
+}
+
+.misc-object {
+  position: absolute;
+  bottom: 15%;
+  z-index: 1;
+  left: 3%;
+}
+
+.misc-model {
+  position: relative;
+  bottom: 3rem;
+}

@@ -1,0 +1,70 @@
+.authentication-wrapper {
+  display: flex;
+  flex-basis: 100%;
+  min-height: 100vh;
+  width: 100%;
+}
+.authentication-wrapper .authentication-inner {
+  width: 100%;
+}
+.authentication-wrapper.authentication-basic {
+  align-items: center;
+  justify-content: center;
+}
+.authentication-wrapper .auth-cover-illustration {
+  z-index: 1;
+  max-inline-size: 38rem;
+}
+.authentication-wrapper .authentication-image-object-left {
+  position: absolute;
+  bottom: 6%;
+  left: 4%;
+}
+.authentication-wrapper .authentication-image-object-right {
+  position: absolute;
+  bottom: 7%;
+  right: 4%;
+}
+.authentication-wrapper .authentication-image {
+  z-index: -1;
+  inline-size: 100%;
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: 0;
+}
+.authentication-wrapper .authentication-image-model {
+  width: 768px;
+}
+.authentication-wrapper.authentication-cover {
+  align-items: flex-start;
+}
+.authentication-wrapper.authentication-cover .authentication-inner {
+  min-height: 100vh;
+  position: relative;
+}
+.authentication-wrapper.authentication-cover .authentication-image {
+  inset-inline-start: unset;
+}
+.authentication-wrapper.authentication-cover .authentication-image-tree {
+  position: absolute;
+  bottom: 3rem;
+  left: 3rem;
+}
+.authentication-wrapper.authentication-basic .authentication-inner {
+  max-width: 450px;
+}
+.authentication-wrapper .auth-input-wrapper .auth-input {
+  max-width: 50px;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  font-size: 150%;
+}
+
+@media (max-width: 575.98px) {
+  .authentication-wrapper .auth-input-wrapper .auth-input {
+    font-size: 1.25rem;
+  }
+}
+.light-style .authentication-wrapper .authentication-bg {
+  background-color: #fff;
+}

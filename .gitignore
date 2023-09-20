@@ -45,14 +45,13 @@ gulpfile.tmp.*
 ############################### DEVELOPMENT_ONLY ###############################
 
 # Excludes generated
-# Excludes generated
 /dist
 /build
 /tmp
 /temp
 
 # Assets
-**/assets/vendor
+# **/assets/vendor
 # **/static/vendor
 
 # HTML files
