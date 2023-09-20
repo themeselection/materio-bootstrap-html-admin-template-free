@@ -18,7 +18,7 @@
 
 ## Introduction 🚀
 
-If you’re a developer looking for the most Powerful & comprehensive [**Free Bootstrap 5 HTML Admin Template**](https://themeselection.com/item/materio-free-bootstrap-html-admin-template/) built for developers, rich with features, and highly customizable look no further than Materio. We’ve followed the highest industry standards to bring you the very best admin template that is not only fast and easy to use but highly scalable. Offering ultimate convenience and flexibility, you’ll be able to build whatever application you want with very little hassle.
+If you’re a developer looking for the most Powerful & comprehensive [**Materio Free Bootstrap 5 HTML Admin Template**](https://themeselection.com/item/materio-free-bootstrap-html-admin-template/) built for developers, rich with features, and highly customizable look no further than Materio. We’ve followed the highest industry standards to bring you the very best admin template that is not only fast and easy to use but highly scalable. Offering ultimate convenience and flexibility, you’ll be able to build whatever application you want with very little hassle.
 
 Build premium quality applications with ease. Use our innovative [bootstrap admin template](https://themeselection.com/item/category/bootstrap-admin-templates/) to create eye-catching, high-quality WebApps. Your apps will be completely responsive, ensuring they’ll look stunning and function flawlessly on desktops, tablets, and mobile devices.
 
