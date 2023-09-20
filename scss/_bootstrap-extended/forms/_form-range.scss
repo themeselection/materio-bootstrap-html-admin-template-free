@@ -1,0 +1,23 @@
+// Range select
+// *******************************************************************************
+
+.form-range {
+  // Chrome specific
+  &::-webkit-slider-thumb {
+    box-shadow: $form-range-thumb-box-shadow;
+  }
+
+  // Mozilla specific
+  &::-moz-range-thumb {
+    box-shadow: $form-range-thumb-box-shadow;
+  }
+  &:disabled {
+    &::-webkit-slider-runnable-track {
+      background-color: $form-range-track-disabled-bg;
+    }
+
+    &::-moz-range-track {
+      background-color: $form-range-track-disabled-bg;
+    }
+  }
+}

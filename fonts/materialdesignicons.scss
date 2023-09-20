@@ -1,0 +1,17 @@
+$mdi-font-path: 'materialdesignicons' !default;
+$mdi-font-weight: 'normal';
+$mdi-font-size-base: 18px;
+$mdi-line-height: 1.1;
+$mdi-css-prefix: mdi;
+$mdi-sizes: 14 18 20 24 36 48 !default;
+
+@import '../node_modules/@mdi/font/scss/materialdesignicons';
+
+.#{$mdi-css-prefix} {
+  line-height: $mdi-line-height;
+  vertical-align: middle;
+}
+.#{$mdi-css-prefix}:before,
+.#{$mdi-css-prefix}-set {
+  font-size: $mdi-font-size-base;
+}

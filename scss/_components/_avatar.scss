@@ -1,0 +1,157 @@
+// Avatar
+// *******************************************************************************
+
+// Avatar Styles
+.avatar {
+  position: relative;
+  width: $avatar-size;
+  height: $avatar-size;
+  cursor: pointer;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  // Avatar Initials if no images added
+  .avatar-initial {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    background-color: $secondary;
+    font-size: $avatar-initial;
+    font-weight: $font-weight-medium;
+  }
+
+  // Avatar initial size md line height fix
+  &.avatar-md {
+    .avatar-initial {
+      line-height: 1.3;
+    }
+  }
+
+  // Avatar Status indication
+  &.avatar-online,
+  &.avatar-offline,
+  &.avatar-away,
+  &.avatar-busy {
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 3px;
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+      box-shadow: 0 0 0 2px $avatar-group-border;
+    }
+    // To fix line height of Avatar Status Initial
+    .avatar-initial {
+      line-height: 1.4;
+    }
+  }
+  &.avatar-online:after {
+    background-color: $success;
+  }
+  &.avatar-offline:after {
+    background-color: $secondary;
+  }
+  &.avatar-away:after {
+    background-color: $warning;
+  }
+  &.avatar-busy:after {
+    background-color: $danger;
+  }
+}
+
+// Pull up avatar style
+.pull-up {
+  transition: all 0.25s ease;
+  &:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: $box-shadow;
+    z-index: 30 !important;
+    border-radius: 50%;
+  }
+}
+
+// Avatar Sizes
+.avatar-xs {
+  @include template-avatar-style($avatar-size-xs, $avatar-size-xs, $avatar-initial-xs, 1px);
+}
+.avatar-sm {
+  @include template-avatar-style($avatar-size-sm, $avatar-size-sm, $avatar-initial-sm, 2px);
+}
+.avatar-md {
+  @include template-avatar-style($avatar-size-md, $avatar-size-md, $avatar-initial-md, 4px);
+}
+.avatar-lg {
+  @include template-avatar-style($avatar-size-lg, $avatar-size-lg, $avatar-initial-lg, 5px);
+}
+.avatar-xl {
+  @include template-avatar-style($avatar-size-xl, $avatar-size-xl, $avatar-initial-xl, 6px);
+}
+
+// Avatar Group SCSS
+.avatar-group {
+  .avatar {
+    transition: all 0.25s ease;
+    img,
+    .avatar-initial {
+      border: 2px solid $avatar-group-border;
+      // box-shadow: 0 0 0 2px $avatar-group-border, inset 0 0 0 1px rgba($black, 0.07); //0 2px 10px 0 rgba($secondary,.3);
+    }
+    .avatar-initial {
+      background-color: tint-color($secondary, 20%);
+    }
+    &:hover {
+      z-index: 30 !important;
+      transition: all 0.25s ease;
+    }
+  }
+}
+
+// Avatar group z-index
+$avatar-group-count: 8;
+$avatar-group-zindex: $avatar-group-count;
+@for $i from 1 to $avatar-group-count {
+  .avatar-group {
+    .avatar:nth-child(#{$i}) {
+      z-index: $avatar-group-zindex;
+    }
+  }
+  $avatar-group-zindex: $avatar-group-zindex - 1;
+}
+
+// Avatar Group LTR only with sizing
+@include ltr-only {
+  .avatar-group {
+    // Avatar Group Sizings
+    .avatar {
+      margin-left: -0.65rem;
+      &:first-child {
+        margin-left: 0 !important;
+      }
+    }
+    .avatar-xs {
+      margin-left: -0.5rem !important;
+    }
+    .avatar-sm {
+      margin-left: -0.6rem !important;
+    }
+    .avatar-md {
+      margin-left: -0.8rem !important;
+    }
+    .avatar-lg {
+      margin-left: -1rem !important;
+    }
+    .avatar-xl {
+      margin-left: -1.1rem !important;
+    }
+  }
+}

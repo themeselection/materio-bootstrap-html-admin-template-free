@@ -1,0 +1,36 @@
+// * Dropdowns
+// *******************************************************************************
+
+@mixin template-dropdown-variant($parent, $background, $color: null) {
+  #{$parent} .dropdown-item {
+    &.waves-effect {
+      .waves-ripple {
+        background: radial-gradient(
+          rgba($color, 0.2) 0,
+          rgba($color, 0.3) 40%,
+          rgba($color, 0.4) 50%,
+          rgba($color, 0.5) 60%,
+          rgba($white, 0) 70%
+        );
+      }
+    }
+    &:not(.disabled).active,
+    &:not(.disabled):active {
+      background-color: $background;
+      color: if($color, $color, color-contrast($background)) !important;
+    }
+  }
+
+  #{$parent}.dropdown-menu > li:not(.disabled) > a:not(.dropdown-item):active,
+  #{$parent}.dropdown-menu > li.active:not(.disabled) > a:not(.dropdown-item) {
+    background-color: $background;
+    color: if($color, $color, color-contrast($background)) !important;
+    &.btn {
+      color: color-contrast($background) !important;
+    }
+  }
+}
+
+@mixin template-dropdown-theme($background, $color: null) {
+  @include template-dropdown-variant('', $background, $color);
+}

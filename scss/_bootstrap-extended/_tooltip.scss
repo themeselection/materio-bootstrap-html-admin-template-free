@@ -1,0 +1,7 @@
+// Tooltips
+// *******************************************************************************
+
+// Open modal tooltip z-index
+.modal-open .tooltip {
+  z-index: $zindex-modal + 2;
+}

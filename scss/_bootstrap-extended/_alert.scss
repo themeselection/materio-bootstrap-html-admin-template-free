@@ -1,0 +1,16 @@
+// Alerts
+// *******************************************************************************
+
+// Alert mixins
+@each $state, $value in $theme-colors {
+  @if $state != primary and $state != light {
+    @include template-alert-variant('.alert-#{$state}', $value);
+  }
+}
+
+// Adjust close link position
+.alert-dismissible {
+  .btn-close {
+    padding: $alert-padding-y * 1.42 $alert-padding-x;
+  }
+}

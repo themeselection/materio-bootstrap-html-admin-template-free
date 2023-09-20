@@ -1,0 +1,36 @@
+// Breadcrumbs
+// *******************************************************************************
+
+.breadcrumb-item,
+.breadcrumb-item a {
+  color: $breadcrumb-color;
+  line-height: $line-height-lg;
+  &:hover,
+  &:focus {
+    color: $breadcrumb-active-color;
+  }
+}
+
+.breadcrumb-item.active a {
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    color: inherit;
+  }
+}
+
+// Breadcrumb divider styles
+.breadcrumb-style1,
+.breadcrumb-style2 {
+  .breadcrumb-item + .breadcrumb-item::before {
+    font-family: Material Design Icons;
+  }
+}
+.breadcrumb-style1 .breadcrumb-item + .breadcrumb-item::before {
+  content: '\F0142';
+  line-height: $line-height-lg;
+}
+.breadcrumb-style2 .breadcrumb-item + .breadcrumb-item::before {
+  content: '\F0CE0';
+}

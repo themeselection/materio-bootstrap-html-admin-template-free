@@ -1,0 +1,35 @@
+// Popovers
+// *******************************************************************************
+
+.modal-open .popover {
+  z-index: $zindex-modal + 1;
+}
+
+.popover {
+  box-shadow: $popover-box-shadow;
+
+  // Popover header padding and font-size
+  .popover-header {
+    padding-bottom: 0;
+    font-size: $h5-font-size;
+  }
+
+  // Popover body padding
+  .popover-body {
+    padding-top: $spacer;
+  }
+
+  .popover-arrow {
+    z-index: 1;
+  }
+  &.bs-popover-auto {
+    &[data-popper-placement='bottom'] > .popover-arrow {
+      &::after {
+        top: 2px;
+      }
+      &:before {
+        top: 1px;
+      }
+    }
+  }
+}

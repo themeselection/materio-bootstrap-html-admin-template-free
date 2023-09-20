@@ -1,0 +1,41 @@
+@import './_components/include';
+@import './_theme/common';
+@import './_theme/_theme';
+
+$primary-color: #9055fd;
+$body-bg: #f4f5fa;
+
+body {
+  background: $body-bg;
+}
+
+.bg-body {
+  background: $body-bg !important;
+}
+
+@include template-common-theme($primary-color);
+
+// Navbar
+// ---------------------------------------------------------------------------
+@include template-navbar-style('.bg-navbar-theme', $body-bg, $color: $headings-color, $active-color: $headings-color);
+
+// Menu
+// ---------------------------------------------------------------------------
+
+@include template-menu-style(
+  '.bg-menu-theme',
+  $body-bg,
+  $color: $headings-color,
+  $active-color: $headings-color,
+  $border: transparent,
+  $active-bg: $primary-color
+);
+@include media-breakpoint-up($menu-collapsed-layout-breakpoint) {
+  .layout-menu-collapsed.layout-menu-hover .bg-menu-theme {
+    box-shadow: $box-shadow-lg;
+  }
+}
+
+// Footer
+// ---------------------------------------------------------------------------
+@include template-footer-style('.bg-footer-theme', $body-bg, $color: $primary-color, $active-color: $headings-color);

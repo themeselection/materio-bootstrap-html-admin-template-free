@@ -1,0 +1,66 @@
+// Floating Labels
+// *******************************************************************************
+
+// Floating label (Outlined)
+.form-floating.form-floating-outline {
+  > .form-control,
+  > .form-select {
+    &:focus {
+      border-width: $input-focus-border-width;
+    }
+    &:focus,
+    &:not(:placeholder-shown) {
+      padding-top: $form-floating-padding-y;
+      padding-bottom: $form-floating-padding-y;
+      &::placeholder {
+        color: $input-placeholder-color;
+      }
+      // Floating (outline) label position on focus
+      ~ label {
+        width: auto;
+        height: auto;
+        padding: 0 $input-focus-border-width;
+        margin-left: $form-floating-padding-y;
+        transform: $form-floating-outline-label-transform;
+        opacity: 1;
+        &:after {
+          content: '';
+          position: absolute;
+          height: 0.5rem;
+          width: 100%;
+          left: 0;
+          top: 0.35rem;
+          z-index: -1;
+        }
+      }
+    }
+    // Duplicated because `:-webkit-autofill` invalidates other selectors when grouped
+    &:-webkit-autofill {
+      padding-top: $form-floating-padding-y;
+      padding-bottom: $form-floating-padding-y;
+      ~ label {
+        transform: $form-floating-outline-label-transform;
+        opacity: 1;
+      }
+    }
+  }
+
+  // Form control padding on focus
+  &:focus-within {
+    > .form-control:first-child,
+    > .form-select:first-child {
+      padding: $form-floating-padding-y calc($form-floating-padding-x - 1px);
+    }
+  }
+}
+
+// Fie Upload : Floating label File
+.form-floating {
+  .form-control {
+    &::file-selector-button {
+      padding: $form-floating-padding-y $form-floating-padding-x;
+      margin: (-$form-floating-padding-y) (-$form-floating-padding-x);
+      margin-inline-end: $form-floating-padding-x;
+    }
+  }
+}

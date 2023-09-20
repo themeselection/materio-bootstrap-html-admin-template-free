@@ -1,0 +1,69 @@
+// Checkboxes and Radios
+// *******************************************************************************
+.form-check-input {
+  cursor: $form-check-label-cursor;
+}
+
+.form-check {
+  position: relative;
+}
+
+// Only for checkbox and radio (not for bs default switch)
+//? .dt-checkboxes-cell class is used for DataTables checkboxes
+.form-check:not(.form-switch),
+.dt-checkboxes-cell {
+  // Material shadow
+  .form-check-input {
+    position: relative;
+    transition: all 0.2s;
+    &::after {
+      content: '';
+      position: absolute;
+      top: -(px-to-rem(floor(rem-to-px(((($line-height-base * $font-size-base) - 1.125rem) * 0.5)))));
+      left: -2px;
+      z-index: 1;
+      display: block;
+      width: $form-check-input-width;
+      height: $form-check-input-width;
+      border-radius: 50%;
+      opacity: 0;
+      transition: all 0.2s;
+      transform-origin: center;
+      transform: scale(0) translateZ(0);
+    }
+  }
+
+  // Checkbox and Radio bg size for animation transition
+  .form-check-input[type='checkbox'] {
+    background-size: 1.375rem;
+    &:not(:checked):not(:indeterminate) {
+      background-size: 0rem;
+    }
+  }
+  .form-check-input[type='radio'] {
+    background-size: 1rem;
+    &:not(:checked) {
+      background-size: 0.75rem;
+    }
+  }
+  // Material shadow display on hover & active
+  .form-check-input {
+    &:active,
+    &:hover {
+      &::after {
+        opacity: 1;
+        transform: scale(2) translateZ(0);
+      }
+    }
+
+    &:disabled,
+    &[disabled] {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+// Switches
+// *******************************************************************************

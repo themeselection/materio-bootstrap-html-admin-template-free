@@ -1,0 +1,51 @@
+@import '_components/include';
+
+// * Bootstrap colors (Uncomment required colors)
+// *******************************************************************************
+
+$bootstrap-colors: (
+  // blue: $blue,
+  // indigo: $indigo,
+  // purple: $purple,
+  // pink: $pink,
+  // orange: $orange,
+  // teal: $teal
+) !default;
+
+@each $color-name, $color-value in $bootstrap-colors {
+  @include bg-variant('.bg-#{$color-name}', $color-value);
+  @include bg-label-variant('.bg-label-#{$color-name}', $color-value);
+
+  .border-#{$color-name} {
+    border-color: $color-value !important;
+  }
+
+  @include template-button-variant('.btn-#{$color-name}', $color-value);
+  @include template-button-outline-variant('.btn-outline-#{$color-name}', $color-value);
+}
+
+// * Navbar
+// *******************************************************************************
+
+@each $color, $value in $theme-colors {
+  @if $color !=primary and $color !=light {
+    @include template-navbar-style('.navbar.bg-#{$color}', $value);
+  }
+}
+
+@include template-navbar-style('.navbar.bg-white', #fff, $color: $text-muted, $active-color: $body-color);
+@include template-navbar-style('.navbar.bg-light', $light, $color: $body-color, $active-color: $headings-color);
+@include template-navbar-style('.navbar.bg-lighter', $gray-50, $color: $body-color, $active-color: $headings-color);
+
+// * Footer
+// *******************************************************************************
+
+@each $color, $value in $theme-colors {
+  @if $color !=primary and $color !=light {
+    @include template-footer-style('.footer.bg-#{$color}', $value);
+  }
+}
+
+@include template-footer-style('.footer.bg-white', #fff, $color: $text-muted, $active-color: $body-color);
+@include template-footer-style('.footer.bg-light', $light, $color: $body-color, $active-color: $headings-color);
+@include template-footer-style('.footer.bg-lighter', $gray-50, $color: $body-color, $active-color: $headings-color);

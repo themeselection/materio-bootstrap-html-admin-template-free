@@ -1,0 +1,79 @@
+// App Brand
+// *******************************************************************************
+
+@import 'mixins/app-brand';
+
+.app-brand {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  line-height: 1;
+  min-height: 1px;
+  align-items: center;
+}
+// For cover auth pages
+.auth-cover-brand {
+  position: absolute;
+  z-index: 1;
+  inset-block-start: 1.8rem;
+  inset-inline-start: 2.5rem;
+}
+
+.app-brand-link {
+  display: flex;
+  align-items: center;
+}
+.app-brand-logo {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  min-height: 1px;
+
+  img,
+  svg {
+    display: block;
+  }
+}
+
+.app-brand-text {
+  text-transform: uppercase;
+  flex-shrink: 0;
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.app-brand-img-collapsed {
+  display: none;
+}
+
+.app-brand .layout-menu-toggle {
+  display: block;
+  svg {
+    color: $black;
+  }
+}
+
+// App brand with vertical menu
+.menu-vertical .app-brand {
+  padding-right: $menu-vertical-link-padding-x + 0.25rem;
+  padding-left: $menu-vertical-link-padding-x + 0.25rem;
+}
+
+// App brand with vertical menu
+.menu-horizontal .app-brand,
+.menu-horizontal .app-brand + .menu-divider {
+  display: none !important;
+}
+
+:not(.layout-menu) > .menu-vertical.menu-collapsed:not(.layout-menu):not(:hover) {
+  @include template-app-brand-collapsed();
+}
+
+@include media-breakpoint-up($menu-collapsed-layout-breakpoint) {
+  .layout-menu-collapsed:not(.layout-menu-hover):not(.layout-menu-offcanvas):not(.layout-menu-fixed-offcanvas)
+    .layout-menu {
+    @include template-app-brand-collapsed();
+  }
+}

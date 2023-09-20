@@ -1,0 +1,39 @@
+// * Miscellaneous
+// *******************************************************************************
+
+@import '../_bootstrap-extended/include';
+@import '../_custom-variables/pages';
+
+// Misc wrapper styles
+.misc-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: center;
+  position: relative;
+  padding: 1.25rem;
+}
+
+// Misc background image styles
+.misc-bg {
+  inline-size: 100%;
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: 0;
+}
+
+// Misc object styles
+.misc-object {
+  position: absolute;
+  bottom: 15%;
+  z-index: 1;
+  left: 3%;
+}
+
+// Misc model style
+
+.misc-model {
+  position: relative;
+  bottom: 3rem;
+}

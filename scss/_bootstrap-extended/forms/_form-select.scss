@@ -1,0 +1,54 @@
+// Select
+// *******************************************************************************
+
+.form-select {
+  background-clip: padding-box;
+  &:hover {
+    &:not([disabled]):not([focus]) {
+      border-color: $input-border-hover-color;
+    }
+  }
+  @include ltr-style {
+    padding: calc($input-padding-y - $input-border-width) calc($input-padding-x * 2.25 - $input-border-width)
+      calc($input-padding-y - $input-border-width) calc($input-padding-x - $input-border-width);
+  }
+  &:focus {
+    border-width: $input-focus-border-width;
+    @include ltr-style {
+      padding: calc($input-padding-y - $input-focus-border-width)
+        calc($input-padding-x * 2.25 - $input-focus-border-width) calc($input-padding-y - $input-focus-border-width)
+        calc($input-padding-x - $input-focus-border-width);
+    }
+    background-position: right calc($input-padding-x - 1px) center;
+  }
+  &.form-select-lg {
+    @include ltr-style {
+      padding: calc($input-padding-y-lg - $input-border-width) calc($input-padding-x-lg * 2.25 - $input-border-width)
+        calc($input-padding-y-lg - $input-border-width) calc($input-padding-x-lg - $input-border-width);
+    }
+    &:focus {
+      @include ltr-style {
+        padding: calc($input-padding-y-lg - $input-focus-border-width)
+          calc($input-padding-x-lg * 2.25 - $input-focus-border-width)
+          calc($input-padding-y-lg - $input-focus-border-width) calc($input-padding-x-lg - $input-focus-border-width);
+      }
+      background-position: right calc($input-padding-x - 1px) center;
+    }
+  }
+  &.form-select-sm {
+    min-height: $input-height-sm;
+    @include ltr-style {
+      padding: calc($input-padding-y-sm - $input-border-width) calc($input-padding-x-sm * 2.25 - $input-border-width)
+        calc($input-padding-y-sm - $input-border-width) calc($input-padding-x-sm - $input-border-width);
+    }
+    &:focus {
+      @include ltr-style {
+        padding: calc($input-padding-y-sm - $input-focus-border-width)
+          calc($input-padding-x-sm * 2.25 - $input-focus-border-width)
+          calc($input-padding-y-sm - $input-focus-border-width) calc($input-padding-x-sm - $input-focus-border-width);
+      }
+      background-position: right calc($input-padding-x - 1px) center;
+    }
+    // background-size: 14px 11px;
+  }
+}

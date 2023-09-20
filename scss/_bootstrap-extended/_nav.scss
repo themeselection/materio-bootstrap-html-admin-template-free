@@ -1,0 +1,365 @@
+// Nav
+// *******************************************************************************
+
+.nav .nav-item,
+.nav .nav-link,
+.tab-pane,
+.tab-pane .card-body {
+  outline: none !important;
+}
+.nav {
+  flex-wrap: inherit;
+  &.nav-pills:not(.nav-align-right):not(.nav-align-left) {
+    flex-wrap: wrap;
+  }
+  .nav-item {
+    white-space: nowrap;
+  }
+}
+.nav .nav-link {
+  &:not(.active):hover {
+    color: $nav-link-color !important;
+  }
+}
+
+// Tab and pills style
+.nav-tabs,
+.nav-pills {
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    color: $headings-color;
+    &,
+    &.active {
+      background-color: transparent;
+      border-width: 0;
+    }
+  }
+
+  &:not(.nav-fill):not(.nav-justified) .nav-link {
+    margin-right: $nav-spacer;
+    width: 100%;
+  }
+}
+
+.tab-content:not(.doc-example-content) {
+  padding: $card-spacer-y;
+  border-radius: $border-radius;
+  // tab content animation
+  .tab-pane {
+    opacity: 0;
+    transition: all linear 0.1s;
+    @include ltr-style {
+      transform: translateX(-30px);
+    }
+    &.show {
+      opacity: 1;
+      transform: unset !important;
+      transition: all ease-out 0.2s 0.1s;
+    }
+  }
+}
+
+// Widget Tabs
+// --------------------------------------------------
+
+.nav-tabs {
+  div:not(.nav-align-left):not(.nav-align-right) > & {
+    display: inline-flex;
+    width: 100%;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+  }
+  &.nav-tabs-widget {
+    border: 0 !important;
+    overflow-x: auto;
+    .nav-link {
+      border: 2px dashed $border-color;
+      @include media-breakpoint-up(md) {
+        height: 92px !important;
+        width: 110px !important;
+        @include border-radius($border-radius-lg);
+      }
+      @include media-breakpoint-down(md) {
+        border: 0 !important;
+        padding: 0;
+      }
+      &.active {
+        border-style: solid;
+        border-color: $primary;
+        .avatar-initial {
+          background-color: rgba-to-hex(rgba($primary, 0.22), $rgba-to-hex-bg) !important;
+          color: $primary !important;
+        }
+      }
+    }
+
+    // Remove bottom border of tabs
+    .tab-slider {
+      display: none;
+    }
+    & + .tab-content {
+      .tab-pane {
+        transition: unset;
+        transform: none !important;
+      }
+    }
+  }
+}
+
+// For scrollable navs/tabs/pills
+.nav-scrollable {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  width: 100%;
+  overflow-y: auto;
+  flex-wrap: nowrap;
+}
+
+// Todo: remove/ update style for nav with perfect scrollbar
+// ? Not working with fixed width
+// ? if provide width/min-width with %/auto not working
+// ? Also can't use width with PX (as it's required for ps)
+// ? removed JS so need to initialize ps again
+// ? Once done add an example to docs
+
+// .nav-scrollable {
+//   display: -webkit-inline-box;
+//   display: -moz-inline-box;
+//   width: 420px;
+//   padding-bottom: 0.5rem;
+//   position: relative;
+//   // overflow-y: auto;
+//   flex-wrap: nowrap;
+// }
+
+// Tab link
+.nav-tabs {
+  position: relative;
+  .tab-slider {
+    height: 2px;
+    border-radius: 2px;
+    position: absolute;
+    transition: all 0.2s linear;
+    .nav-align-left &,
+    .nav-align-right & {
+      width: 2px !important;
+    }
+  }
+  .nav-link {
+    background-clip: padding-box;
+    border-radius: 0;
+  }
+}
+.nav-pills {
+  .nav-link {
+    padding: $nav-pills-padding-y $nav-pills-padding-x;
+  }
+}
+
+// Sizing
+// *******************************************************************************
+
+.nav-sm {
+  @include template-nav-size($nav-link-padding-y-sm, $nav-link-padding-x-sm, $font-size-sm, $nav-link-line-height-sm);
+}
+.nav-lg {
+  @include template-nav-size($nav-link-padding-y-lg, $nav-link-padding-x-lg, $font-size-lg, $nav-link-line-height-lg);
+}
+
+// Top, Right, Bottom & Left Tabbed panels
+// *******************************************************************************
+
+.nav-align-top,
+.nav-align-right,
+.nav-align-bottom,
+.nav-align-left {
+  display: flex;
+
+  > .nav,
+  > div > .nav {
+    z-index: 1;
+  }
+}
+
+.nav-align-right,
+.nav-align-left {
+  align-items: stretch;
+
+  > .nav,
+  > div > .nav {
+    flex-grow: 0;
+    flex-direction: column;
+    border-bottom-width: 0;
+  }
+
+  > .nav .nav-item,
+  > div > .nav .nav-item {
+    margin: 0 0 $nav-spacer 0 !important;
+  }
+
+  > .tab-content {
+    flex-grow: 1;
+    .tab-pane {
+      transform: translateY(-30px);
+      &.show {
+        transform: translateY(0px);
+      }
+    }
+  }
+}
+
+// Top tabs
+.nav-align-top {
+  flex-direction: column;
+  .nav-tabs {
+    ~ .tab-content {
+      @include border-top-radius(0);
+    }
+  }
+}
+.nav-align-top,
+.nav-align-bottom {
+  > .tab-content {
+    .tab-pane {
+      @include ltr-style {
+        transform: translateX(-30px);
+      }
+      &.show {
+        transform: translateX(0px) !important;
+      }
+    }
+  }
+}
+
+// Right tabs
+.nav-align-right {
+  flex-direction: row-reverse;
+  .nav-tabs {
+    position: relative;
+    .tab-slider {
+      left: 0;
+    }
+    ~ .tab-content {
+      .card & {
+        @include ltr-style {
+          border-right: $nav-tabs-border-width solid $nav-tabs-border-color;
+        }
+      }
+      @include ltr-style {
+        @include border-end-radius(0);
+      }
+    }
+  }
+
+  > .nav .nav-item,
+  > div > .nav .nav-item {
+    margin-left: -1px;
+    margin-bottom: 0;
+  }
+  .nav-link {
+    text-align: right;
+    justify-content: end;
+  }
+}
+
+// Bottom tabs
+.nav-align-bottom {
+  flex-direction: column-reverse;
+
+  > .nav .nav-item,
+  > div > .nav .nav-item {
+    margin-bottom: 0;
+    margin-top: -1px;
+  }
+
+  .nav-tabs {
+    ~ .tab-content {
+      @include border-bottom-radius(0);
+    }
+
+    .tab-slider {
+      bottom: inherit !important;
+    }
+  }
+}
+
+// Left tabs
+.nav-align-left {
+  // position: relative;
+  .nav-tabs {
+    position: relative;
+    ~ .tab-content {
+      .card & {
+        @include ltr-style {
+          border-left: $nav-tabs-border-width solid $nav-tabs-border-color;
+        }
+      }
+      @include ltr-style {
+        @include border-start-radius(0);
+      }
+    }
+  }
+  > .nav .nav-item,
+  > div > .nav .nav-item {
+    margin-right: -1px;
+    margin-bottom: 0;
+  }
+  .nav-link {
+    text-align: left;
+    justify-content: start;
+  }
+}
+
+// Tab content
+.nav-align-top > .tab-content,
+.nav-align-right > .tab-content,
+.nav-align-bottom > .tab-content,
+.nav-align-left > .tab-content {
+  flex-shrink: 1;
+  box-shadow: $card-box-shadow;
+  background-clip: padding-box;
+  background: $nav-tabs-link-active-bg;
+  .card & {
+    background: transparent;
+  }
+}
+.card .tab-content {
+  box-shadow: none !important;
+}
+
+// Dark
+@if $dark-style {
+  .nav-tabs {
+    .nav-link.active {
+      border-color: $border-inner-color;
+      border-bottom-color: $nav-tabs-link-active-bg;
+    }
+  }
+  .nav-align-top,
+  .nav-align-bottom,
+  .nav-align-left,
+  .nav-align-right {
+    .nav-tabs {
+      .nav-link.active {
+        border-color: $gray-300;
+      }
+    }
+  }
+  .nav-align-top {
+    .nav-tabs {
+      .nav-link.active {
+        border-bottom-color: $nav-tabs-link-active-bg !important;
+      }
+    }
+  }
+  .nav-align-bottom {
+    .nav-tabs {
+      .nav-link.active {
+        border-top-color: $nav-tabs-link-active-bg !important;
+      }
+    }
+  }
+}
