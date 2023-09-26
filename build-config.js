@@ -26,7 +26,7 @@ module.exports = {
   },
   development: {
     // Build path can be both relative or absolute.
-    // Current dist path is `./assets/vendor` which will be used by templates from `html\` directory. Set distPath: './assets/vendor' to generate assets in dist folder.
+    // Current dist path is `./assets/vendor` which will be used by templates from `html\` directory. Set distPath: './dist' to generate assets in dist folder.
     distPath: './assets/vendor',
 
     // Minify assets.
@@ -45,7 +45,7 @@ module.exports = {
   },
   production: {
     // Build path can be both relative or absolute.
-    // Current dist path is `./assets/vendor` which will be used by templates from `html\` directory. Set distPath: './assets/vendor' to generate assets in dist folder.
+    // Current dist path is `./assets/vendor` which will be used by templates from `html\` directory. Set distPath: './dist' to generate assets in dist folder.
     distPath: './assets/vendor',
 
     // Minify assets.
