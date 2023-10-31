@@ -49,7 +49,7 @@
   &:focus-within {
     > .form-control:first-child,
     > .form-select:first-child {
-      padding: $form-floating-padding-y calc($form-floating-padding-x - 1px);
+      padding: calc($form-floating-padding-y - 1px) calc($form-floating-padding-x - 1px);
     }
   }
 }
@@ -62,5 +62,8 @@
       margin: (-$form-floating-padding-y) (-$form-floating-padding-x);
       margin-inline-end: $form-floating-padding-x;
     }
+  }
+  > label {
+    width: 100%;
   }
 }

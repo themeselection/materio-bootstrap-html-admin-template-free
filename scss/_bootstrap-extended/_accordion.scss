@@ -45,7 +45,7 @@
 
       &::before {
         background-image: var(--#{$prefix}accordion-btn-active-icon);
-        transform: rotate(-90deg);
+        transform: rotate(-180deg);
       }
       &::after {
         background-image: none;

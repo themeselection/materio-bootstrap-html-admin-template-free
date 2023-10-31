@@ -62,6 +62,7 @@ a.bg-primary:hover, a.bg-primary:focus {
 }
 
 .list-group-item-primary {
+  border-color: #9b66fd;
   background-color: #f2ebff;
   color: #824de4 !important;
 }
@@ -73,14 +74,15 @@ button.list-group-item-primary {
 a.list-group-item-primary:hover, a.list-group-item-primary:focus,
 button.list-group-item-primary:hover,
 button.list-group-item-primary:focus {
+  border-color: #9b66fd;
   background-color: #e6dff2;
   color: #824de4;
 }
 a.list-group-item-primary.active,
 button.list-group-item-primary.active {
-  border-color: #9055fd;
-  background-color: #9055fd;
-  color: #824de4;
+  border-color: #9055fd !important;
+  background-color: #9055fd !important;
+  color: #fff !important;
 }
 
 .list-group-item.active {
@@ -556,7 +558,7 @@ a:hover {
   border-color: rgba(84, 79, 90, 0.0769076471);
 }
 .bg-navbar-theme .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba(58, 53, 65, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='rgba(137, 134, 141, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>");
 }
 .bg-navbar-theme .navbar-text {
   color: #544f5a;

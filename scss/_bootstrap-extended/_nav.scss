@@ -30,7 +30,9 @@
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
-    color: $headings-color;
+    &:not(.disabled) {
+      color: $headings-color;
+    }
     &,
     &.active {
       background-color: transparent;
