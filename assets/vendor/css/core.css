@@ -2530,7 +2530,7 @@ textarea.form-control-lg {
 .form-floating > .form-control:not(:placeholder-shown) ~ label,
 .form-floating > .form-control-plaintext ~ label,
 .form-floating > .form-select ~ label {
-  color: rgba(var(--bs-body-color-rgb), 0.75);
+  color: rgba(var(--bs-body-color-rgb), 1);
   transform: scale(0.8) translateY(-0.6rem) translateX(0.15rem);
 }
 .form-floating > .form-control:focus ~ label::after,
@@ -2546,7 +2546,7 @@ textarea.form-control-lg {
   border-radius: 0.375rem;
 }
 .form-floating > .form-control:-webkit-autofill ~ label {
-  color: rgba(var(--bs-body-color-rgb), 0.75);
+  color: rgba(var(--bs-body-color-rgb), 1);
   transform: scale(0.8) translateY(-0.6rem) translateX(0.15rem);
 }
 .form-floating > .form-control-plaintext ~ label {

@@ -489,7 +489,6 @@ $input-border-width: $input-btn-border-width !default;
 $input-border-color: rgba-to-hex($gray-300, $rgba-to-hex-bg) !default;
 $input-border-hover-color: rgba-to-hex($gray-400, $rgba-to-hex-bg) !default; // (C)
 
-$input-hover-border-color: rgba-to-hex($gray-200, $rgba-to-hex-bg) !default; // (C)
 $input-border-radius: $border-radius-lg !default;
 $input-border-radius-sm: $border-radius !default;
 
@@ -594,8 +593,8 @@ $form-floating-input-bg: rgba-to-hex($gray-50, $rgba-to-hex-bg) !default; // (C)
 $form-floating-height: calc(
   ($font-size-base * $form-floating-line-height) + ($form-floating-padding-y * 2) + ($border-width * 2)
 ) !default;
-$form-floating-label-height: 1.75em !default; // (C)
-$form-floating-label-opacity: 0.75 !default;
+$form-floating-label-height: 1.75em !default;
+$form-floating-label-opacity: 1 !default;
 $form-floating-transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out !default;
 $form-floating-label-transform-scale: 0.8; // (C)
 $form-floating-label-transform: scale($form-floating-label-transform-scale) translateY(-0.6rem) translateX(0.15rem) !default;
@@ -807,7 +806,6 @@ $toast-padding-y: 0.406rem !default;
 $toast-font-size: $font-size-base !default;
 $toast-color: $body-color !default;
 $toast-background-color: rgba($card-bg, 0.85);
-$toast-bg-factor: 0.85 !default; // (C)
 $toast-border-width: 0rem !default;
 $toast-border-color: $gray-100 !default;
 $toast-border-radius: $border-radius !default;
