@@ -2,6 +2,12 @@
 
 All notable changes to this template will be documented in this file
 
+## [1.1.1] - [2023-11-06]
+
+### Fixed
+
+- Minor improvements & Bugfixes
+
 ## [1.1.0] - [2023-10-31]
 
 ### Updated
