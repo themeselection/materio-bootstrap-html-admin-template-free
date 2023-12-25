@@ -204,7 +204,7 @@ For free products, enjoy community support via GitHub issues. Upgrade to Premium
    <a href="{pro_angular_version_item_page_link_on_themeselection}" target="_blank"><picture><source width="auto" height="74px" media="(prefers-color-scheme: dark)" srcset="https://github.com/microsoft/vscode/assets/47495003/da7f0abe-9f83-4205-b691-bc8d2ffef59b"><source width="auto" height="74px" media="(prefers-color-scheme: light)" srcset="https://github.com/microsoft/vscode/assets/47495003/9ebeb520-442a-4047-9000-5b13d0e6c000"><img width="auto" height="74px" alt="angular" src="https://github.com/microsoft/vscode/assets/47495003/9ebeb520-442a-4047-9000-5b13d0e6c000"></picture></img></a>&nbsp;&nbsp;
 </p>
 
-<!-- Add other pro variants here. You can get the logo URL from here: https://icones.js.org/collection/logos -->
+<!-- Add other pro variants here. You can get logo URL from here: https://icones.js.org/collection/logos -->
 
 ## Looking For Premium Admin Templates ?? 👀
 
