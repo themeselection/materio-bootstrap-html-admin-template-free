@@ -103,12 +103,14 @@ const Helpers = {
   // ---
   // Add classes
   _addClass(cls, el = this.ROOT_EL) {
-    if (el.length !== undefined) {
+    if (el && el.length !== undefined) {
       // Add classes to multiple elements
       el.forEach(e => {
-        cls.split(' ').forEach(c => e.classList.add(c))
+        if (e) {
+          cls.split(' ').forEach(c => e.classList.add(c))
+        }
       })
-    } else {
+    } else if (el) {
       // Add classes to single element
       cls.split(' ').forEach(c => el.classList.add(c))
     }
@@ -117,12 +119,14 @@ const Helpers = {
   // ---
   // Remove classes
   _removeClass(cls, el = this.ROOT_EL) {
-    if (el.length !== undefined) {
+    if (el && el.length !== undefined) {
       // Remove classes to multiple elements
       el.forEach(e => {
-        cls.split(' ').forEach(c => e.classList.remove(c))
+        if (e) {
+          cls.split(' ').forEach(c => e.classList.remove(c))
+        }
       })
-    } else {
+    } else if (el) {
       // Remove classes to single element
       cls.split(' ').forEach(c => el.classList.remove(c))
     }
@@ -735,10 +739,10 @@ const Helpers = {
 
           if (formPasswordToggleInput.getAttribute('type') === 'text') {
             formPasswordToggleInput.setAttribute('type', 'password')
-            formPasswordToggleIcon.classList.replace('mdi-eye-outline', 'mdi-eye-off-outline')
+            formPasswordToggleIcon.classList.replace('ri-eye-line', 'ri-eye-off-line')
           } else if (formPasswordToggleInput.getAttribute('type') === 'password') {
             formPasswordToggleInput.setAttribute('type', 'text')
-            formPasswordToggleIcon.classList.replace('mdi-eye-off-outline', 'mdi-eye-outline')
+            formPasswordToggleIcon.classList.replace('ri-eye-off-line', 'ri-eye-line')
           }
         })
       })
@@ -891,4 +895,5 @@ if (typeof window !== 'undefined') {
 }
 
 // ---
+window.Helpers = Helpers
 export { Helpers }

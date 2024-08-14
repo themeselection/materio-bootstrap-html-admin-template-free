@@ -8,46 +8,58 @@
       border-color: $input-border-hover-color;
     }
   }
+  &:disabled {
+    background-image: escape-svg($form-select-disabled-indicator);
+  }
   @include ltr-style {
-    padding: calc($input-padding-y - $input-border-width) calc($input-padding-x * 2.25 - $input-border-width)
-      calc($input-padding-y - $input-border-width) calc($input-padding-x - $input-border-width);
+    padding: calc($form-select-padding-y - $form-select-border-width)
+      calc($form-select-padding-x * 3 - $form-select-border-width)
+      calc($form-select-padding-y - $form-select-border-width) calc($form-select-padding-x - $form-select-border-width);
   }
   &:focus {
     border-width: $input-focus-border-width;
     @include ltr-style {
-      padding: calc($input-padding-y - $input-focus-border-width)
-        calc($input-padding-x * 2.25 - $input-focus-border-width) calc($input-padding-y - $input-focus-border-width)
-        calc($input-padding-x - $input-focus-border-width);
+      padding: calc($form-select-padding-y - $input-focus-border-width)
+        calc($form-select-padding-x * 3 - $input-focus-border-width)
+        calc($form-select-padding-y - $input-focus-border-width)
+        calc($form-select-padding-x - $input-focus-border-width);
     }
     background-position: right calc($input-padding-x - 1px) center;
   }
   &.form-select-lg {
+    min-height: $input-height-lg;
+    background-size: 24px 24px;
     @include ltr-style {
-      padding: calc($input-padding-y-lg - $input-border-width) calc($input-padding-x-lg * 2.25 - $input-border-width)
-        calc($input-padding-y-lg - $input-border-width) calc($input-padding-x-lg - $input-border-width);
+      padding: calc($form-select-padding-y-lg - $form-select-border-width)
+        calc($form-select-padding-x-lg * 3 - $form-select-border-width)
+        calc($form-select-padding-y-lg - $form-select-border-width)
+        calc($form-select-padding-x-lg - $form-select-border-width);
     }
     &:focus {
       @include ltr-style {
-        padding: calc($input-padding-y-lg - $input-focus-border-width)
-          calc($input-padding-x-lg * 2.25 - $input-focus-border-width)
-          calc($input-padding-y-lg - $input-focus-border-width) calc($input-padding-x-lg - $input-focus-border-width);
+        padding: calc($form-select-padding-y-lg - $input-focus-border-width)
+          calc($form-select-padding-x-lg * 3 - $input-focus-border-width)
+          calc($form-select-padding-y-lg - $input-focus-border-width)
+          calc($form-select-padding-x-lg - $input-focus-border-width);
       }
-      background-position: right calc($input-padding-x - 1px) center;
     }
   }
   &.form-select-sm {
     min-height: $input-height-sm;
+    background-size: 20px 20px;
     @include ltr-style {
-      padding: calc($input-padding-y-sm - $input-border-width) calc($input-padding-x-sm * 2.25 - $input-border-width)
-        calc($input-padding-y-sm - $input-border-width) calc($input-padding-x-sm - $input-border-width);
+      padding: calc($form-select-padding-y-sm - $form-select-border-width)
+        calc($form-select-padding-x-sm * 3 - $form-select-border-width)
+        calc($form-select-padding-y-sm - $form-select-border-width)
+        calc($form-select-padding-x-sm - $form-select-border-width);
     }
     &:focus {
       @include ltr-style {
-        padding: calc($input-padding-y-sm - $input-focus-border-width)
-          calc($input-padding-x-sm * 2.25 - $input-focus-border-width)
-          calc($input-padding-y-sm - $input-focus-border-width) calc($input-padding-x-sm - $input-focus-border-width);
+        padding: calc($form-select-padding-y-sm - $input-focus-border-width)
+          calc($form-select-padding-x-sm * 3 - $input-focus-border-width)
+          calc($form-select-padding-y-sm - $input-focus-border-width)
+          calc($form-select-padding-x-sm - $input-focus-border-width);
       }
-      background-position: right calc($input-padding-x - 1px) center;
     }
     // background-size: 14px 11px;
   }

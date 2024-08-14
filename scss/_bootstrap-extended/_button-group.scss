@@ -47,12 +47,12 @@
 .input-group > .btn:not([class*='btn-outline-']):first-child,
 :not(.btn-group):not(.input-group) > .btn-group > .btn:not([class*='btn-outline-']):first-child,
 .input-group > .btn-group:first-child > .btn:not([class*='btn-outline-']):first-child {
-  border-left-color: transparent;
+  border-left-color: transparent !important;
 }
 
 .btn-group > .btn-group:last-child > .btn:not([class*='btn-outline-']):last-of-type,
 .input-group > .btn:not([class*='btn-outline-']):last-of-type,
 :not(.btn-group):not(.input-group) > .btn-group > .btn:not([class*='btn-outline-']):last-of-type,
 .input-group > .btn-group:last-child > .btn:not([class*='btn-outline-']):last-of-type {
-  border-right-color: transparent;
+  border-right-color: transparent !important;
 }

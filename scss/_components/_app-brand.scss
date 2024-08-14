@@ -17,7 +17,7 @@
   position: absolute;
   z-index: 1;
   inset-block-start: 1.8rem;
-  inset-inline-start: 2.5rem;
+  inset-inline-start: 3rem;
 }
 
 .app-brand-link {
@@ -57,8 +57,8 @@
 
 // App brand with vertical menu
 .menu-vertical .app-brand {
-  padding-right: $menu-vertical-link-padding-x + 0.25rem;
-  padding-left: $menu-vertical-link-padding-x + 0.25rem;
+  padding-right: $menu-vertical-link-padding-x - 0.25rem;
+  padding-left: $menu-vertical-link-padding-x + 0.125rem;
 }
 
 // App brand with vertical menu

@@ -22,14 +22,4 @@
   .popover-arrow {
     z-index: 1;
   }
-  &.bs-popover-auto {
-    &[data-popper-placement='bottom'] > .popover-arrow {
-      &::after {
-        top: 2px;
-      }
-      &:before {
-        top: 1px;
-      }
-    }
-  }
 }

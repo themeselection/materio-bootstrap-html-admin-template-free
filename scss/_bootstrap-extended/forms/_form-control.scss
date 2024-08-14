@@ -31,6 +31,6 @@
   }
 }
 .input-group:has(button) .form-control {
-  padding: $input-padding-y$input-padding-x !important;
+  padding: calc($input-padding-y - $input-border-width) calc($input-padding-x - $input-border-width) !important;
   border-width: $input-border-width !important;
 }

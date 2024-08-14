@@ -24,13 +24,12 @@
 .breadcrumb-style1,
 .breadcrumb-style2 {
   .breadcrumb-item + .breadcrumb-item::before {
-    font-family: Material Design Icons;
+    font-family: 'remixicon';
   }
 }
 .breadcrumb-style1 .breadcrumb-item + .breadcrumb-item::before {
-  content: '\F0142';
-  line-height: $line-height-lg;
+  content: '\EA6E';
 }
 .breadcrumb-style2 .breadcrumb-item + .breadcrumb-item::before {
-  content: '\F0CE0';
+  content: '\EA68';
 }

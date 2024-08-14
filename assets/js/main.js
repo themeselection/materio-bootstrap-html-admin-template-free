@@ -117,12 +117,14 @@ let menu, animate;
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
 
-  // Accordion active class
+  // Accordion active class and previous-active class
   const accordionActiveFunction = function (e) {
     if (e.type == 'show.bs.collapse' || e.type == 'show.bs.collapse') {
       e.target.closest('.accordion-item').classList.add('active');
+      e.target.closest('.accordion-item').previousElementSibling?.classList.add('previous-active');
     } else {
       e.target.closest('.accordion-item').classList.remove('active');
+      e.target.closest('.accordion-item').previousElementSibling?.classList.remove('previous-active');
     }
   };
 

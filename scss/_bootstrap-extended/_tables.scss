@@ -19,6 +19,29 @@
       }
     }
   }
+  caption {
+    padding: $table-cell-padding-y $table-cell-padding-x;
+  }
+  &.table-sm {
+    thead tr th {
+      padding-block: $table-head-padding-y-sm;
+    }
+  }
+  // Table heading style
+  th {
+    text-transform: uppercase;
+    font-size: $font-size-sm;
+    letter-spacing: 0.2px;
+    color: $table-th-color;
+  }
+  thead tr th {
+    border-bottom-color: $table-header-bg-color;
+    padding-block: $table-head-padding-y;
+  }
+  // heading background color except .table-dark and .table-light
+  &:not(.table-dark):not(.table-light) thead:not(.table-dark):not(.table-light) tr th {
+    background-color: $table-header-bg-color;
+  }
 }
 
 // Style for table inside card
@@ -34,13 +57,7 @@
     }
   }
 }
-// Table heading style
-.table th {
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-  color: $table-th-color;
-}
+
 .table-dark th {
   color: var(--#{$prefix}table-color);
 }

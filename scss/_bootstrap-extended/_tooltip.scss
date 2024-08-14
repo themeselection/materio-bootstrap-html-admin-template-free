@@ -5,3 +5,6 @@
 .modal-open .tooltip {
   z-index: $zindex-modal + 2;
 }
+.tooltip.bs-tooltip-auto {
+  font-weight: $font-weight-medium;
+}

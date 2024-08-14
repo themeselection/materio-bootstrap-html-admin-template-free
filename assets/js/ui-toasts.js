@@ -15,7 +15,9 @@
   function toastDispose(toast) {
     if (toast && toast._element !== null) {
       if (toastPlacementExample) {
-        toastPlacementExample.querySelector('i.mdi').classList.remove(selectedType);
+        toastPlacementExample.querySelectorAll('i[class^="ri-"]').forEach(function (element) {
+          element.classList.remove(selectedType);
+        });
         DOMTokenList.prototype.remove.apply(toastPlacementExample.classList, selectedPlacement);
       }
       toast.dispose();
@@ -30,7 +32,9 @@
       selectedType = document.querySelector('#selectTypeOpt').value;
       selectedPlacement = document.querySelector('#selectPlacement').value.split(' ');
 
-      toastPlacementExample.querySelector('i.mdi').classList.add(selectedType);
+      toastPlacementExample.querySelectorAll('i[class^="ri-"]').forEach(function (element) {
+        element.classList.add(selectedType);
+      });
       DOMTokenList.prototype.add.apply(toastPlacementExample.classList, selectedPlacement);
       toastPlacement = new bootstrap.Toast(toastPlacementExample);
       toastPlacement.show();

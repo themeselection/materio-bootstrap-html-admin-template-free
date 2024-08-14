@@ -43,7 +43,12 @@
   display: none;
   position: absolute;
   top: $navbar-height - (($navbar-height - 3rem) * 0.5);
-  height: 3rem;
+  @include media-breakpoint-up($menu-collapsed-layout-breakpoint) {
+    height: 3rem;
+  }
+  @include media-breakpoint-down($menu-collapsed-layout-breakpoint) {
+    height: 1.5rem;
+  }
   width: 100%;
   pointer-events: none;
   z-index: 2;
@@ -137,10 +142,6 @@
   flex: 0 1 auto;
   margin: 0;
 
-  .menu-item.active > & {
-    font-weight: $font-weight-medium;
-  }
-
   .menu-item.disabled & {
     cursor: not-allowed !important;
   }
@@ -170,13 +171,13 @@
 // Menu toggle open/close arrow
 .menu-toggle::after {
   position: absolute;
-  top: 50%;
+  top: 53%;
   display: block;
-  font-family: 'Material Design Icons';
+  font-family: 'remixicon';
   font-size: $menu-icon-expanded-font-size;
-  color: $body-color;
+  color: $headings-color;
   transform: translateY(-49%);
-  content: '\F0142';
+  content: '\EA6E';
 
   .menu:not(.menu-no-animation) & {
     transition-duration: $menu-animation-duration;
@@ -220,8 +221,8 @@
     .menu-item {
       margin: $menu-item-spacer 0 0;
       &.active {
-        > .menu-link {
-          font-weight: $font-weight-medium;
+        > .menu-link:not(.menu-toggle) {
+          box-shadow: $box-shadow-sm;
         }
       }
     }
@@ -244,6 +245,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      line-height: 1.467;
     }
     &.waves-effect:focus {
       .waves-ripple {
@@ -258,7 +260,7 @@
     }
     &:hover {
       .light-style & {
-        background-color: rgba($black, 0.04);
+        background-color: rgba($black, 0.06);
       }
     }
   }
@@ -271,7 +273,7 @@
   }
 
   .menu-item .menu-toggle {
-    padding-right: calc(#{$menu-vertical-link-padding-x} + #{$caret-width * 3});
+    padding-right: calc(#{$menu-vertical-link-padding-x} + #{$caret-width * 3.85});
 
     &::after {
       right: calc(#{$menu-vertical-link-padding-x} - 0.4rem);
@@ -294,16 +296,16 @@
       padding-bottom: $menu-vertical-menu-link-padding-y;
     }
   }
-  .menu-inner > .menu-item > .menu-sub > .menu-item > .menu-link {
+  .menu-sub > .menu-item > .menu-link {
     &::before {
       .layout-wrapper:not(.layout-horizontal) & {
         content: '';
-        height: 11.67px;
-        width: 11.67px;
+        height: 10px;
+        width: 10px;
         border-radius: $border-radius-pill;
         position: absolute;
-        left: 1.55rem;
-        border: 1px solid $body-color;
+        left: $menu-icon-expanded-left-spacer;
+        border: 1.5px solid $body-color;
       }
     }
   }
@@ -323,18 +325,30 @@
   // Levels
   //
 
-  $menu-first-level-spacer: $menu-vertical-link-padding-x + $menu-icon-expanded-width + $menu-icon-expanded-spacer;
+  $menu-first-level-spacer: $menu-vertical-link-padding-x + $menu-icon-expanded-width + ($menu-icon-expanded-spacer) -
+    0.125;
 
-  .menu-sub .menu-link {
-    // &:not(.menu-toggle) {
-    //   .menu-icon:before {
-    //     .layout-wrapper.layout-horizontal & {
-    //       font-size: $font-size-lg;
-    //     }
-    //   }
-    // }
+  // .menu-inner > .menu-item > .menu-link,
+  .menu-inner > .menu-item > .menu-sub > .menu-item > .menu-link {
     .layout-wrapper:not(.layout-horizontal) & {
       padding-left: $menu-first-level-spacer;
+    }
+  }
+  // Menu levels loop for padding left/right
+  @for $i from 2 through $menu-max-levels {
+    $selector: '';
+
+    @for $l from 1 through $i {
+      $selector: '#{$selector} .menu-sub';
+    }
+
+    .layout-wrapper & {
+      #{$selector} .menu-link {
+        padding-left: $menu-first-level-spacer + ($menu-vertical-menu-level-spacer * ($i)) - 0.25;
+        &::before {
+          left: $menu-icon-expanded-left-spacer + ($menu-vertical-menu-level-spacer * ($i - 0.5));
+        }
+      }
     }
   }
 }
@@ -361,6 +375,7 @@
     .menu-inner > .menu-block,
     .menu-inner > .menu-header {
       padding-left: $menu-vertical-link-padding-x + 0.01rem;
+      padding-right: $menu-vertical-link-padding-x + 1rem;
     }
   }
 
@@ -400,6 +415,8 @@
   .menu-inner > .menu-item > .menu-link .menu-icon {
     text-align: center;
     margin-right: 0;
+    padding-left: $menu-vertical-link-padding-x + 1rem;
+    padding-right: $menu-vertical-link-padding-x + 0.01rem;
   }
 }
 

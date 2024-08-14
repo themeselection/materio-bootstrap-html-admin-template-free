@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html
   lang="en"
@@ -6,7 +6,8 @@
   dir="ltr"
   data-theme="theme-default"
   data-assets-path="../assets/"
-  data-template="vertical-menu-template-free">
+  data-template="vertical-menu-template-free"
+  data-style="light">
   <head>
     <meta charset="utf-8" />
     <meta
@@ -27,7 +28,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&ampdisplay=swap"
       rel="stylesheet" />
 
-    <link rel="stylesheet" href="../assets/vendor/fonts/materialdesignicons.css" />
+    <link rel="stylesheet" href="../assets/vendor/fonts/remixicon/remixicon.css" />
 
     <!-- Menu waves for no-customizer fix -->
     <link rel="stylesheet" href="../assets/vendor/libs/node-waves/node-waves.css" />
@@ -64,10 +65,10 @@
               <!-- Search -->
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
-                  <i class="mdi mdi-magnify mdi-24px lh-0"></i>
+                  <i class="ri-search-line ri-22px me-2"></i>
                   <input
                     type="text"
-                    class="form-control border-0 shadow-none bg-body"
+                    class="form-control border-0 shadow-none"
                     placeholder="Search..."
                     aria-label="Search..." />
                 </div>
@@ -76,7 +77,7 @@
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- Place this tag where you want the button to render. -->
-                <li class="nav-item lh-1 me-3">
+                <li class="nav-item lh-1 me-4">
                   <a
                     class="github-button"
                     href="https://github.com/themeselection/materio-bootstrap-html-admin-template-free"
@@ -100,52 +101,57 @@
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end mt-3 py-2">
                     <li>
-                      <a class="dropdown-item pb-2 mb-1" href="#">
+                      <a class="dropdown-item" href="#">
                         <div class="d-flex align-items-center">
-                          <div class="flex-shrink-0 me-2 pe-1">
+                          <div class="flex-shrink-0 me-2">
                             <div class="avatar avatar-online">
                               <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <h6 class="mb-0">John Doe</h6>
+                            <h6 class="mb-0 small">John Doe</h6>
                             <small class="text-muted">Admin</small>
                           </div>
                         </div>
                       </a>
                     </li>
                     <li>
-                      <div class="dropdown-divider my-1"></div>
+                      <div class="dropdown-divider"></div>
                     </li>
                     <li>
                       <a class="dropdown-item" href="#">
-                        <i class="mdi mdi-account-outline me-1 mdi-20px"></i>
+                        <i class="ri-user-3-line ri-22px me-2"></i>
                         <span class="align-middle">My Profile</span>
                       </a>
                     </li>
                     <li>
                       <a class="dropdown-item" href="#">
-                        <i class="mdi mdi-cog-outline me-1 mdi-20px"></i>
+                        <i class="ri-settings-4-line ri-22px me-2"></i>
                         <span class="align-middle">Settings</span>
                       </a>
                     </li>
                     <li>
                       <a class="dropdown-item" href="#">
                         <span class="d-flex align-items-center align-middle">
-                          <i class="flex-shrink-0 mdi mdi-credit-card-outline me-1 mdi-20px"></i>
-                          <span class="flex-grow-1 align-middle ms-1">Billing</span>
-                          <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
+                          <i class="flex-shrink-0 ri-file-text-line ri-22px me-3"></i>
+                          <span class="flex-grow-1 align-middle">Billing</span>
+                          <span
+                            class="flex-shrink-0 badge badge-center rounded-pill bg-danger h-px-20 d-flex align-items-center justify-content-center"
+                            >4</span
+                          >
                         </span>
                       </a>
                     </li>
                     <li>
-                      <div class="dropdown-divider my-1"></div>
+                      <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="javascript:void(0);">
-                        <i class="mdi mdi-power me-1 mdi-20px"></i>
-                        <span class="align-middle">Log Out</span>
-                      </a>
+                      <div class="d-grid px-4 pt-2 pb-1">
+                        <a class="btn btn-danger d-flex" href="javascript:void(0);">
+                          <small class="align-middle">Logout</small>
+                          <i class="ri-logout-box-r-line ms-2 ri-16px"></i>
+                        </a>
+                      </div>
                     </li>
                   </ul>
                 </li>
@@ -184,25 +190,23 @@
             <footer class="content-footer footer bg-footer-theme">
               <div class="container-xxl">
                 <div
-                  class="footer-container d-flex align-items-center justify-content-between py-3 flex-md-row flex-column">
+                  class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
                   <div class="text-body mb-2 mb-md-0">
                     ©
                     <script>
                       document.write(new Date().getFullYear());
                     </script>
-                    , made with <span class="text-danger"><i class="tf-icons mdi mdi-heart"></i></span> by
-                    <a href="https://themeselection.com" target="_blank" class="footer-link fw-medium"
-                      >ThemeSelection</a
-                    >
+                    , made with <span class="text-danger"><i class="tf-icons ri-heart-fill"></i></span> by
+                    <a href="https://themeselection.com" target="_blank" class="footer-link">ThemeSelection</a>
                   </div>
                   <div class="d-none d-lg-inline-block">
-                    <a href="https://themeselection.com/license/" class="footer-link me-3" target="_blank">License</a>
-                    <a href="https://themeselection.com/" target="_blank" class="footer-link me-3">More Themes</a>
+                    <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
+                    <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
 
                     <a
                       href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/documentation/"
                       target="_blank"
-                      class="footer-link me-3"
+                      class="footer-link me-4"
                       >Documentation</a
                     >
 
@@ -254,7 +258,7 @@
 
     <!-- Page JS -->
 
-    <!-- Place this tag in your head or just before your close body tag. -->
+    <!-- Place this tag before closing body tag for github widget button. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
 </html>

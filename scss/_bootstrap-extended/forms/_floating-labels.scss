@@ -1,12 +1,57 @@
 // Floating Labels
 // *******************************************************************************
 
+.form-floating {
+  > .form-control,
+  > .form-control-plaintext,
+  > .form-select {
+    &:focus,
+    &:not(:placeholder-shown) {
+      ~ label {
+        &:after {
+          background-color: $card-bg !important;
+        }
+      }
+    }
+  }
+  &.form-floating-outline {
+    > .form-control,
+    > .form-control-plaintext {
+      &:disabled {
+        background-color: $input-bg;
+        border-color: $border-color;
+        color: $text-muted;
+        ~ .form-text {
+          color: $form-floating-label-disabled-color;
+        }
+      }
+    }
+    > .form-select {
+      &:disabled {
+        opacity: $btn-disabled-opacity;
+      }
+    }
+    > .form-control-plaintext {
+      border: none;
+    }
+  }
+}
+
 // Floating label (Outlined)
 .form-floating.form-floating-outline {
   > .form-control,
   > .form-select {
+    padding: calc($form-floating-padding-y - $input-border-width) calc($form-floating-padding-x - $input-border-width);
     &:focus {
       border-width: $input-focus-border-width;
+    }
+    &:disabled,
+    &.disabled {
+      background-color: transparent;
+      border-color: $border-color;
+      ~ .form-text {
+        color: $form-floating-label-disabled-color;
+      }
     }
     &:focus,
     &:not(:placeholder-shown) {
@@ -19,16 +64,17 @@
       ~ label {
         width: auto;
         height: auto;
-        padding: 0 $input-focus-border-width;
-        margin-left: $form-floating-padding-y;
+        padding: $input-focus-border-width $form-floating-label-padding-x;
+        margin-left: $form-floating-label-margin;
+        margin-top: 0.125rem;
         transform: $form-floating-outline-label-transform;
         opacity: 1;
+        font-size: $font-size-sm;
         &:after {
           content: '';
           position: absolute;
-          height: 0.5rem;
           width: 100%;
-          left: 0;
+          inset-inline-start: 0;
           top: 0.35rem;
           z-index: -1;
         }
@@ -49,12 +95,27 @@
   &:focus-within {
     > .form-control:first-child,
     > .form-select:first-child {
-      padding: calc($form-floating-padding-y - 1px) calc($form-floating-padding-x - 1px);
+      padding: calc($form-floating-padding-y - 1px) calc($form-floating-padding-x - 2px);
+    }
+  }
+
+  // Input group (not first-child) floating (outline) label position
+  .input-group & {
+    &:not(:first-child) {
+      > .form-control:focus,
+      > .form-control:not(:placeholder-shown),
+      > .form-select {
+        ~ label {
+          padding: calc($input-focus-border-width * 0.5) $form-floating-label-padding-x !important;
+          margin-left: calc($input-focus-border-width * -1);
+          transform: $form-floating-outline-label-transform;
+        }
+      }
     }
   }
 }
 
-// Fie Upload : Floating label File
+// File Upload : Floating label File and text alignment
 .form-floating {
   .form-control {
     &::file-selector-button {
@@ -65,5 +126,32 @@
   }
   > label {
     width: 100%;
+    color: $text-muted;
+    padding: 0.8125rem $form-floating-padding-x;
+  }
+  & ~ .form-text,
+  .form-text {
+    margin-left: $input-padding-x;
+  }
+  > .form-control-plaintext:not(:placeholder-shown) {
+    padding-top: 2.1895rem;
+  }
+  > .form-control:focus,
+  > .form-select {
+    & ~ label:after {
+      border-radius: 0;
+    }
+  }
+  > .form-control:disabled,
+  > .form-select:disabled {
+    & ~ label:after {
+      background-color: $card-bg;
+    }
+  }
+}
+.form-floating {
+  & ~ .form-text,
+  .form-text {
+    margin-left: $input-padding-x;
   }
 }

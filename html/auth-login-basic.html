@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html
   lang="en"
@@ -6,7 +6,8 @@
   dir="ltr"
   data-theme="theme-default"
   data-assets-path="../assets/"
-  data-template="vertical-menu-template-free">
+  data-template="vertical-menu-template-free"
+  data-style="light">
   <head>
     <meta charset="utf-8" />
     <meta
@@ -27,7 +28,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&ampdisplay=swap"
       rel="stylesheet" />
 
-    <link rel="stylesheet" href="../assets/vendor/fonts/materialdesignicons.css" />
+    <link rel="stylesheet" href="../assets/vendor/fonts/remixicon/remixicon.css" />
 
     <!-- Menu waves for no-customizer fix -->
     <link rel="stylesheet" href="../assets/vendor/libs/node-waves/node-waves.css" />
@@ -56,12 +57,12 @@
 
     <div class="position-relative">
       <div class="authentication-wrapper authentication-basic container-p-y">
-        <div class="authentication-inner py-4">
+        <div class="authentication-inner py-6 mx-4">
           <!-- Login -->
-          <div class="card p-2">
+          <div class="card p-7">
             <!-- Logo -->
             <div class="app-brand justify-content-center mt-5">
-              <a href="index.html" class="app-brand-link gap-2">
+              <a href="index.html" class="app-brand-link gap-3">
                 <span class="app-brand-logo demo">
                   <span style="color: #9055fd">
                     <svg width="30" height="24" viewBox="0 0 250 196" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -129,12 +130,12 @@
             </div>
             <!-- /Logo -->
 
-            <div class="card-body mt-2">
-              <h4 class="mb-2">Welcome to Materio! 👋</h4>
-              <p class="mb-4">Please sign-in to your account and start the adventure</p>
+            <div class="card-body mt-1">
+              <h4 class="mb-1">Welcome to Materio! 👋🏻</h4>
+              <p class="mb-5">Please sign-in to your account and start the adventure</p>
 
-              <form id="formAuthentication" class="mb-3" action="index.html">
-                <div class="form-floating form-floating-outline mb-3">
+              <form id="formAuthentication" class="mb-5" action="index.html" method="POST">
+                <div class="form-floating form-floating-outline mb-5">
                   <input
                     type="text"
                     class="form-control"
@@ -144,7 +145,7 @@
                     autofocus />
                   <label for="email">Email or Username</label>
                 </div>
-                <div class="mb-3">
+                <div class="mb-5">
                   <div class="form-password-toggle">
                     <div class="input-group input-group-merge">
                       <div class="form-floating form-floating-outline">
@@ -157,12 +158,12 @@
                           aria-describedby="password" />
                         <label for="password">Password</label>
                       </div>
-                      <span class="input-group-text cursor-pointer"><i class="mdi mdi-eye-off-outline"></i></span>
+                      <span class="input-group-text cursor-pointer"><i class="ri-eye-off-line ri-20px"></i></span>
                     </div>
                   </div>
                 </div>
-                <div class="mb-3 d-flex justify-content-between">
-                  <div class="form-check">
+                <div class="mb-5 pb-2 d-flex justify-content-between pt-2 align-items-center">
+                  <div class="form-check mb-0">
                     <input class="form-check-input" type="checkbox" id="remember-me" />
                     <label class="form-check-label" for="remember-me"> Remember Me </label>
                   </div>
@@ -170,12 +171,12 @@
                     <span>Forgot Password?</span>
                   </a>
                 </div>
-                <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                <div class="mb-5">
+                  <button class="btn btn-primary d-grid w-100" type="submit">login</button>
                 </div>
               </form>
 
-              <p class="text-center">
+              <p class="text-center mb-5">
                 <span>New on our platform?</span>
                 <a href="auth-register-basic.html">
                   <span>Create an account</span>
@@ -191,6 +192,7 @@
           <img
             src="../assets/img/illustrations/auth-basic-mask-light.png"
             class="authentication-image d-none d-lg-block"
+            height="172"
             alt="triangle-bg"
             data-app-light-img="illustrations/auth-basic-mask-light.png"
             data-app-dark-img="illustrations/auth-basic-mask-dark.png" />
@@ -231,7 +233,7 @@
 
     <!-- Page JS -->
 
-    <!-- Place this tag in your head or just before your close body tag. -->
+    <!-- Place this tag before closing body tag for github widget button. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
 </html>

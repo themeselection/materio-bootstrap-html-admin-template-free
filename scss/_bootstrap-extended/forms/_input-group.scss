@@ -16,7 +16,7 @@ $validation-messages: '';
 .input-group {
   // Input group (Default)
   .input-group-text {
-    padding: calc($input-padding-y - $input-border-width) calc($input-padding-x - $input-border-width);
+    padding: calc($input-padding-y - $input-focus-border-width) calc($input-padding-x - $input-border-width);
     @include transition($input-transition);
   }
 
@@ -29,8 +29,11 @@ $validation-messages: '';
     .form-control,
     .form-select {
       border-width: $input-focus-border-width;
-      padding: calc($input-padding-y - $input-focus-border-width) calc($input-padding-x - $input-border-width);
+      padding: calc($input-padding-y - $input-focus-border-width) calc($input-padding-x - $input-focus-border-width);
     }
+  }
+  &:not(.input-group-merge):focus-within .input-group-text + .form-control {
+    padding: calc($input-padding-y - $input-focus-border-width) calc($input-padding-x - $input-border-width);
   }
 
   // Input group (lg)
@@ -58,6 +61,10 @@ $validation-messages: '';
         padding: calc($input-padding-y-sm - $input-focus-border-width)
           calc($input-padding-x-sm - $input-focus-border-width);
       }
+      .form-control:first-child,
+      .form-select:first-child {
+        padding: calc($input-padding-y-sm - $input-border-width) calc($input-padding-x-sm - $input-border-width) !important;
+      }
       .form-control:not(:first-child),
       .form-select:not(:first-child) {
         padding: calc($input-padding-y-sm - $input-border-width) calc($input-padding-x-sm);
@@ -70,12 +77,20 @@ $validation-messages: '';
     > :not(:first-child):not(.dropdown-menu)#{$validation-messages} {
       margin-left: calc(($input-focus-border-width + $input-border-width) * -1);
     }
+    &:focus-within {
+      > .form-control:first-child,
+      > .form-select:first-child {
+        padding-inline: calc($input-padding-x - 2px);
+      }
+    }
   }
 
   // Input group (not input-group-floating) on focus-within use margin-left same as as focus border width
   &:not(.input-group-floating) {
     &:focus-within {
-      > :not(:first-child):not(.dropdown-menu)#{$validation-messages} {
+      > :not(:first-child):not(.dropdown-menu):not(.btn):not(.dropdown-menu + .form-control):not(
+          .btn + .form-control
+        )#{$validation-messages} {
         margin-left: calc($input-focus-border-width * -1);
       }
     }
@@ -84,6 +99,12 @@ $validation-messages: '';
     .input-group-text,
     .form-control {
       border-color: $input-border-hover-color;
+    }
+    &.input-group-floating {
+      .input-group-text {
+        border-color: $input-border-hover-color;
+        background-color: $form-floating-hover-bg;
+      }
     }
   }
   &:focus-within {
@@ -105,17 +126,17 @@ $validation-messages: '';
 .input-group-text {
   background-clip: padding-box;
   i {
-    @include font-size($input-font-size);
+    @include font-size(1.25rem);
   }
 }
 .input-group-lg > .input-group-text {
   i {
-    @include font-size($input-font-size-lg);
+    @include font-size(1.25rem);
   }
 }
 .input-group-sm > .input-group-text {
   i {
-    @include font-size($input-font-size-sm);
+    @include font-size(1.25rem);
   }
 }
 
@@ -139,6 +160,23 @@ $validation-messages: '';
       &:not(:last-child) {
         padding-right: 0 !important;
         border-right: 0;
+      }
+    }
+    .form-floating-outline {
+      &:not(:first-child) {
+        > .form-control {
+          padding-left: 0;
+          border-left: 0;
+        }
+        > label {
+          padding-left: 0;
+        }
+      }
+      &:not(:last-child) {
+        > .form-control {
+          padding-right: 0;
+          border-right: 0;
+        }
       }
     }
   }

@@ -16,11 +16,6 @@
     white-space: nowrap;
   }
 }
-.nav .nav-link {
-  &:not(.active):hover {
-    color: $nav-link-color !important;
-  }
-}
 
 // Tab and pills style
 .nav-tabs,
@@ -29,10 +24,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-transform: uppercase;
-    &:not(.disabled) {
-      color: $headings-color;
-    }
+    text-transform: capitalize;
     &,
     &.active {
       background-color: transparent;
@@ -142,7 +134,6 @@
   position: relative;
   .tab-slider {
     height: 2px;
-    border-radius: 2px;
     position: absolute;
     transition: all 0.2s linear;
     .nav-align-left &,
@@ -158,6 +149,14 @@
 .nav-pills {
   .nav-link {
     padding: $nav-pills-padding-y $nav-pills-padding-x;
+    &.active {
+      box-shadow: $box-shadow-xs;
+    }
+  }
+  & .nav-item .nav-link:not(.active):hover {
+    border-bottom: none;
+    padding-bottom: $nav-link-padding-y;
+    background-color: $nav-pills-link-hover-bg;
   }
 }
 
@@ -197,8 +196,8 @@
     border-bottom-width: 0;
   }
 
-  > .nav .nav-item,
-  > div > .nav .nav-item {
+  > .nav.nav-pills .nav-item,
+  > div > .nav.nav-pills .nav-item {
     margin: 0 0 $nav-spacer 0 !important;
   }
 
@@ -220,6 +219,17 @@
     ~ .tab-content {
       @include border-top-radius(0);
     }
+    & .nav-link:not(.active):hover {
+      color: $primary !important;
+      border-bottom: 2px solid $nav-pills-link-hover-bg !important;
+      padding-bottom: calc($nav-link-padding-y - 0.125rem);
+    }
+    &.nav-lg .nav-link:not(.active):hover {
+      padding-bottom: calc($nav-link-padding-y-lg - 0.125rem);
+    }
+    &.nav-sm .nav-link:not(.active):hover {
+      padding-bottom: calc($nav-link-padding-y-sm - 0.125rem);
+    }
   }
 }
 .nav-align-top,
@@ -233,6 +243,9 @@
         transform: translateX(0px) !important;
       }
     }
+  }
+  > .nav.nav-pills .nav-item:not(:last-child) {
+    margin-right: $nav-spacer;
   }
 }
 
@@ -254,11 +267,16 @@
         @include border-end-radius(0);
       }
     }
+    & .nav-link:not(.active):hover {
+      color: $primary !important;
+      border-left: 2px solid $nav-pills-link-hover-bg !important;
+      padding-left: calc($nav-link-padding-x - 0.125rem);
+    }
   }
 
   > .nav .nav-item,
   > div > .nav .nav-item {
-    margin-left: -1px;
+    margin-left: 0;
     margin-bottom: 0;
   }
   .nav-link {
@@ -274,7 +292,7 @@
   > .nav .nav-item,
   > div > .nav .nav-item {
     margin-bottom: 0;
-    margin-top: -1px;
+    margin-top: 0;
   }
 
   .nav-tabs {
@@ -284,6 +302,11 @@
 
     .tab-slider {
       bottom: inherit !important;
+    }
+    & .nav-link:not(.active):hover {
+      color: $primary !important;
+      border-top: 2px solid $nav-pills-link-hover-bg !important;
+      padding-top: calc($nav-link-padding-y - 0.125rem);
     }
   }
 }
@@ -303,10 +326,15 @@
         @include border-start-radius(0);
       }
     }
+    & .nav-link:not(.active):hover {
+      color: $primary !important;
+      border-right: 2px solid $nav-pills-link-hover-bg !important;
+      padding-right: calc($nav-link-padding-x - 0.125rem);
+    }
   }
   > .nav .nav-item,
   > div > .nav .nav-item {
-    margin-right: -1px;
+    margin-right: 0;
     margin-bottom: 0;
   }
   .nav-link {

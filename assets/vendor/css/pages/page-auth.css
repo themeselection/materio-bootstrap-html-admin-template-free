@@ -18,12 +18,12 @@
 .authentication-wrapper .authentication-image-object-left {
   position: absolute;
   bottom: 6%;
-  left: 4%;
+  inset-inline-start: 4%;
 }
 .authentication-wrapper .authentication-image-object-right {
   position: absolute;
   bottom: 7%;
-  right: 4%;
+  inset-inline-end: 4%;
 }
 .authentication-wrapper .authentication-image {
   z-index: -1;
@@ -47,11 +47,11 @@
 }
 .authentication-wrapper.authentication-cover .authentication-image-tree {
   position: absolute;
-  bottom: 3rem;
+  bottom: 4rem;
   left: 3rem;
 }
 .authentication-wrapper.authentication-basic .authentication-inner {
-  max-width: 450px;
+  max-width: 460px;
 }
 .authentication-wrapper .auth-input-wrapper .auth-input {
   max-width: 50px;
@@ -62,7 +62,14 @@
 
 @media (max-width: 575.98px) {
   .authentication-wrapper .auth-input-wrapper .auth-input {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
+  }
+}
+@media (max-width: 1199.98px) {
+  .authentication-cover .authentication-image-model {
+    position: relative;
+    width: 575px;
+    top: 1rem;
   }
 }
 .light-style .authentication-wrapper .authentication-bg {

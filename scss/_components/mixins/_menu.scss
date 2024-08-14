@@ -14,11 +14,11 @@
   }
 
   // For gradient bg color
-  $menu-active-bg: linear-gradient(270deg, $active-bg 0%, rgba-to-hex(rgba($active-bg, 0.53)) 100%);
+  $menu-active-bg: linear-gradient(270deg, $active-bg 0%, rgba-to-hex(rgba($active-bg, 0.52)) 100%);
 
   // For label bg color
   $sub-menu-active-bg: rgba-to-hex(
-    rgba($active-bg, 1 - if($contrast-percent < 0.75, 0.88, 0.88)),
+    rgba($active-bg, 1 - if($contrast-percent < 0.75, 0.84, 0.84)),
     if($contrast-percent > 0.25, #fff, #30334e)
   );
 
