@@ -2,13 +2,29 @@
 
 All notable changes to this template will be documented in this file
 
-## [1.1.1] - [2023-11-06]
+## v2.0.0 (2024-08-14)
+
+### Added
+
+- New Design Alignments
+- New spacer & utility classes
+
+### Updated
+
+- Bootstrap 5.3.3
+- Documentation
+
+### Fixed
+
+- UI improvements & bug fixes
+
+## 1.1.1 (2023-11-06)
 
 ### Fixed
 
 - Minor improvements & Bugfixes
 
-## [1.1.0] - [2023-10-31]
+## 1.1.0 (2023-10-31)
 
 ### Updated
 
@@ -20,13 +36,13 @@ All notable changes to this template will be documented in this file
 - Carousel HTML Structure as per latest Bootstrap
 - Minor improvements & Bugfixes
 
-## [1.0.1] - [2023-09-26]
+## 1.0.1 (2023-09-26)
 
 ### Added
 
 - Linting, formatting, .git, vscode extensions & setting files
 
-## [1.0.0] - [2023-09-20]
+## 1.0.0 (2023-09-20)
 
 ### Added
 
