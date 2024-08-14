@@ -98,11 +98,17 @@
     flex-basis: 100%;
   }
 
+  .navbar-dropdown.dropdown-user .dropdown-menu {
+    min-width: 14rem;
+  }
+
   // Style for detached navbar
   &.navbar-detached {
     // Container layout max-width
     $container-xxl: map-get($container-max-widths, xxl);
-    transition: padding 0.2s ease, background-color 0.18s ease;
+    transition:
+      padding 0.2s ease,
+      background-color 0.18s ease;
     padding: 0;
     .layout-navbar-fixed .window-scrolled & {
       box-shadow: $navbar-search-shadow;
@@ -118,7 +124,9 @@
       }
     }
     .search-input {
-      transition: padding 0.2s ease, background-color 0.18s ease;
+      transition:
+        padding 0.2s ease,
+        background-color 0.18s ease;
     }
     &.container-xxl {
       max-width: calc(#{$container-xxl} - calc(#{$container-padding-x} * 2));
@@ -216,6 +224,32 @@
 
   .menu-vertical {
     height: 100%;
+  }
+}
+
+// * Toggle
+// *******************************************************************************
+
+.layout-menu-toggle {
+  display: block;
+
+  // Updated menu toggle icon for menu expanded and collapsed
+  .menu-toggle-icon {
+    font-family: 'remixicon' !important;
+    font-style: normal;
+    font-size: $font-size-xl;
+    &::before {
+      content: '\f050';
+      @include media-breakpoint-down($menu-collapsed-layout-breakpoint) {
+        content: '\eb99';
+      }
+      .layout-menu-collapsed & {
+        content: '\f3c2';
+        @include media-breakpoint-down($menu-collapsed-layout-breakpoint) {
+          content: '\eb99';
+        }
+      }
+    }
   }
 }
 
@@ -356,7 +390,9 @@ html:not(.layout-footer-fixed) .content-wrapper {
     margin-right: 0 !important;
     margin-left: 0 !important;
     transform: translate3d(-100%, 0, 0);
-    will-change: transform, -webkit-transform;
+    will-change:
+      transform,
+      -webkit-transform;
 
     .layout-menu-flipped & {
       right: 0 !important;
@@ -495,7 +531,9 @@ html:not(.layout-footer-fixed) .content-wrapper {
 
     .layout-menu {
       transition-duration: $menu-animation-duration;
-      transition-property: transform, -webkit-transform;
+      transition-property:
+        transform,
+        -webkit-transform;
     }
   }
 }
@@ -512,7 +550,11 @@ html:not(.layout-footer-fixed) .content-wrapper {
   .layout-transitioning {
     &.layout-menu-offcanvas .layout-menu {
       transition-duration: $menu-animation-duration;
-      transition-property: margin-left, margin-right, transform, -webkit-transform;
+      transition-property:
+        margin-left,
+        margin-right,
+        transform,
+        -webkit-transform;
     }
 
     &.layout-menu-fixed,
@@ -532,7 +574,9 @@ html:not(.layout-footer-fixed) .content-wrapper {
     &.layout-menu-fixed-offcanvas {
       .layout-menu {
         transition-duration: $menu-animation-duration;
-        transition-property: transform, -webkit-transform;
+        transition-property:
+          transform,
+          -webkit-transform;
       }
     }
 

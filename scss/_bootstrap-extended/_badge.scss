@@ -3,14 +3,13 @@
 // *******************************************************************************
 
 .badge {
-  line-height: 1.05;
+  line-height: $line-height-base;
 }
 // Badge Center Style
 
 .badge-center {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  padding: 3px;
+  line-height: 1.375;
   @include badge-size($badge-height, $badge-width, $badge-center-font-size);
   i {
     font-size: 0.8rem;

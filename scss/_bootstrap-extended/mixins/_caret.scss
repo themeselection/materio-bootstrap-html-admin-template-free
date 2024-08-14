@@ -12,7 +12,7 @@
 }
 
 @mixin caret-down($caret-width) {
-  margin-top: -1 * divide($caret-width, 1.5);
+  margin-top: -1 * divide($caret-width, 2);
   width: $caret-width;
   height: $caret-width;
   border: 1px solid;

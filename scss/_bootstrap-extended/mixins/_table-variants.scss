@@ -18,7 +18,8 @@
 
     color: $color;
     border-color: mix($color, $background, percentage($table-border-factor));
-    .btn-icon {
+    .btn-icon,
+    .btn {
       color: $color;
     }
   }

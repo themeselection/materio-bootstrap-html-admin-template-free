@@ -24,11 +24,18 @@
 }
 
 // Misc object styles
-.misc-object {
+.misc-object,
+.misc-object-right {
   position: absolute;
-  bottom: 15%;
   z-index: 1;
+}
+.misc-object {
+  bottom: 6%;
   left: 3%;
+}
+.misc-object-right {
+  bottom: 7%;
+  right: 3%;
 }
 
 // Misc model style

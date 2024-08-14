@@ -56,7 +56,6 @@
       color: $hover-color;
       @include gradient-bg($hover-background);
       border-color: $hover-border;
-      box-shadow: none;
     }
 
     .btn-check:checked + &,
@@ -70,10 +69,15 @@
       // Remove CSS gradients if they're enabled
       background-image: if($enable-gradients, none !important, null);
       border-color: $active-border !important;
+    }
 
-      &:focus {
-        box-shadow: none;
-      }
+    &.disabled,
+    &:disabled {
+      color: $color !important;
+      background-color: $background !important;
+      // Remove CSS gradients if they're enabled
+      background-image: if($enable-gradients, none !important, null);
+      border-color: $border !important;
     }
   }
 
@@ -124,7 +128,7 @@
 
   #{$parent} {
     color: $color;
-    border-color: $border-color;
+    border-color: $color;
     background: transparent;
     &.waves-effect {
       .waves-ripple {
@@ -148,7 +152,7 @@
     &:focus {
       color: $color-hover;
       background-color: $focus-background;
-      border-color: $active-border;
+      border-color: $color;
     }
 
     .btn-check:checked + &,
@@ -158,7 +162,13 @@
     &.dropdown-toggle.show {
       color: $active-color !important;
       background-color: $active-background !important;
-      border-color: $active-border !important;
+      border-color: $color !important;
+    }
+
+    &.disabled,
+    &:disabled {
+      color: $color !important;
+      background-color: transparent !important;
     }
   }
 

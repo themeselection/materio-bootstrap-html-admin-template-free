@@ -2,6 +2,13 @@
 // *******************************************************************************
 .form-check-input {
   cursor: $form-check-label-cursor;
+  &:disabled {
+    background-color: $form-check-input-disabled-bg;
+    border-color: $form-check-input-disabled-bg;
+  }
+  &:checked {
+    box-shadow: $box-shadow-xs;
+  }
 }
 
 .form-check {
@@ -35,13 +42,16 @@
 
   // Checkbox and Radio bg size for animation transition
   .form-check-input[type='checkbox'] {
-    background-size: 1.375rem;
+    background-size: 1.1rem;
     &:not(:checked):not(:indeterminate) {
       background-size: 0rem;
     }
+    &:indeterminate {
+      box-shadow: $box-shadow-xs;
+    }
   }
   .form-check-input[type='radio'] {
-    background-size: 1rem;
+    background-size: 1.3125rem;
     &:not(:checked) {
       background-size: 0.75rem;
     }
@@ -67,3 +77,12 @@
 
 // Switches
 // *******************************************************************************
+
+.form-switch .form-check-input {
+  background-color: $form-switch-bg;
+  border: none;
+  box-shadow: $form-switch-box-shadow;
+  &:focus {
+    box-shadow: $form-switch-box-shadow;
+  }
+}

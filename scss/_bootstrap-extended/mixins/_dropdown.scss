@@ -20,13 +20,13 @@
       color: if($color, $color, color-contrast($background)) !important;
     }
   }
-
+  // ! Important: removed "!important" from the color css below for navbar notification dropdown button
   #{$parent}.dropdown-menu > li:not(.disabled) > a:not(.dropdown-item):active,
   #{$parent}.dropdown-menu > li.active:not(.disabled) > a:not(.dropdown-item) {
     background-color: $background;
-    color: if($color, $color, color-contrast($background)) !important;
+    color: if($color, $color, color-contrast($background));
     &.btn {
-      color: color-contrast($background) !important;
+      color: color-contrast($background);
     }
   }
 }

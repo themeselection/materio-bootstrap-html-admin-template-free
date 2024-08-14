@@ -69,6 +69,7 @@ $utilities: map-merge(
         class: shadow,
         values: (
           null: $box-shadow,
+          xs: $box-shadow-xs,
           sm: $box-shadow-sm,
           lg: $box-shadow-lg,
           none: none
@@ -844,7 +845,7 @@ $utilities: map-merge(
   }
 }
 
-// For mdi icons, add size to before psuedo
+// For ri icons, add size to before psuedo
 @each $size,
   $value
     in map-merge(

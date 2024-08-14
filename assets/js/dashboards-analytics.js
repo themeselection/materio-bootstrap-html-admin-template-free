@@ -70,6 +70,9 @@
         }
       },
       xaxis: {
+        axisTicks: { show: false },
+        crosshairs: { opacity: 0 },
+        axisBorder: { show: false },
         categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         tickPlacement: 'on',
         labels: {
@@ -92,7 +95,7 @@
             return parseInt(val) + 'K';
           },
           style: {
-            fontSize: '0.75rem',
+            fontSize: '13px',
             fontFamily: 'Inter',
             colors: labelColor
           }

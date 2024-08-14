@@ -17,13 +17,14 @@
   &.prev,
   &.previous {
     .page-link {
-      padding-top: $pagination-padding-y - 0.148rem;
-      padding-bottom: $pagination-padding-y - 0.148rem;
+      padding: $pagination-padding-y - 0.043rem $pagination-padding-x - 0.067rem;
     }
   }
-  &.disabled {
+  &.disabled,
+  &[disabled] {
     .page-link {
-      border-color: $pagination-border-color;
+      opacity: $pagination-disabled-opacity;
+      pointer-events: none;
     }
   }
 }
@@ -33,32 +34,65 @@
 .page-link > a {
   @include border-radius($border-radius);
 
-  line-height: $pagination-line-height;
   text-align: center;
   min-width: calc(
+    #{'#{($font-size-base * $pagination-line-height) + ($pagination-padding-x * 1.923)} + calc(#{$pagination-border-width} * 2)'}
+  );
+  min-height: calc(
     #{'#{($font-size-base * $pagination-line-height) + ($pagination-padding-y * 2)} + calc(#{$pagination-border-width} * 2)'}
   );
 
   &:focus {
     color: $pagination-hover-color;
   }
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
 }
 
-// Removed border from default pagination
+// Add spacing between pagination items
+.page-item + .page-item .page-link,
+.pagination li + li > a:not(.page-link) {
+  .pagination-sm & {
+    margin-left: 0.25rem;
+  }
+  .pagination-lg & {
+    margin-left: 0.5rem;
+  }
+}
+
+// Removed border from default pagination and set line-height of icons
 .pagination {
   &:not([class*='pagination-outline-']) {
     .page-link {
       border-color: transparent;
     }
-    .page-item {
-      &.disabled {
-        .page-link {
-          background-color: transparent;
-        }
+    & .page-item.active > .page-link {
+      box-shadow: $box-shadow-xs;
+    }
+    & .page-item.active .waves-ripple {
+      background: none;
+    }
+  }
+  &[class*='pagination-outline-'] {
+    .page-item:not(.active) .page-link,
+    .pagination li > a:not(.page-link) {
+      background-color: transparent;
+      &:hover,
+      &:focus {
+        background-color: rgba-to-hex(rgba($black, 0.06), $rgba-to-hex-bg);
+        border-color: rgba-to-hex(rgba($black, 0.22), $rgba-to-hex-bg);
+        color: $headings-color;
       }
-      .page-link {
-        &.disabled {
-          background-color: transparent;
+      &.waves-effect {
+        .waves-ripple {
+          background: radial-gradient(
+            rgba($black, 0.3) 0,
+            rgba($black, 0.4) 40%,
+            rgba($black, 0.5) 50%,
+            rgba($black, 0.6) 60%,
+            rgba($black, 0) 70%
+          );
         }
       }
     }
@@ -83,26 +117,20 @@
 .pagination-lg .page-link,
 .pagination-lg > li > a:not(.page-link) {
   min-width: calc(
-    #{'#{($font-size-lg * $pagination-line-height) + ($pagination-padding-y-lg * 2)} + calc(#{$pagination-border-width} * 2)'}
+    #{'#{($font-size-base * $pagination-line-height) + ($pagination-padding-x-lg * 1.615)} + calc(#{$pagination-border-width} * 2)'}
   );
-}
-.pagination-lg > .page-item {
-  &.first,
-  &.last,
-  &.next,
-  &.prev,
-  &.previous {
-    .page-link {
-      padding-top: $pagination-padding-y-lg - 0.155rem;
-      padding-bottom: $pagination-padding-y-lg - 0.155rem;
-    }
-  }
+  min-height: calc(
+    #{'#{($font-size-base * $pagination-line-height) + ($pagination-padding-y-lg * 2.33)} + calc(#{$pagination-border-width} * 2)'}
+  );
 }
 
 // Pagination Small
 .pagination-sm .page-link,
 .pagination-sm > li > a:not(.page-link) {
   min-width: calc(
+    #{'#{($font-size-sm * $pagination-line-height) + ($pagination-padding-x-sm * 2.356)} + calc(#{$pagination-border-width} * 2)'}
+  );
+  min-height: calc(
     #{'#{($font-size-sm * $pagination-line-height) + ($pagination-padding-y-sm * 2)} + calc(#{$pagination-border-width} * 2)'}
   );
 }
@@ -113,8 +141,7 @@
   &.prev,
   &.previous {
     .page-link {
-      padding-top: $pagination-padding-y-sm - 0.074rem;
-      padding-bottom: $pagination-padding-y-sm - 0.074rem;
+      padding: $pagination-padding-y-sm - 0.1055rem;
     }
   }
 }

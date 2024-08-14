@@ -10,7 +10,6 @@ $base-color: if($dark-style, $base, $black) !default;
   align-items: center;
   justify-content: center;
   text-transform: $btn-text-transform;
-  letter-spacing: $btn-letter-spacing;
 
   // Disabled Style for all the button options as using gray color for all disabled buttons
   &[class*='btn-']:not([class*='btn-label-']):not([class*='btn-outline-']):not([class*='btn-text-']):not(.btn-icon) {
@@ -27,9 +26,6 @@ $base-color: if($dark-style, $base, $black) !default;
 
     &:disabled,
     &.disabled {
-      background: rgba-to-hex(rgba($base-color, 0.12), $rgba-to-hex-bg) !important;
-      border-color: rgba-to-hex(rgba($base-color, 0.12), $rgba-to-hex-bg) !important;
-      color: rgba-to-hex(rgba($base-color, 0.26), $rgba-to-hex-bg);
       box-shadow: none !important;
     }
   }
@@ -37,14 +33,9 @@ $base-color: if($dark-style, $base, $black) !default;
     &:disabled,
     &.disabled {
       background: transparent !important;
-      border-color: rgba-to-hex(rgba($base-color, 0.12), $rgba-to-hex-bg);
-      color: rgba-to-hex(rgba($base-color, 0.26), $rgba-to-hex-bg);
     }
   }
 
-  .bx {
-    line-height: 1.15;
-  }
   &.btn-text {
     background: none;
     box-shadow: none;
@@ -71,13 +62,8 @@ label.btn {
   @include button-size($btn-padding-y-xl, $btn-padding-x-xl, $btn-font-size-xl, $btn-border-radius-xl);
 }
 
-.btn-sm {
-  line-height: $line-height-sm;
-}
-
 .btn-xs {
   @include button-size($btn-padding-y-xs, $btn-padding-x-xs, $btn-font-size-xs, $btn-border-radius-xs);
-  line-height: $line-height-xs;
 }
 
 // Buttons Variant
@@ -94,7 +80,7 @@ label.btn {
 .btn-icon {
   $btn-icon-size: ($btn-font-size * $btn-line-height) + ($btn-padding-y * 2);
   $btn-icon-size-xl: ($btn-font-size-xl * $btn-line-height-xl) + ($btn-padding-y-xl * 2);
-  $btn-icon-size-lg: ($btn-font-size-lg * $btn-line-height-lg) + ($btn-padding-y-lg * 2);
+  $btn-icon-size-lg: ($btn-font-size-lg * $btn-line-height-lg) + ($btn-padding-y-lg * 2.48);
   $btn-icon-size-sm: ($btn-font-size-sm * $btn-line-height-sm) + ($btn-padding-y-sm * 2);
   $btn-icon-size-xs: ($btn-font-size-xs * $btn-line-height-xs) + ($btn-padding-y-xs * 2);
   $borders-width: calc(#{$btn-border-width} * 2);
@@ -117,8 +103,8 @@ label.btn {
   }
 
   &.btn-lg {
-    width: calc(#{$btn-icon-size-lg} + #{$borders-width});
-    height: calc(#{$btn-icon-size-lg} + #{$borders-width});
+    width: calc(#{$btn-icon-size-lg} - #{$borders-width});
+    height: calc(#{$btn-icon-size-lg} - #{$borders-width});
     font-size: $btn-font-size-lg;
   }
 

@@ -1,2 +1,13 @@
 // Progress
 // *******************************************************************************
+
+.progress {
+  .progress-bar:last-child {
+    border-top-right-radius: $progress-border-radius;
+    border-bottom-right-radius: $progress-border-radius;
+  }
+  .progress-bar:first-child {
+    border-top-left-radius: $progress-border-radius;
+    border-bottom-left-radius: $progress-border-radius;
+  }
+}

@@ -7,13 +7,14 @@
 
   .card-link {
     display: inline-block;
-    text-transform: uppercase;
     font-weight: $font-weight-medium;
   }
   // ! FIX: to remove padding top from first card-body if used with card-header
   .card-header + .card-body,
-  .card-body + .card-footer {
-    padding-top: 0.5rem;
+  .card-body + .card-footer,
+  .card-header + .card-footer,
+  .card-header + .card-content > .card-body:first-of-type {
+    padding-top: 0rem;
   }
 
   // color border bottom and shadow in card
@@ -36,7 +37,7 @@
       z-index: -1;
     }
     &:hover {
-      box-shadow: $box-shadow;
+      box-shadow: $box-shadow-xl;
       &::after {
         border-bottom-width: 3px;
       }
@@ -52,6 +53,10 @@
   &[class*='card-hover-border-'] {
     border-width: 1px;
   }
+}
+// adding class with card background color
+.bg-card {
+  background-color: $card-bg;
 }
 
 // Card action
@@ -91,7 +96,6 @@
   // Card header
   .card-header {
     display: flex;
-    line-height: $component-line-height;
     .card-action-title {
       flex-grow: 1;
       margin-right: 0.5rem;
@@ -119,6 +123,11 @@
       color: $body-color;
       margin: 1rem 0 0 0;
     }
+  }
+
+  .collapse > .card-body,
+  .collapsing > .card-body {
+    padding-top: 0;
   }
 }
 
@@ -199,6 +208,15 @@
   }
 }
 
+// Card group
+.card-group {
+  box-shadow: $card-box-shadow;
+  background-color: $card-bg;
+  border-radius: $card-border-radius;
+  .card {
+    box-shadow: none;
+  }
+}
 // List groups
 // *******************************************************************************
 

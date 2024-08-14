@@ -3,7 +3,7 @@
 */
 @use '../../scss/_bootstrap-extended/include' as light;
 @import '../../scss/_custom-variables/libs';
-@import '../../node_modules/apexcharts-clevision/dist/apexcharts';
+@import 'apexcharts-clevision/dist/apexcharts';
 
 // Light style
 @if $enable-light-style {

@@ -65,7 +65,7 @@
 @mixin template-form-switch-theme($background) {
   $focus-color: $background;
   $focus-bg-image: str-replace(
-    str-replace($form-switch-focus-bg-image, '#{$form-switch-focus-color}', $focus-color),
+    str-replace($form-switch-focus-bg-image, '#{$form-switch-focus-color}', $form-switch-color),
     '#',
     '%23'
   );
@@ -112,11 +112,15 @@
     &::-webkit-slider-thumb {
       background-color: $background;
       &:hover {
-        box-shadow: 0 0 0 8px rgba($background, 0.15), $floating-component-shadow;
+        box-shadow:
+          0 0 0 8px rgba($background, 0.15),
+          $floating-component-shadow;
       }
       &:active {
         background-color: $background;
-        box-shadow: 0 0 0 10px rgba($background, 0.2), $floating-component-shadow;
+        box-shadow:
+          0 0 0 10px rgba($background, 0.2),
+          $floating-component-shadow;
       }
     }
 
@@ -124,11 +128,15 @@
     &::-moz-range-thumb {
       // background-color: $background;
       &:hover {
-        box-shadow: 0 0 0 8px rgba($background, 0.15), $floating-component-shadow;
+        box-shadow:
+          0 0 0 8px rgba($background, 0.15),
+          $floating-component-shadow;
       }
       &:active {
         // background-color: $background;
-        box-shadow: 0 0 0 10px rgba($background, 0.2), $floating-component-shadow;
+        box-shadow:
+          0 0 0 10px rgba($background, 0.2),
+          $floating-component-shadow;
       }
     }
 
@@ -149,13 +157,13 @@
   $focus-color: 0 0 $input-btn-focus-blur $input-focus-width rgba($color, $input-btn-focus-color-opacity);
 
   #{$parent} .form-check-input {
-    &:focus {
-      border-color: $focus-border;
-    }
+    // &:focus {
+    //   border-color: $focus-border;
+    // }
 
-    &:active {
-      border-color: $focus-border;
-    }
+    // &:active {
+    //   border-color: $focus-border;
+    // }
     &:hover {
       &::after {
         background: $gray-50;
@@ -164,9 +172,6 @@
     &:checked {
       background-color: $background;
       border-color: $background;
-      &::after {
-        background: rgba($background, 0.08) !important;
-      }
     }
 
     &[type='checkbox']:indeterminate {

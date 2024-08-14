@@ -6,13 +6,13 @@
   box-shadow: $modal-content-box-shadow-xs;
   .modal-header {
     padding-bottom: 0;
-    .modal-title {
-      font-size: $font-size-xl;
-    }
   }
   .modal-footer {
     padding: $modal-footer-padding;
     padding-top: 0;
+    & > * {
+      margin-block: 0;
+    }
   }
 }
 
@@ -161,9 +161,6 @@
   }
 }
 @include media-breakpoint-up(sm) {
-  .modal-content {
-    box-shadow: $modal-content-box-shadow-sm-up;
-  }
   // .modal {
   //   padding: 0 0.75rem;
   // }

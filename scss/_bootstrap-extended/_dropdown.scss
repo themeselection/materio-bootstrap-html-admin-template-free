@@ -24,7 +24,6 @@
 }
 // Dropdown item line height
 .dropdown-item {
-  line-height: $dropdown-link-line-height;
   &.active .waves-ripple,
   &.disabled .waves-ripple {
     display: none;
@@ -46,5 +45,47 @@
   .dropstart .dropdown-toggle::before,
   .dropend .dropdown-toggle::after {
     vertical-align: $caret-vertical-align;
+  }
+  .dropdown-toggle-split::after {
+    margin-left: 0 !important;
+  }
+  .dropdown-toggle::after {
+    margin-top: -0.278rem;
+    margin-left: 0.8em;
+    width: 0.55em;
+    height: 0.55em;
+    border: 2px solid;
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(45deg);
+  }
+
+  .dropup .dropdown-toggle::after {
+    margin-top: 0.25rem;
+    margin-left: 0.667em;
+    border: 2px solid;
+    border-bottom: 0;
+    border-left: 0;
+    transform: rotate(-45deg);
+  }
+
+  .dropend .dropdown-toggle::after {
+    margin-top: 0;
+    margin-left: 0.667em;
+    border: 2px solid;
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(-45deg);
+  }
+
+  .dropstart .dropdown-toggle::before {
+    margin-top: 0;
+    margin-right: 0.667em;
+    width: 0.55em;
+    height: 0.55em;
+    border: 2px solid;
+    border-top: 0;
+    border-right: 0;
+    transform: rotate(45deg);
   }
 }
