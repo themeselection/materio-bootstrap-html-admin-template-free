@@ -1,6 +1,6 @@
 <p align="center">
    <a href="https://themeselection.com/item/materio-free-bootstrap-html-admin-template/" target="_blank">
-      <img src="https://user-images.githubusercontent.com/64475785/158384184-1fe44a59-6b68-40f5-b860-d14c51f0ce5d.svg" alt="materio-logo" width="60px" height="auto">
+      <img src="https://cdn.themeselection.com/ts-assets/materio/logo/logo.png" alt="materio-logo" width="40px" height="auto">
    </a>
 </p>
 
@@ -12,9 +12,9 @@
 
 <p align="center">Most Powerful & Comprehensive Free Bootstrap 5 HTML Admin Dashboard Template built for developers!</p>
 
-![GitHub](https://img.shields.io/github/license/themeselection/materio-bootstrap-html-aspnet-core-mvc-admin-template-free) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/themeselection/materio-bootstrap-html-aspnet-core-mvc-admin-template-free) ![GitHub issues](https://img.shields.io/github/issues/themeselection/materio-bootstrap-html-aspnet-core-mvc-admin-template-free) ![GitHub closed issues](https://img.shields.io/github/issues-closed/themeselection/materio-bootstrap-html-aspnet-core-mvc-admin-template-free) ![Twitter Follow](https://img.shields.io/twitter/follow/Theme_Selection?style=social)
+![GitHub](https://img.shields.io/github/license/themeselection/materio-bootstrap-html-admin-template-free) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/themeselection/materio-bootstrap-html-admin-template-free) ![GitHub issues](https://img.shields.io/github/issues/themeselection/materio-bootstrap-html-admin-template-free) ![GitHub closed issues](https://img.shields.io/github/issues-closed/themeselection/materio-bootstrap-html-admin-template-free) ![Twitter Follow](https://img.shields.io/twitter/follow/Theme_Selection?style=social)
 
-[![Materio - Bootstrap 5 HTML Admin Template Demo Screenshot](https://cdn.jsdelivr.net/gh/themeselection/ts-assets/materio/materio-bootstrap-html-admin-template-free/banner/materio-html-free.png)](https://themeselection.com/item/materio-free-bootstrap-html-admin-template/)
+[![Materio - Bootstrap 5 HTML Admin Template Demo Screenshot](https://cdn.themeselection.com/ts-assets/materio/materio-bootstrap-html-admin-template-free/banner/banner.png)](https://themeselection.com/item/materio-free-bootstrap-html-admin-template/)
 
 ## Introduction 🚀
 
@@ -51,7 +51,7 @@ Please [visit](https://demos.themeselection.com/materio-bootstrap-html-admin-tem
 - Extended UI
   - Perfect Scrollbar
   - Text Divider
-- Material Design Icons (MDI)
+- Remix Icons (RI)
 - Form Elements
   - Basic Inputs
   - Input Groups
@@ -169,22 +169,22 @@ For free products, enjoy community support via GitHub issues. Upgrade to Premium
 
 **[ThemeSelection](https://themeselection.com/)** provides Selected high quality, modern design, professional and easy-to-use **Fully Coded Dashboard Templates & UI Kits** to create your applications faster!
 
-- [Bootstrap Admin Templates](https://themeselection.com/products/category/bootstrap-admin-templates/)
-- [VueJS Admin Templates](https://themeselection.com/products/category/vuejs-admin-templates/)
-- [Laravel Admin Templates](https://themeselection.com/products/category/laravel-admin-templates/)
+- [Bootstrap Admin Templates](https://themeselection.com/item/category/bootstrap-admin-template/)
+- [VueJS Admin Templates](https://themeselection.com/item/category/vuejs-admin-templates/)
+- [Laravel Admin Templates](https://themeselection.com/item/category/laravel-admin-templates/)
 - [Django Admin Templates](https://themeselection.com/item/category/django-admin-template/)
 - [React (NextJS) Admin Templates](https://themeselection.com/item/category/next-js-admin-template/)
 - [ASP.Net Core Admin Templates](https://themeselection.com/item/category/asp-net-dashboard/)
-- [Free UI Kits](https://themeselection.com/products/category/free-ui-kits/)
+- [Free UI Kits](https://themeselection.com/item/category/free-ui-kits/) 
 
-If you want to [Download Free Admin Templates](https://themeselection.com/products/category/download-free-admin-templates/) like Materio then do visit [ThemeSelection](https://themeselection.com/).
+If you want to [Download Free Admin Templates](https://themeselection.com/item/category/free-admin-templates/) like Materio then do visit [ThemeSelection](https://themeselection.com/).
 
 ## Useful Links 🎁
 
-- [Freebies](https://themeselection.com/products/category/download-free-admin-templates/)
-- [Download Free Admin Templates](https://themeselection.com/products/category/download-free-admin-templates/)
-- [Bootstrap 5 CheatSheet](https://bootstrap-cheatsheet.themeselection.com/)
 - [Vue CheatSheet](https://vue-cheatsheet.themeselection.com/)
+- [Freebies](https://themeselection.com/item/category/free-admin-templates/)
+- [Download Free Admin Templates](https://themeselection.com/item/category/free-admin-templates/)
+- [Bootstrap 5 CheatSheet](https://bootstrap-cheatsheet.themeselection.com/)
 
 ## Social Media :earth_africa:
 
