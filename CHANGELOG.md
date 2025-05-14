@@ -2,6 +2,22 @@
 
 All notable changes to this template will be documented in this file
 
+## v3.0.0 (2025-05-14)
+
+### Updated
+
+- Bootstrap 5.3.5
+- SCSS structure - Build and extend in real-time with CSS variables
+- Documentation
+
+### Replaced
+
+- Fonts icons with SVG icons using iconify
+
+### Fixed
+
+- UI improvements & bug fixes
+
 ## v2.0.0 (2024-08-14)
 
 ### Added
