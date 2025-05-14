@@ -1,51 +1,48 @@
-@import '_components/include';
+/* Custom colors
+******************************************************************************* */
 
-// * Bootstrap colors (Uncomment required colors)
-// *******************************************************************************
-
-$bootstrap-colors: (
-  // blue: $blue,
-  // indigo: $indigo,
-  // purple: $purple,
-  // pink: $pink,
-  // orange: $orange,
-  // teal: $teal
+$facebook: #3b5998 !default;
+$twitter: #1da1f2 !default;
+$google-plus: #dd4b39 !default;
+$instagram: #e1306c !default;
+$linkedin: #0077b5 !default;
+$github: #333 !default;
+$dribbble: #ea4c89 !default;
+$pinterest: #cb2027 !default;
+$slack: #4a154b !default;
+$reddit: #ff4500 !default;
+$youtube: #f00 !default;
+$vimeo: #1ab7ea !default;
+$custom-colors: (
+  "facebook": $facebook,
+  "twitter": $twitter,
+  "google-plus": $google-plus,
+  "instagram": $instagram,
+  "linkedin": $linkedin,
+  "github": $github,
+  "dribbble": $dribbble,
+  "pinterest": $pinterest,
+  "slack": $slack,
+  "reddit": $reddit,
+  "youtube": $youtube,
+  "vimeo": $vimeo
 ) !default;
 
-@each $color-name, $color-value in $bootstrap-colors {
-  @include bg-variant('.bg-#{$color-name}', $color-value);
-  @include bg-label-variant('.bg-label-#{$color-name}', $color-value);
-
-  .border-#{$color-name} {
-    border-color: $color-value !important;
+:root {
+  @each $color, $value in $custom-colors {
+    --#{$prefix}#{$color}: #{$value};
+    --#{$prefix}#{$color}-rgb: #{red($value)}, #{green($value)}, #{blue($value)};
   }
 
-  @include template-button-variant('.btn-#{$color-name}', $color-value);
-  @include template-button-outline-variant('.btn-outline-#{$color-name}', $color-value);
-}
-
-// * Navbar
-// *******************************************************************************
-
-@each $color, $value in $theme-colors {
-  @if $color !=primary and $color !=light {
-    @include template-navbar-style('.navbar.bg-#{$color}', $value);
+  @each $state in map-keys($theme-colors) {
+    .bg-gradient-#{$state} {
+      --#{$prefix}bg-gradient-color: var(--#{$prefix}#{$state});
+      --#{$prefix}bg-gradient-color-rgb: var(--#{$prefix}#{$state}-rgb);
+      background-image: linear-gradient(45deg, var(--#{$prefix}bg-gradient-color), rgba(var(--#{$prefix}bg-gradient-color-rgb), .5)) !important;
+    }
   }
 }
 
-@include template-navbar-style('.navbar.bg-white', #fff, $color: $text-muted, $active-color: $body-color);
-@include template-navbar-style('.navbar.bg-light', $light, $color: $body-color, $active-color: $headings-color);
-@include template-navbar-style('.navbar.bg-lighter', $gray-50, $color: $body-color, $active-color: $headings-color);
+// A new variable $custom-theme-colors was created by merging the $theme-colors and $custom-colors arrays. This was necessary to enable the use of both theme and custom colors for buttons and background color configurations.
 
-// * Footer
-// *******************************************************************************
-
-@each $color, $value in $theme-colors {
-  @if $color !=primary and $color !=light {
-    @include template-footer-style('.footer.bg-#{$color}', $value);
-  }
-}
-
-@include template-footer-style('.footer.bg-white', #fff, $color: $text-muted, $active-color: $body-color);
-@include template-footer-style('.footer.bg-light', $light, $color: $body-color, $active-color: $headings-color);
-@include template-footer-style('.footer.bg-lighter', $gray-50, $color: $body-color, $active-color: $headings-color);
+$custom-theme-colors: map-merge($theme-colors, $custom-colors) !default;

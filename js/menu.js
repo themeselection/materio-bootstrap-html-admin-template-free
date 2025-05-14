@@ -267,7 +267,6 @@ class Menu {
 
   toggle(el, closeChildren = this._closeChildren) {
     const item = Menu._getItem(el, true)
-    // const toggleLink = Menu._getLink(el, true)
 
     if (item.classList.contains('open')) this.close(item, closeChildren)
     else this.open(item, closeChildren)
@@ -516,7 +515,6 @@ class Menu {
 
     if (window.innerWidth < window.Helpers.LAYOUT_BREAKPOINT) {
       if (this._scrollbar !== null) {
-        // window.Helpers.menuPsScroll.destroy()
         this._scrollbar.destroy()
         this._scrollbar = null
       }

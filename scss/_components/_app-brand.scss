@@ -1,17 +1,34 @@
-// App Brand
-// *******************************************************************************
-
-@import 'mixins/app-brand';
-
+/* App Brand
+******************************************************************************* */
 .app-brand {
   display: flex;
   flex-grow: 0;
   flex-shrink: 0;
-  overflow: hidden;
-  line-height: 1;
-  min-height: 1px;
   align-items: center;
+  line-height: 1;
+
+
+  .app-brand-text {
+    opacity: 1;
+    transition: opacity $menu-animation-duration ease-in-out;
+  }
+
+
+  .layout-menu-toggle {
+    display: block;
+  }
+
+  .app-brand-img{
+    display: block;
+  }
+  .app-brand-img-collapsed{
+    display: none;
+  }
 }
+.app-brand-text {
+  text-transform: uppercase;
+}
+
 // For cover auth pages
 .auth-cover-brand {
   position: absolute;
@@ -24,56 +41,31 @@
   display: flex;
   align-items: center;
 }
-.app-brand-logo {
-  display: block;
-  flex-grow: 0;
-  flex-shrink: 0;
-  overflow: hidden;
-  min-height: 1px;
 
-  img,
-  svg {
-    display: block;
-  }
-}
+/* App brand with vertical menu */
 
-.app-brand-text {
-  text-transform: uppercase;
-  flex-shrink: 0;
-  opacity: 1;
-  transition: opacity 0.1s ease-in-out;
-}
-
-.app-brand-img-collapsed {
-  display: none;
-}
-
-.app-brand .layout-menu-toggle {
-  display: block;
-  svg {
-    color: $black;
-  }
-}
-
-// App brand with vertical menu
 .menu-vertical .app-brand {
-  padding-right: $menu-vertical-link-padding-x - 0.25rem;
-  padding-left: $menu-vertical-link-padding-x + 0.125rem;
+  padding-inline: calc($menu-vertical-link-padding-x + .125rem) calc($menu-vertical-link-padding-x - .25rem);
 }
 
-// App brand with vertical menu
+/* App brand with horizontal menu */
 .menu-horizontal .app-brand,
 .menu-horizontal .app-brand + .menu-divider {
   display: none !important;
 }
 
-:not(.layout-menu) > .menu-vertical.menu-collapsed:not(.layout-menu):not(:hover) {
-  @include template-app-brand-collapsed();
-}
-
 @include media-breakpoint-up($menu-collapsed-layout-breakpoint) {
-  .layout-menu-collapsed:not(.layout-menu-hover):not(.layout-menu-offcanvas):not(.layout-menu-fixed-offcanvas)
-    .layout-menu {
-    @include template-app-brand-collapsed();
+  // .layout-menu-collapsed:not(.layout-menu-hover, .layout-menu-offcanvas, .layout-menu-fixed-offcanvas) .layout-menu {
+  .layout-menu-collapsed:not(.layout-menu-hover) .layout-menu,
+  .menu-collapsed:not(:hover) .app-brand {
+    .app-brand-logo ~ .app-brand-text{
+      opacity: 0;
+    }
+    .app-brand-img{
+      display: none;
+    }
+    .app-brand-img-collapsed{
+      display: block;
+    }
   }
 }

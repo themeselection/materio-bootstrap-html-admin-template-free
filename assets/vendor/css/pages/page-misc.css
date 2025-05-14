@@ -1,18 +1,18 @@
 .misc-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
   justify-content: center;
-  position: relative;
   padding: 1.25rem;
+  min-block-size: 100vh;
 }
 
 .misc-bg {
-  inline-size: 100%;
   position: absolute;
+  inline-size: 100%;
+  inset-block-end: 0;
   inset-inline-start: 0;
-  bottom: 0;
 }
 
 .misc-object,
@@ -22,16 +22,16 @@
 }
 
 .misc-object {
-  bottom: 6%;
-  left: 3%;
+  inset-block-end: 6%;
+  inset-inline-start: 3%;
 }
 
 .misc-object-right {
-  bottom: 7%;
-  right: 3%;
+  inset-block-end: 7%;
+  inset-inline-end: 3%;
 }
 
 .misc-model {
   position: relative;
-  bottom: 3rem;
+  inset-block-end: 3rem;
 }

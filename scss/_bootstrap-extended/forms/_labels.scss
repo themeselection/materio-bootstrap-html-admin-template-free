@@ -1,13 +1,17 @@
-// Labels
-// *******************************************************************************
+/* Labels
+******************************************************************************* */
+
+.col-form-label {
+  white-space: nowrap;
+}
 
 .form-label,
 .col-form-label {
-  text-transform: $form-label-text-transform;
-  letter-spacing: $form-label-letter-spacing;
-  color: $headings-color;
+  letter-spacing: inherit;
+  text-transform: inherit;
 }
-// Default (vertical ) form label size
+
+/* Default (vertical ) form label size */
 .form-label-lg {
   @include font-size($input-font-size-lg);
 }

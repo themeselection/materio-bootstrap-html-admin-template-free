@@ -1,58 +1,74 @@
-// Navbar
-// *******************************************************************************
+/* Navbar
+******************************************************************************* */
+.layout-navbar {
+  background-color: var(--#{$prefix}body-bg);
+}
 
-.navbar {
-  z-index: 2;
-  // ! Fix: navbar dropdown focus outline
-  .dropdown:focus,
-  .dropdown-toggle:focus {
-    outline: 0;
-  }
-  .navbar-toggler:focus {
-    box-shadow: none;
+.navbar-brand {
+  margin-inline: 0 var(--#{$prefix}navbar-brand-margin-end);
+  a {
+    color: var(--#{$prefix}heading-color);
   }
 }
 
-.fixed-top {
-  z-index: $zindex-fixed;
-}
+/* IE fix */
 
-.navbar.navbar-light {
-  color: $navbar-light-color;
-}
-
-.navbar-light .navbar-nav .nav-link.disabled {
-  color: $navbar-light-disabled-color !important;
-}
-
-.navbar.navbar-dark {
-  color: $navbar-dark-color;
-}
-
-.navbar-dark .navbar-nav .nav-link.disabled {
-  color: $navbar-dark-disabled-color !important;
-}
-.navbar-nav {
-  --#{$prefix}nav-link-padding-y: calc(#{$spacer} / 2);
-}
-
-// IE fix
-.navbar-collapse,
+/* .navbar-collapse,
 .navbar-brand,
 .navbar-text {
   flex-shrink: 1;
+} */
+
+/* Mega dropdown
+****************************************************************************** */
+
+.mega-dropdown {
+  .dropdown-toggle {
+    box-shadow: none;
+    outline: 0;
+  }
+
+  .dropdown-menu {
+    inline-size: 100%;
+  }
+}
+.navbar {
+  &.bg-body-tertiary {
+    --#{$prefix}navbar-color: var(--#{$prefix}body-color);
+    --#{$prefix}navbar-hover-color: var(--#{$prefix}heading-color);
+    --#{$prefix}navbar-disabled-color: color-mix(in sRGB, var(--#{$prefix}base-color) 40%, var(--#{$prefix}paper-bg));
+    --#{$prefix}navbar-active-color: var(--#{$prefix}heading-color);
+    --#{$prefix}navbar-brand-color: var(--#{$prefix}heading-color);
+    --#{$prefix}navbar-brand-hover-color: color-mix(in sRGB, var(--#{$prefix}base-color) 70%, var(--#{$prefix}paper-bg));
+  }
+  &.bg-white {
+    --#{$prefix}navbar-color: color-mix(in sRGB, var(--#{$prefix}pure-black) #{$bg-label-tint-amount}, var(--#{$prefix}white));
+    --#{$prefix}navbar-hover-color: var(--#{$prefix}pure-black);
+    --#{$prefix}navbar-disabled-color: color-mix(in sRGB, var(--#{$prefix}pure-black) 40%, var(--#{$prefix}white));
+    --#{$prefix}navbar-active-color: var(--#{$prefix}pure-black);
+    --#{$prefix}navbar-brand-color: var(--#{$prefix}pure-black);
+    --#{$prefix}navbar-brand-hover-color: color-mix(in sRGB, var(--#{$prefix}pure-black) #{$bg-label-tint-amount}, var(--#{$prefix}white));
+  }
 }
 
-// Icons
-// .navbar-icon {
-//   font-size: 130%;
-// }
-
-// Rulers
-.navbar-dark hr {
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-.navbar-light hr {
-  border-color: $gray-100;
+/* Generate contextual modifier classes for colorizing the navbar */
+@each $state in map-keys($theme-colors) {
+  .navbar.bg-#{$state} {
+    @if $state == "light" {
+      --#{$prefix}navbar-color: var(--#{$prefix}body-color);
+      --#{$prefix}navbar-hover-color: var(--#{$prefix}heading-color);
+      --#{$prefix}navbar-disabled-color: color-mix(in sRGB, var(--#{$prefix}base-color) 40%, var(--#{$prefix}paper-bg));
+      --#{$prefix}navbar-active-color: var(--#{$prefix}heading-color);
+      --#{$prefix}navbar-brand-color: var(--#{$prefix}heading-color);
+      --#{$prefix}navbar-brand-hover-color: color-mix(in sRGB, var(--#{$prefix}base-color) 70%, var(--#{$prefix}paper-bg));
+    }
+    @else {
+      --#{$prefix}navbar-color: color-mix(in sRGB, var(--#{$prefix}#{$state}-contrast) #{$bg-label-tint-amount}, var(--#{$prefix}#{$state}));
+      --#{$prefix}navbar-hover-color: var(--#{$prefix}#{$state}-contrast);
+      --#{$prefix}navbar-disabled-color: color-mix(in sRGB, var(--#{$prefix}#{$state}-contrast) 60%, var(--#{$prefix}#{$state}));
+      --#{$prefix}navbar-active-color: var(--#{$prefix}#{$state}-contrast);
+      --#{$prefix}navbar-brand-color: var(--#{$prefix}#{$state}-contrast);
+      --#{$prefix}navbar-brand-hover-color: color-mix(in sRGB, var(--#{$prefix}paper-bg) #{$bg-label-tint-amount}, var(--#{$prefix}#{$state}));
+    }
+  }
 }

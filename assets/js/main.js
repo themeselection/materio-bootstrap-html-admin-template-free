@@ -5,45 +5,25 @@
 'use strict';
 
 let menu, animate;
+document.addEventListener('DOMContentLoaded', function () {
+  // class for ios specific styles
+  if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+    document.body.classList.add('ios');
+  }
+});
 
 (function () {
   // Button & Pagination Waves effect
   if (typeof Waves !== 'undefined') {
     Waves.init();
-    Waves.attach(
-      ".btn[class*='btn-']:not(.position-relative):not([class*='btn-outline-']):not([class*='btn-label-'])",
-      ['waves-light']
-    );
+    Waves.attach(".btn[class*='btn-']:not(.position-relative):not([class*='btn-outline-'])", ['waves-light']);
     Waves.attach("[class*='btn-outline-']:not(.position-relative)");
     Waves.attach('.pagination .page-item .page-link');
     Waves.attach('.dropdown-menu .dropdown-item');
-    Waves.attach('.light-style .list-group .list-group-item-action');
-    Waves.attach('.dark-style .list-group .list-group-item-action', ['waves-light']);
+    Waves.attach('[data-bs-theme="light"] .list-group .list-group-item-action');
     Waves.attach('.nav-tabs:not(.nav-tabs-widget) .nav-item .nav-link');
     Waves.attach('.nav-pills .nav-item .nav-link', ['waves-light']);
-    Waves.attach('.menu-vertical .menu-item .menu-link.menu-toggle');
   }
-
-  // Window scroll function for navbar
-  function onScroll() {
-    var layoutPage = document.querySelector('.layout-page');
-    if (layoutPage) {
-      if (window.pageYOffset > 0) {
-        layoutPage.classList.add('window-scrolled');
-      } else {
-        layoutPage.classList.remove('window-scrolled');
-      }
-    }
-  }
-  // On load time out
-  setTimeout(() => {
-    onScroll();
-  }, 200);
-
-  // On window scroll
-  window.onscroll = function () {
-    onScroll();
-  };
 
   // Initialize menu
   //-----------------
@@ -142,9 +122,6 @@ let menu, animate;
 
   // Speech To Text
   window.Helpers.initSpeechToText();
-
-  // Nav tabs animation
-  window.Helpers.navTabsAnimation();
 
   // Manage menu expanded/collapsed with templateCustomizer & local storage
   //------------------------------------------------------------------

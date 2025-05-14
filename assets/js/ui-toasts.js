@@ -4,7 +4,7 @@
 
 'use strict';
 
-(function () {
+document.addEventListener('DOMContentLoaded', function (e) {
   // Bootstrap toasts example
   // --------------------------------------------------------------------
   const toastPlacementExample = document.querySelector('.toast-placement-ex'),
@@ -15,7 +15,7 @@
   function toastDispose(toast) {
     if (toast && toast._element !== null) {
       if (toastPlacementExample) {
-        toastPlacementExample.querySelectorAll('i[class^="ri-"]').forEach(function (element) {
+        toastPlacementExample.querySelectorAll('i[class*="ri-"]').forEach(function (element) {
           element.classList.remove(selectedType);
         });
         DOMTokenList.prototype.remove.apply(toastPlacementExample.classList, selectedPlacement);
@@ -32,7 +32,7 @@
       selectedType = document.querySelector('#selectTypeOpt').value;
       selectedPlacement = document.querySelector('#selectPlacement').value.split(' ');
 
-      toastPlacementExample.querySelectorAll('i[class^="ri-"]').forEach(function (element) {
+      toastPlacementExample.querySelectorAll('i[class*="ri-"]').forEach(function (element) {
         element.classList.add(selectedType);
       });
       DOMTokenList.prototype.add.apply(toastPlacementExample.classList, selectedPlacement);
@@ -40,4 +40,4 @@
       toastPlacement.show();
     };
   }
-})();
+});

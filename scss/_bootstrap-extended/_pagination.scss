@@ -1,25 +1,93 @@
-// Pagination
-// *******************************************************************************
+/* Pagination
+******************************************************************************* */
 
-// Pagination Mixins
-@each $color, $value in $theme-colors {
-  @if $color != primary and $color != light {
-    @include template-pagination-variant('.pagination-#{$color}', $value);
-    @include template-pagination-outline-variant('.pagination-outline-#{$color}', $value);
+.pagination {
+  --#{$prefix}pagination-box-shadow-color: #{$pagination-box-shadow-color};
+  --#{$prefix}pagination-waves-effect-color: var(--#{$prefix}primary-rgb);
+  &[class*="pagination-outline-"] {
+    .page-item.active .page-link {
+      box-shadow: none;
+      &.waves-effect {
+        .waves-ripple {
+          background:
+            radial-gradient(
+              rgba(var(--#{$prefix}pagination-waves-effect-color), .2) 0,
+              rgba(var(--#{$prefix}pagination-waves-effect-color), .3) 40%,
+              rgba(var(--#{$prefix}pagination-waves-effect-color), .4) 50%,
+              rgba(var(--#{$prefix}pagination-waves-effect-color), .5) 60%,
+              rgba($black, 0) 70%
+            );
+        }
+      }
+    }
+    .page-item:not(.active) .page-link,
+    & li > a:not(.page-link) {
+      --#{$prefix}pagination-bg: transparent;
+      --#{$prefix}pagination-hover-bg: #{$gray-100};
+      --#{$prefix}pagination-hover-color: var(--#{$prefix}pagination-color);
+      --#{$prefix}pagination-hover-border-color: #{rgba($black, .22)};
+      --#{$prefix}pagination-focus-bg: #{$gray-100};
+      --#{$prefix}pagination-focus-color: var(--#{$prefix}pagination-color);
+    }
+  }
+  &.pagination-lg {
+    --#{$prefix}pagination-font-size: #{$font-size-lg};
+  }
+  &.pagination-sm {
+    --#{$prefix}pagination-font-size: #{$font-size-sm};
+  }
+  .page-item .page-link,
+  & li > a:not(.page-link) {
+    &:focus {
+      color: var(--#{$prefix}pagination-focus-color);
+    }
+  }
+  .page-item.active .page-link,
+  & li.active > a:not(.page-link) {
+    box-shadow: 0 .125rem .25rem 0 rgba(var(--#{$prefix}pagination-box-shadow-color), .4);
+    color: var(--#{$prefix}pagination-active-color);
+  }
+  &:not([class*="pagination-outline-"]) {
+    .page-link {
+      border-color: transparent;
+    }
+    .page-item .page-link,
+    & li > a:not(.page-link) {
+      &.waves-effect:not(.waves-light) {
+        .waves-ripple {
+          background:
+            radial-gradient(
+              rgba(var(--#{$prefix}pagination-waves-effect-color), .2) 0,
+              rgba(var(--#{$prefix}pagination-waves-effect-color), .3) 40%,
+              rgba(var(--#{$prefix}pagination-waves-effect-color), .4) 50%,
+              rgba(var(--#{$prefix}pagination-waves-effect-color), .5) 60%,
+              rgba($black, 0) 70%
+            );
+        }
+      }
+    }
+  }
+
+  // Pagination shapes + border less
+  &.pagination-square .page-item a {
+    @include border-radius(0);
+  }
+  &.pagination-round .page-item a {
+    @include border-radius(50%);
+  }
+  &.pagination-rounded .page-item a {
+    @include border-radius($border-radius);
+  }
+  &.pagination-sm.pagination-rounded .page-item a {
+    @include border-radius($border-radius-sm);
+  }
+  &.pagination-lg.pagination-rounded .page-item a {
+    @include border-radius($border-radius-lg);
   }
 }
 
-// Pagination next, prev, first & last css padding
+/* Pagination next, prev, first & last css padding */
 .page-item {
-  &.first,
-  &.last,
-  &.next,
-  &.prev,
-  &.previous {
-    .page-link {
-      padding: $pagination-padding-y - 0.043rem $pagination-padding-x - 0.067rem;
-    }
-  }
   &.disabled,
   &[disabled] {
     .page-link {
@@ -27,113 +95,77 @@
       pointer-events: none;
     }
   }
+  &.first,
+  &.last,
+  &.next,
+  &.prev,
+  &.previous {
+    .page-link {
+      padding-block: $pagination-padding-y - .0845rem;
+      padding-inline: $pagination-padding-y - .0845rem;
+    }
+  }
 }
 
-// Pagination basic style
+/* Pagination basic style */
 .page-link,
 .page-link > a {
   @include border-radius($border-radius);
-
-  text-align: center;
-  min-width: calc(
-    #{'#{($font-size-base * $pagination-line-height) + ($pagination-padding-x * 1.923)} + calc(#{$pagination-border-width} * 2)'}
-  );
-  min-height: calc(
-    #{'#{($font-size-base * $pagination-line-height) + ($pagination-padding-y * 2)} + calc(#{$pagination-border-width} * 2)'}
-  );
-
-  &:focus {
-    color: $pagination-hover-color;
-  }
   display: inline-flex !important;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  line-height: 1;
+  min-block-size:
+    calc(
+      #{"#{($font-size-base * $pagination-line-height) + ($pagination-padding-y * 2)} + calc(#{$pagination-border-width} * 2)"}
+    );
+  min-inline-size:
+    calc(
+      #{"#{($font-size-base * $pagination-line-height) + ($pagination-padding-x * 1.923)} + calc(#{$pagination-border-width} * 2)"}
+    );
 }
 
-// Add spacing between pagination items
-.page-item + .page-item .page-link,
-.pagination li + li > a:not(.page-link) {
-  .pagination-sm & {
-    margin-left: 0.25rem;
-  }
-  .pagination-lg & {
-    margin-left: 0.5rem;
-  }
-}
+/* Sizing
+******************************************************************************* */
 
-// Removed border from default pagination and set line-height of icons
-.pagination {
-  &:not([class*='pagination-outline-']) {
-    .page-link {
-      border-color: transparent;
-    }
-    & .page-item.active > .page-link {
-      box-shadow: $box-shadow-xs;
-    }
-    & .page-item.active .waves-ripple {
-      background: none;
-    }
-  }
-  &[class*='pagination-outline-'] {
-    .page-item:not(.active) .page-link,
-    .pagination li > a:not(.page-link) {
-      background-color: transparent;
-      &:hover,
-      &:focus {
-        background-color: rgba-to-hex(rgba($black, 0.06), $rgba-to-hex-bg);
-        border-color: rgba-to-hex(rgba($black, 0.22), $rgba-to-hex-bg);
-        color: $headings-color;
-      }
-      &.waves-effect {
-        .waves-ripple {
-          background: radial-gradient(
-            rgba($black, 0.3) 0,
-            rgba($black, 0.4) 40%,
-            rgba($black, 0.5) 50%,
-            rgba($black, 0.6) 60%,
-            rgba($black, 0) 70%
-          );
-        }
-      }
-    }
-  }
-}
-
-.page-link.btn-primary {
-  box-shadow: none !important;
-}
-
-// Pagination shape rounded
-.pagination {
-  &.pagination-rounded .page-item a {
-    @include border-radius($border-radius);
-  }
-}
-
-// Sizing
-// *******************************************************************************
-
-// Pagination Large
+/* Pagination Large */
 .pagination-lg .page-link,
 .pagination-lg > li > a:not(.page-link) {
-  min-width: calc(
-    #{'#{($font-size-base * $pagination-line-height) + ($pagination-padding-x-lg * 1.615)} + calc(#{$pagination-border-width} * 2)'}
-  );
-  min-height: calc(
-    #{'#{($font-size-base * $pagination-line-height) + ($pagination-padding-y-lg * 2.33)} + calc(#{$pagination-border-width} * 2)'}
-  );
+  min-block-size:
+    calc(
+      #{"#{($font-size-base * $pagination-line-height) + ($pagination-padding-y-lg * 2.33)} + calc(#{$pagination-border-width} * 2)"}
+    );
+  min-inline-size:
+    calc(
+      #{"#{($font-size-base * $pagination-line-height) + ($pagination-padding-x-lg * 1.615)} + calc(#{$pagination-border-width} * 2)"}
+    );
 }
 
-// Pagination Small
+.pagination-lg > .page-item {
+  &.first,
+  &.last,
+  &.next,
+  &.prev,
+  &.previous {
+    .page-link {
+      padding-inline: $pagination-padding-y-lg - .0845rem;
+    }
+  }
+}
+
+/* Pagination Small */
 .pagination-sm .page-link,
 .pagination-sm > li > a:not(.page-link) {
-  min-width: calc(
-    #{'#{($font-size-sm * $pagination-line-height) + ($pagination-padding-x-sm * 2.356)} + calc(#{$pagination-border-width} * 2)'}
-  );
-  min-height: calc(
-    #{'#{($font-size-sm * $pagination-line-height) + ($pagination-padding-y-sm * 2)} + calc(#{$pagination-border-width} * 2)'}
-  );
+  min-block-size:
+    calc(
+      #{"#{($font-size-sm * $pagination-line-height) + ($pagination-padding-y-sm * 2)} + calc(#{$pagination-border-width} * 2)"}
+    );
+  min-inline-size:
+    calc(
+      #{"#{($font-size-sm * $pagination-line-height) + ($pagination-padding-x-sm * 2.356)} + calc(#{$pagination-border-width} * 2)"}
+    );
 }
+
 .pagination-sm > .page-item {
   &.first,
   &.last,
@@ -141,7 +173,31 @@
   &.prev,
   &.previous {
     .page-link {
-      padding: $pagination-padding-y-sm - 0.1055rem;
+      padding-block: $pagination-padding-y-sm - .1055rem;
+      padding-inline: $pagination-padding-y-sm - .1055rem;
     }
   }
 }
+
+// scss-docs-start pagination-modifiers
+@each $state in map-keys($theme-colors) {
+  .pagination {
+    &.pagination-#{$state} {
+      --#{$prefix}pagination-hover-bg: var(--#{$prefix}#{$state}-bg-subtle);
+      --#{$prefix}pagination-hover-color: var(--#{$prefix}#{$state});
+      --#{$prefix}pagination-focus-bg: var(--#{$prefix}#{$state}-bg-subtle);
+      --#{$prefix}pagination-focus-color: var(--#{$prefix}#{$state});
+      --#{$prefix}pagination-active-bg: var(--#{$prefix}#{$state});
+      --#{$prefix}pagination-box-shadow-color: var(--#{$prefix}#{$state}-rgb);
+      --#{$prefix}pagination-waves-effect-color: var(--#{$prefix}#{$state}-rgb);
+    }
+    &.pagination-outline-#{$state} {
+      --#{$prefix}pagination-active-bg: var(--#{$prefix}#{$state}-bg-subtle);
+      --#{$prefix}pagination-active-color: var(--#{$prefix}#{$state});
+      --#{$prefix}pagination-active-border-color: var(--#{$prefix}#{$state});
+      --#{$prefix}pagination-waves-effect-color: var(--#{$prefix}#{$state}-rgb);
+    }
+  }
+}
+
+// scss-docs-end pagination-modifiers

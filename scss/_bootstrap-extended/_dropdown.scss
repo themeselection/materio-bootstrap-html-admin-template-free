@@ -1,36 +1,59 @@
 // Dropdowns
 // *****************************************************************
 
-// On hover outline
-[data-trigger='hover'] {
-  outline: 0;
-}
-
 .dropdown-menu {
-  box-shadow: $dropdown-box-shadow;
+  box-shadow: var(--#{$prefix}dropdown-box-shadow);
 
-  // Mega dropdown inside the dropdown menu
+  text-align: start;
+  > li:not(.disabled) > a:not(.dropdown-item):active,
+  > li:not(.disabled) > a:not(.dropdown-item).active,
+  > li.active:not(.disabled) > a:not(.dropdown-item) {
+    background-color: var(--#{$prefix}dropdown-link-active-bg);
+    color: var(--#{$prefix}dropdown-link-active-color);
+  }
+
+  /* Mega dropdown inside the dropdown menu */
   .mega-dropdown > & {
-    left: 0 !important;
-    right: 0 !important;
-  }
-
-  // Badge within dropdown menu
-  .badge[class^='float-'],
-  .badge[class*=' float-'] {
-    position: relative;
-    top: 0.071em;
+    inset-inline: 0;
   }
 }
-// Dropdown item line height
+
+.btn-xs.dropdown-toggle::after {
+  @include caret-down(.45em);
+}
+
+/* Split dropdowns */
+.dropdown-toggle-split {
+  &::after,
+  .dropup &::after,
+  .dropend &::after {
+    margin-inline: 0;
+  }
+  .dropstart &::before {
+    margin-inline: 0;
+  }
+}
+
+/* Dropdown item line height */
 .dropdown-item {
-  &.active .waves-ripple,
-  &.disabled .waves-ripple {
-    display: none;
+  &.waves-effect {
+    .waves-ripple {
+      background:
+        radial-gradient(
+          rgba(var(--#{$prefix}primary-rgb), .2) 0,
+          rgba(var(--#{$prefix}primary-rgb), .3) 40%,
+          rgba(var(--#{$prefix}primary-rgb), .4) 50%,
+          rgba(var(--#{$prefix}primary-rgb), .5) 60%,
+          rgba(var(--#{$prefix}white-rgb), 0) 70%
+        );
+    }
+  }
+  &.text-danger:active {
+    color: var(--#{$prefix}primary) !important;
   }
 }
 
-// Hidden dropdown toggle arrow
+/* Hidden dropdown toggle arrow */
 .dropdown-toggle.hide-arrow,
 .dropdown-toggle-hide-arrow > .dropdown-toggle {
   &::before,
@@ -39,53 +62,22 @@
   }
 }
 
-// Dropdown caret icon
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-@if $enable-caret {
-  .dropstart .dropdown-toggle::before,
-  .dropend .dropdown-toggle::after {
-    vertical-align: $caret-vertical-align;
-  }
-  .dropdown-toggle-split::after {
-    margin-left: 0 !important;
-  }
-  .dropdown-toggle::after {
-    margin-top: -0.278rem;
-    margin-left: 0.8em;
-    width: 0.55em;
-    height: 0.55em;
-    border: 2px solid;
-    border-top: 0;
-    border-left: 0;
-    transform: rotate(45deg);
-  }
+    .dropdown-menu#{$infix}-start {
+      --#{$prefix}position: start;
+      &[data-bs-popper] {
+        inset-inline: 0 auto;
+      }
+    }
 
-  .dropup .dropdown-toggle::after {
-    margin-top: 0.25rem;
-    margin-left: 0.667em;
-    border: 2px solid;
-    border-bottom: 0;
-    border-left: 0;
-    transform: rotate(-45deg);
-  }
-
-  .dropend .dropdown-toggle::after {
-    margin-top: 0;
-    margin-left: 0.667em;
-    border: 2px solid;
-    border-top: 0;
-    border-left: 0;
-    transform: rotate(-45deg);
-  }
-
-  .dropstart .dropdown-toggle::before {
-    margin-top: 0;
-    margin-right: 0.667em;
-    width: 0.55em;
-    height: 0.55em;
-    border: 2px solid;
-    border-top: 0;
-    border-right: 0;
-    transform: rotate(45deg);
+    .dropdown-menu#{$infix}-end {
+      --#{$prefix}position: end;
+      &[data-bs-popper] {
+        inset-inline: auto 0;
+      }
+    }
   }
 }

@@ -6,25 +6,37 @@
  */
 
 'use strict';
-
-// JS global variables
+/* JS global variables
+ !Please use the hex color code (#000) here. Don't use rgba(), hsl(), etc
+*/
 window.config = {
+  // global color variables for charts except chartjs
   colors: {
-    primary: '#8c57ff',
-    secondary: '#8a8d93',
-    success: '#56ca00',
-    info: '#16b1ff',
-    warning: '#ffb400',
-    danger: '#ff4c51',
-    dark: '#4b4b4b',
-    black: '#2e263d',
-    white: '#fff',
-    cardColor: '#fff',
-    bodyBg: '#f4f5fa',
-    bodyColor: '#6D6777',
-    headingColor: '#433C50',
-    textMuted: '#ABA8B1',
-    borderColor: '#E6E5E8',
-    chartBgColor: '#F0F2F8'
-  }
+    primary: window.Helpers.getCssVar('primary'),
+    secondary: window.Helpers.getCssVar('secondary'),
+    success: window.Helpers.getCssVar('success'),
+    info: window.Helpers.getCssVar('info'),
+    warning: window.Helpers.getCssVar('warning'),
+    danger: window.Helpers.getCssVar('danger'),
+    dark: window.Helpers.getCssVar('dark'),
+    black: window.Helpers.getCssVar('pure-black'),
+    white: window.Helpers.getCssVar('white'),
+    cardColor: window.Helpers.getCssVar('paper-bg'),
+    bodyBg: window.Helpers.getCssVar('body-bg'),
+    bodyColor: window.Helpers.getCssVar('body-color'),
+    headingColor: window.Helpers.getCssVar('heading-color'),
+    textMuted: window.Helpers.getCssVar('secondary-color'),
+    borderColor: window.Helpers.getCssVar('border-color')
+  },
+  colors_label: {
+    primary: window.Helpers.getCssVar('primary-bg-subtle'),
+    secondary: window.Helpers.getCssVar('secondary-bg-subtle'),
+    success: window.Helpers.getCssVar('success-bg-subtle'),
+    info: window.Helpers.getCssVar('info-bg-subtle'),
+    warning: window.Helpers.getCssVar('warning-bg-subtle'),
+    danger: window.Helpers.getCssVar('danger-bg-subtle'),
+    dark: window.Helpers.getCssVar('dark-bg-subtle')
+  },
+  fontFamily: window.Helpers.getCssVar('font-family-base'),
+  enableMenuLocalStorage: true // Enable menu state with local storage support
 };

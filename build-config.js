@@ -11,7 +11,8 @@ module.exports = {
       'tasks',
       'node_modules',
       '_temp',
-      'node-script'
+      'node-script',
+      'fonts'
     ],
 
     // Base Path to Serve from using Browser Sync, Currently set to root of the project
@@ -26,7 +27,7 @@ module.exports = {
   },
   development: {
     // Build path can be both relative or absolute.
-    // Current dist path is `./assets/vendor` which will be used by templates from `html\` directory. Set distPath: './dist' to generate assets in dist folder.
+    // Current dist path is `./assets/vendor` which will be used by templates from `html\` directory. Set distPath: './assets/vendor' to generate assets in dist folder.
     distPath: './assets/vendor',
 
     // Minify assets.
@@ -40,12 +41,11 @@ module.exports = {
 
     // Use this option with caution because it will remove entire output directory.
     // Will affect only and `build` command
-    cleanDist: true,
-    fastDev: true
+    cleanDist: true
   },
   production: {
     // Build path can be both relative or absolute.
-    // Current dist path is `./assets/vendor` which will be used by templates from `html\` directory. Set distPath: './dist' to generate assets in dist folder.
+    // Current dist path is `./assets/vendor` which will be used by templates from `html\` directory. Set distPath: './assets/vendor' to generate assets in dist folder.
     distPath: './assets/vendor',
 
     // Minify assets.
@@ -60,7 +60,6 @@ module.exports = {
 
     // Use this option with caution because it will remove entire output directory.
     // Will affect only `build:prod` command
-    cleanDist: true,
-    fastDev: false
+    cleanDist: true
   }
 };
