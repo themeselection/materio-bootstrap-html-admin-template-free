@@ -57,6 +57,3 @@ gulpfile.tmp.*
 # HTML files
 /html-demo
 /html-starter-demo
-
-# Package Lock files
-/package-lock.json

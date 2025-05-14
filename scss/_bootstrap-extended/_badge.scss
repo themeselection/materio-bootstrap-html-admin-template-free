@@ -3,18 +3,73 @@
 // *******************************************************************************
 
 .badge {
+  --#{$prefix}badge-border-width: #{$badge-border-width};
+  --#{$prefix}badge-border-color: var(--#{$prefix}primary);
+  --#{$prefix}badge-bg-color: #{$badge-bg-color};
+  border: var(--#{$prefix}badge-border-width) var(--#{$prefix}border-style) var(--#{$prefix}badge-border-color);
+  background-color: var(--#{$prefix}badge-bg-color);
   line-height: $line-height-base;
+
+  // badge outline style
+  &[class*="badge-outline"] {
+    --#{$prefix}badge-border-width: 1px;
+    background-color: transparent;
+    --#{$prefix}badge-padding-x: #{calc($badge-padding-x - .0625rem)};
+    --#{$prefix}badge-padding-y: #{calc($badge-padding-y - .0625rem)};
+  }
 }
-// Badge Center Style
+
+/* Badge Center Style */
 
 .badge-center {
-  padding: 3px;
-  line-height: 1.375;
-  @include badge-size($badge-height, $badge-width, $badge-center-font-size);
-  i {
-    font-size: 0.8rem;
-    &::before {
-      font-size: 0.8rem;
-    }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  block-size: #{$badge-height};
+  inline-size: #{$badge-width};
+  --#{$prefix}badge-font-size: #{$badge-center-font-size};
+  .icon-base {
+    @include icon-base(.875rem);
+  }
+}
+
+/* Dots Style */
+
+.badge.badge-dot {
+  display: inline-block;
+  padding: 0;
+  @include border-radius(50%);
+  margin: 0;
+  block-size: .5rem;
+  inline-size: .5rem;
+}
+
+/* Notifications */
+
+.badge.badge-notifications {
+  position: absolute;
+  display: inline-block;
+  margin: 0;
+  inset-block-start: auto;
+  transform: translate(-50%, -30%);
+
+  &:not(.badge-center) {
+    font-size: .582rem;
+    line-height: .75rem;
+    padding-block: .05rem;
+    padding-inline: .2rem;
+  }
+  .btn[class*="btn-"] & {
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+@each $state in map-keys($theme-colors) {
+  .badge-outline-#{$state},
+  .btn[class*="-outline"] .badge-outline-#{$state} {
+    --#{$prefix}badge-color: var(--#{$prefix}#{$state});
+    --#{$prefix}badge-border-color: var(--#{$prefix}#{$state});
   }
 }

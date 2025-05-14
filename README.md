@@ -1,11 +1,11 @@
 <p align="center">
-   <a href="https://themeselection.com/item/materio-free-bootstrap-html-admin-template/" target="_blank">
+   <a href="https://themeselection.com/item/materio-dashboard-free-bootstrap/" target="_blank">
       <img src="https://cdn.themeselection.com/ts-assets/materio/logo/logo.png" alt="materio-logo" width="40px" height="auto">
    </a>
 </p>
 
 <h1 align="center">
-   <a href="https://themeselection.com/item/materio-free-bootstrap-html-admin-template/" target="_blank" align="center">
+   <a href="https://themeselection.com/item/materio-dashboard-free-bootstrap/" target="_blank" align="center">
       Materio - Free Bootstrap 5 HTML Admin Template
    </a>
 </h1>
@@ -14,11 +14,11 @@
 
 ![GitHub](https://img.shields.io/github/license/themeselection/materio-bootstrap-html-admin-template-free) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/themeselection/materio-bootstrap-html-admin-template-free) ![GitHub issues](https://img.shields.io/github/issues/themeselection/materio-bootstrap-html-admin-template-free) ![GitHub closed issues](https://img.shields.io/github/issues-closed/themeselection/materio-bootstrap-html-admin-template-free) ![Twitter Follow](https://img.shields.io/twitter/follow/Theme_Selection?style=social)
 
-[![Materio - Bootstrap 5 HTML Admin Template Demo Screenshot](https://cdn.themeselection.com/ts-assets/materio/materio-bootstrap-html-admin-template-free/banner/banner.png)](https://themeselection.com/item/materio-free-bootstrap-html-admin-template/)
+[![Materio - Bootstrap 5 HTML Admin Template Demo Screenshot](https://cdn.themeselection.com/ts-assets/materio/materio-bootstrap-html-admin-template-free/banner/banner.png)](https://themeselection.com/item/materio-dashboard-free-bootstrap/)
 
 ## Introduction 🚀
 
-If you’re a developer looking for the most Powerful & comprehensive [**Free Bootstrap 5 HTML Admin Template**](https://themeselection.com/item/materio-free-bootstrap-html-admin-template/) built for developers, rich with features, and highly customizable look no further than Materio. We’ve followed the highest industry standards to bring you the very best admin template that is not only fast and easy to use but highly scalable. Offering ultimate convenience and flexibility, you’ll be able to build whatever application you want with very little hassle.
+If you’re a developer looking for the most Powerful & comprehensive [**Free Bootstrap 5 HTML Admin Template**](https://themeselection.com/item/materio-dashboard-free-bootstrap/) built for developers, rich with features, and highly customizable look no further than Materio. We’ve followed the highest industry standards to bring you the very best admin template that is not only fast and easy to use but highly scalable. Offering ultimate convenience and flexibility, you’ll be able to build whatever application you want with very little hassle.
 
 Build premium quality applications with ease. Use our innovative [bootstrap admin template](https://themeselection.com/item/category/bootstrap-admin-templates/) to create eye-catching, high-quality WebApps. Your apps will be completely responsive, ensuring they’ll look stunning and function flawlessly on desktops, tablets, and mobile devices.
 
@@ -65,7 +65,7 @@ Please [visit](https://demos.themeselection.com/materio-bootstrap-html-admin-tem
 | Materio Free Version                                                                     | Materio Premium Version                                                                                                              |
 | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | [Demo](https://themeselection.com/demo/materio-bootstrap-html-admin-template-free/html/) | [Demo](https://themeselection.com/demo/materio-bootstrap-html-admin-template/html/vertical-menu-template/)                           |
-| [Download](https://themeselection.com/item/materio-free-bootstrap-html-admin-template/)  | [Purchase](https://themeselection.com/products/materio-bootstrap-html-admin-template/)                                               |
+| [Download](https://themeselection.com/item/materio-dashboard-free-bootstrap/)            | [Purchase](https://themeselection.com/item/materio-dashboard-pro-bootstrap/)                                                         |
 | Single vertical Menu                                                                     | Vertical Menu + Horizontal Menu                                                                                                      |
 | Simple Light Style                                                                       | Light & Dark Style                                                                                                                   |
 | Default Theme                                                                            | Default, Semi Dark & Bordered Themes                                                                                                 |
@@ -136,6 +136,7 @@ For free products, enjoy community support via GitHub issues. Upgrade to Premium
 - Copyright © [ThemeSelection](https://themeselection.com/)
 - Licensed under [MIT](LICENSE)
 - All our free items are Open Source and licensed under MIT. You can use our free items for personal as well as commercial purposes. We just need an attribution from your end. Copy the below link and paste it at the footer of your web application or project.
+
   ```html
   <a href="https://themeselection.com/">ThemeSelection</a>
   ```
@@ -169,28 +170,30 @@ For free products, enjoy community support via GitHub issues. Upgrade to Premium
 
 **[ThemeSelection](https://themeselection.com/)** provides Selected high quality, modern design, professional and easy-to-use **Fully Coded Dashboard Templates & UI Kits** to create your applications faster!
 
-- [Bootstrap Admin Templates](https://themeselection.com/item/category/bootstrap-admin-template/)
+- [Bootstrap Admin Templates](https://themeselection.com/item/category/bootstrap-admin-templates/)
 - [VueJS Admin Templates](https://themeselection.com/item/category/vuejs-admin-templates/)
 - [Laravel Admin Templates](https://themeselection.com/item/category/laravel-admin-templates/)
 - [Django Admin Templates](https://themeselection.com/item/category/django-admin-template/)
 - [React (NextJS) Admin Templates](https://themeselection.com/item/category/next-js-admin-template/)
 - [ASP.Net Core Admin Templates](https://themeselection.com/item/category/asp-net-dashboard/)
-- [Free UI Kits](https://themeselection.com/item/category/free-ui-kits/) 
+- [Free UI Kits](https://themeselection.com/item/category/free-ui-kits/)
 
-If you want to [Download Free Admin Templates](https://themeselection.com/item/category/free-admin-templates/) like Materio then do visit [ThemeSelection](https://themeselection.com/).
+If you want to [Free Admin Templates](https://themeselection.com/item/category/free-admin-templates/) like Materio then do visit [ThemeSelection](https://themeselection.com/).
 
 ## Useful Links 🎁
 
 - [Vue CheatSheet](https://vue-cheatsheet.themeselection.com/)
-- [Freebies](https://themeselection.com/item/category/free-admin-templates/)
-- [Download Free Admin Templates](https://themeselection.com/item/category/free-admin-templates/)
+- [Freebies](https://themeselection.com/item/category/freebies/)
+- [Free Admin Templates](https://themeselection.com/item/category/free-admin-templates/)
 - [Bootstrap 5 CheatSheet](https://bootstrap-cheatsheet.themeselection.com/)
+- [FlyonUI](https://flyonui.com/)
+- [JetShip](https://demos.themeselection.com/jetship-laravel-starter-kit/)
 
 ## Social Media :earth_africa:
 
-- [Twitter](https://twitter.com/Theme_Selection)
+- [x](https://x.com/Theme_Selection)
 - [Facebook](https://www.facebook.com/ThemeSelections/)
-- [Pinterest](https://pinterest.com/themeselect/)
+- [Pinterest](https://www.pinterest.com/themeselection/)
 - [Instagram](https://www.instagram.com/themeselection/)
-- [Discord](https://discord.gg/kBHkY7DekX)
+- [Discord](https://discord.com/invite/kBHkY7DekX)
 - [YouTube](https://www.youtube.com/channel/UCuryo5s0CW4aP83itLjIdZg)

@@ -1,63 +1,65 @@
-// Checkboxes and Radios
-// *******************************************************************************
+/* Checkboxes and Radios
+******************************************************************************* */
+.form-check {
+  position: relative;
+  padding-inline: $form-check-padding-start 0;
+  .form-check-input {
+    float: inline-start;
+    margin-inline-start: calc($form-check-padding-start * -1);
+  }
+  &.form-check-reverse {
+    padding-inline: 0 $form-check-padding-start;
+    .form-check-input {
+      float: inline-end;
+      margin-inline-end: calc($form-check-padding-start * -1);
+    }
+  }
+}
 .form-check-input {
+  --#{$prefix}form-check-input-checked-bg: #{$form-check-input-checked-bg-color};
+  --#{$prefix}form-check-input-checked-border-color: #{$form-check-input-checked-border-color};
+  --#{$prefix}form-check-box-shadow: var(--#{$prefix}box-shadow-xs);
   cursor: $form-check-label-cursor;
   &:disabled {
-    background-color: $form-check-input-disabled-bg;
+    --#{$prefix}form-check-bg: #{$form-check-input-disabled-bg};
     border-color: $form-check-input-disabled-bg;
   }
   &:checked {
-    box-shadow: $box-shadow-xs;
+    border-color: var(--#{$prefix}form-check-input-checked-border-color);
+    background-color: var(--#{$prefix}form-check-input-checked-bg);
+    box-shadow: var(--#{$prefix}form-check-box-shadow);
+  }
+  &[type="checkbox"]:indeterminate {
+    border-color: var(--#{$prefix}form-check-input-checked-border-color);
+    background-color: var(--#{$prefix}form-check-input-checked-bg);
+    box-shadow: var(--#{$prefix}form-check-box-shadow);
+  }
+  &:active {
+    filter: none;
   }
 }
 
-.form-check {
-  position: relative;
-}
-
-// Only for checkbox and radio (not for bs default switch)
-//? .dt-checkboxes-cell class is used for DataTables checkboxes
+/* Only for checkbox and radio (not for bs default switch)
+? .dt-checkboxes-cell class is used for DataTables checkboxes */
 .form-check:not(.form-switch),
-.dt-checkboxes-cell {
-  // Material shadow
-  .form-check-input {
-    position: relative;
-    transition: all 0.2s;
-    &::after {
-      content: '';
-      position: absolute;
-      top: -(px-to-rem(floor(rem-to-px(((($line-height-base * $font-size-base) - 1.125rem) * 0.5)))));
-      left: -2px;
-      z-index: 1;
-      display: block;
-      width: $form-check-input-width;
-      height: $form-check-input-width;
-      border-radius: 50%;
-      opacity: 0;
-      transition: all 0.2s;
-      transform-origin: center;
-      transform: scale(0) translateZ(0);
-    }
-  }
-
+.dt-select {
   // Checkbox and Radio bg size for animation transition
-  .form-check-input[type='checkbox'] {
+  .form-check-input[type="checkbox"] {
     background-size: 1.1rem;
-    &:not(:checked):not(:indeterminate) {
-      background-size: 0rem;
-    }
     &:indeterminate {
-      box-shadow: $box-shadow-xs;
+      box-shadow: var(--#{$prefix}form-check-box-shadow);
     }
   }
-  .form-check-input[type='radio'] {
+  .form-check-input[type="radio"] {
     background-size: 1.3125rem;
     &:not(:checked) {
-      background-size: 0.75rem;
+      background-size: .75rem;
     }
   }
   // Material shadow display on hover & active
   .form-check-input {
+    position: relative;
+    @include transition (all .2s);
     &:active,
     &:hover {
       &::after {
@@ -75,14 +77,43 @@
   }
 }
 
+.form-check-inline {
+  margin-inline: 0 $form-check-inline-margin-end;
+}
+
 // Switches
 // *******************************************************************************
 
-.form-switch .form-check-input {
-  background-color: $form-switch-bg;
-  border: none;
-  box-shadow: $form-switch-box-shadow;
-  &:focus {
-    box-shadow: $form-switch-box-shadow;
+.form-switch {
+  padding-inline-start: $form-switch-padding-start;
+  .form-check-input {
+    &:not(:checked) {
+      background-color: $form-switch-bg;
+      box-shadow: $form-switch-box-shadow;
+    }
+    border: 0;
+    margin-inline-start: $form-switch-padding-start * -1;
+    &:checked {
+      box-shadow: none;
+    }
+  }
+  &.form-check-reverse {
+    padding-inline-end: $form-switch-padding-start;
+    .form-check-input {
+      margin-inline-end: $form-switch-padding-start * -1;
+    }
+  }
+}
+
+// Generate contextual modifier classes for colorizing the form check
+@each $state in map-keys($custom-theme-colors) {
+  .form-check-#{$state} {
+    .form-check-input {
+      --#{$prefix}form-check-input-checked-bg: var(--#{$prefix}#{$state});
+      --#{$prefix}form-check-input-checked-border-color: var(--#{$prefix}#{$state});
+    }
+    &.custom-option.checked {
+      --#{$prefix}custom-option-border-color: var(--#{$prefix}#{$state});
+    }
   }
 }

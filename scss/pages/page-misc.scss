@@ -1,26 +1,25 @@
 // * Miscellaneous
 // *******************************************************************************
 
-@import '../_bootstrap-extended/include';
-@import '../_custom-variables/pages';
+@import "../_bootstrap-extended/include";
 
 // Misc wrapper styles
 .misc-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
   justify-content: center;
-  position: relative;
   padding: 1.25rem;
+  min-block-size: 100vh;
 }
 
 // Misc background image styles
 .misc-bg {
-  inline-size: 100%;
   position: absolute;
+  inline-size: 100%;
+  inset-block-end: 0;
   inset-inline-start: 0;
-  bottom: 0;
 }
 
 // Misc object styles
@@ -30,17 +29,17 @@
   z-index: 1;
 }
 .misc-object {
-  bottom: 6%;
-  left: 3%;
+  inset-block-end: 6%;
+  inset-inline-start: 3%;
 }
 .misc-object-right {
-  bottom: 7%;
-  right: 3%;
+  inset-block-end: 7%;
+  inset-inline-end: 3%;
 }
 
 // Misc model style
 
 .misc-model {
   position: relative;
-  bottom: 3rem;
+  inset-block-end: 3rem;
 }

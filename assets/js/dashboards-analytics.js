@@ -5,13 +5,49 @@
 'use strict';
 
 (function () {
-  let cardColor, labelColor, borderColor, chartBgColor, bodyColor;
+  let cardColor,
+    labelColor,
+    fontFamily,
+    borderColor,
+    heatMap2,
+    heatMap3,
+    heatMap4,
+    bodyColor,
+    currentTheme,
+    chartBgColor;
+  heatMap2 = '#d5d6ff';
+  heatMap3 = '#b7b9ff';
+  heatMap4 = '#696cff';
+  chartBgColor = '#F0F2F8';
+  currentTheme = 'light';
 
   cardColor = config.colors.cardColor;
   labelColor = config.colors.textMuted;
   borderColor = config.colors.borderColor;
-  chartBgColor = config.colors.chartBgColor;
   bodyColor = config.colors.bodyColor;
+  fontFamily = config.fontFamily;
+
+  // Chart Colors
+  const chartColors = {
+    donut: {
+      series1: config.colors.primary,
+      series2: '#9055fdb3',
+      series3: '#9055fd80'
+    },
+    donut2: {
+      series1: '#49AC00',
+      series2: '#4DB600',
+      series3: config.colors.success,
+      series4: '#78D533',
+      series5: '#9ADF66',
+      series6: '#BBEA99'
+    },
+    line: {
+      series1: config.colors.warning,
+      series2: config.colors.primary,
+      series3: '#7367f029'
+    }
+  };
 
   // Weekly Overview Line Chart
   // --------------------------------------------------------------------
@@ -96,7 +132,7 @@
           },
           style: {
             fontSize: '13px',
-            fontFamily: 'Inter',
+            fontFamily: fontFamily,
             colors: labelColor
           }
         }
@@ -112,71 +148,7 @@
             type: 'none'
           }
         }
-      },
-      responsive: [
-        {
-          breakpoint: 1500,
-          options: {
-            plotOptions: {
-              bar: {
-                columnWidth: '40%'
-              }
-            }
-          }
-        },
-        {
-          breakpoint: 1200,
-          options: {
-            plotOptions: {
-              bar: {
-                columnWidth: '30%'
-              }
-            }
-          }
-        },
-        {
-          breakpoint: 815,
-          options: {
-            plotOptions: {
-              bar: {
-                borderRadius: 5
-              }
-            }
-          }
-        },
-        {
-          breakpoint: 768,
-          options: {
-            plotOptions: {
-              bar: {
-                borderRadius: 10,
-                columnWidth: '20%'
-              }
-            }
-          }
-        },
-        {
-          breakpoint: 568,
-          options: {
-            plotOptions: {
-              bar: {
-                borderRadius: 8,
-                columnWidth: '30%'
-              }
-            }
-          }
-        },
-        {
-          breakpoint: 410,
-          options: {
-            plotOptions: {
-              bar: {
-                columnWidth: '50%'
-              }
-            }
-          }
-        }
-      ]
+      }
     };
   if (typeof weeklyOverviewChartEl !== undefined && weeklyOverviewChartEl !== null) {
     const weeklyOverviewChart = new ApexCharts(weeklyOverviewChartEl, weeklyOverviewChartConfig);
@@ -188,7 +160,7 @@
   const totalProfitLineChartEl = document.querySelector('#totalProfitLineChart'),
     totalProfitLineChartConfig = {
       chart: {
-        height: 90,
+        height: 79.5,
         type: 'line',
         parentHeightOffset: 0,
         toolbar: {
@@ -307,7 +279,7 @@
   const sessionsColumnChartEl = document.querySelector('#sessionsColumnChart'),
     sessionsColumnChartConfig = {
       chart: {
-        height: 90,
+        height: 80,
         parentHeightOffset: 0,
         type: 'bar',
         toolbar: {
@@ -320,7 +292,7 @@
       plotOptions: {
         bar: {
           barHeight: '100%',
-          columnWidth: '20px',
+          columnWidth: '20%',
           startingShape: 'rounded',
           endingShape: 'rounded',
           borderRadius: 4,

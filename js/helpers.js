@@ -1,6 +1,8 @@
 // Constants
 const TRANS_EVENTS = ['transitionend', 'webkitTransitionEnd', 'oTransitionEnd']
 const TRANS_PROPERTIES = ['transition', 'MozTransition', 'webkitTransition', 'WebkitTransition', 'OTransition']
+
+// Inline styles used for full navbar layout & sticky layout
 const INLINE_STYLES = `
 .layout-menu-fixed .layout-navbar-full .layout-menu,
 .layout-page {
@@ -18,6 +20,8 @@ function requiredParam(name) {
 const Helpers = {
   // Root Element
   ROOT_EL: typeof window !== 'undefined' ? document.documentElement : null,
+
+  prefix: getComputedStyle(document.documentElement).getPropertyValue('--prefix').trim(),
 
   // Large screens breakpoint
   LAYOUT_BREAKPOINT: 1200,
@@ -39,7 +43,7 @@ const Helpers = {
   _listeners: [],
   _initialized: false,
   _autoUpdate: false,
-  _lastWindowHeight: 0,
+  // _lastWindowHeight: 0,
 
   // *******************************************************************************
   // * Utilities
@@ -327,7 +331,7 @@ const Helpers = {
   },
 
   // ---
-  // Add layout sivenav toggle animationEnd event
+  // Add layout sidenav toggle animationEnd event
   _bindLayoutAnimationEndEvent(modifier, cb) {
     const menu = this.getMenu()
     const duration = menu ? this._getAnimationDuration(menu) + 50 : 0
@@ -356,7 +360,7 @@ const Helpers = {
   },
 
   // ---
-  // Remove layout sivenav toggle animationEnd event
+  // Remove layout sidenav toggle animationEnd event
   _unbindLayoutAnimationEndEvent() {
     const menu = this.getMenu()
 
@@ -599,13 +603,6 @@ const Helpers = {
   // *******************************************************************************
   // * Tests
 
-  isRtl() {
-    return (
-      document.querySelector('body').getAttribute('dir') === 'rtl' ||
-      document.querySelector('html').getAttribute('dir') === 'rtl'
-    )
-  },
-
   isMobileDevice() {
     return typeof window.orientation !== 'undefined' || navigator.userAgent.indexOf('IEMobile') !== -1
   },
@@ -651,7 +648,6 @@ const Helpers = {
   on(event = requiredParam('event'), callback = requiredParam('callback')) {
     const [_event] = event.split('.')
     let [, ...namespace] = event.split('.')
-    // let [_event, ...namespace] = event.split('.')
     namespace = namespace.join('.') || null
 
     this._listeners.push({ event: _event, namespace, callback })
@@ -696,7 +692,6 @@ const Helpers = {
           if (this.isFixed()) return
           const { scrollTop } = document.documentElement
           document.body.style.display = 'none'
-          // document.body.offsetHeight
           document.body.style.display = 'block'
           document.documentElement.scrollTop = scrollTop
         })
@@ -784,50 +779,6 @@ const Helpers = {
     }
   },
 
-  // Tabs animation
-  navTabsAnimation() {
-    // Adding timeout to make it work on firefox
-    setTimeout(() => {
-      document.querySelectorAll('.nav-tabs').forEach(tab => {
-        let slider = tab.querySelector('.tab-slider')
-        if (!slider) {
-          const sliderEle = document.createElement('span')
-          sliderEle.setAttribute('class', 'tab-slider')
-
-          slider = tab.appendChild(sliderEle)
-        }
-        const isVertical = tab.closest('.nav-align-left') || tab.closest('.nav-align-right')
-        const setSlider = activeTab => {
-          const tabsEl = activeTab.parentElement
-          const tabsRect = tabsEl.getBoundingClientRect()
-          const activeTabRect = activeTab.getBoundingClientRect()
-          const sliderStart = activeTabRect.x - tabsRect.x
-          const isBottom = tab.closest('.nav-align-bottom')
-          if (isVertical) {
-            slider.style.top = activeTabRect.y - tabsRect.y + 'px'
-            slider.style[tab.closest('.nav-align-right') ? 'inset-inline-start' : 'inset-inline-end'] = 0
-            slider.style.height = activeTabRect.height + 'px'
-          } else {
-            slider.style.left = sliderStart + 'px'
-            slider.style.width = activeTabRect.width + 'px'
-            if (!isBottom) {
-              slider.style.bottom = 0
-            }
-          }
-        }
-        // On click
-        tab.addEventListener('click', event => {
-          // To avoid active state for disabled element
-          if (event.target.closest('.nav-item .active')) {
-            setSlider(event.target.closest('.nav-item'))
-          }
-        })
-        // On Load
-        setSlider(tab.querySelector('.nav-link.active').closest('.nav-item'))
-      })
-    }, 50)
-  },
-
   // Ajax Call Promise
   ajaxCall(url) {
     return new Promise((resolve, reject) => {
@@ -872,6 +823,14 @@ const Helpers = {
         })
       })
     })
+  },
+
+  // get css variables for theme colors
+  getCssVar(color, isChartJs = false) {
+    if (isChartJs === true) {
+      return getComputedStyle(document.documentElement).getPropertyValue(`--${window.Helpers.prefix}${color}`).trim()
+    }
+    return `var(--${window.Helpers.prefix}${color})`
   }
 }
 

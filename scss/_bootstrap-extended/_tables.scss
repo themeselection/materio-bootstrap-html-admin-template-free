@@ -1,17 +1,19 @@
-// Tables
-// ********************************************************************************/
+/* Tables
+******************************************************************************** */
 
-@each $color, $value in $table-variants {
-  @if $color != primary {
-    @include template-table-variant($color, $value);
-  }
+/* ios fix for drodown-menu being clipped off when used in tables */
+.ios .table tr > td .dropdown {
+  position: relative;
 }
 
-// Firefox fix for table head border bottom
+
+/* Firefox fix for table head border bottom */
 .table {
+  --#{$prefix}table-header-bg-color: #{$table-header-bg-color};
   > :not(caption) > * > * {
     background-clip: padding-box;
   }
+
   tr {
     > td {
       .dropdown {
@@ -19,103 +21,99 @@
       }
     }
   }
+
   caption {
-    padding: $table-cell-padding-y $table-cell-padding-x;
+    padding-block: $table-cell-padding-y;
+    padding-inline: $table-cell-padding-x;
+  }
+  .btn-icon,
+  .btn:not([class*="btn-"]) {
+    color: var(--#{$prefix}table-color);
+  }
+
+  // Table heading style
+  th {
+    color: var(--#{$prefix}heading-color);
+    font-size: $font-size-sm;
+    text-transform: uppercase;
+  }
+  thead tr th {
+    padding-block: $table-head-padding-y;
   }
   &.table-sm {
     thead tr th {
       padding-block: $table-head-padding-y-sm;
     }
   }
-  // Table heading style
-  th {
-    text-transform: uppercase;
-    font-size: $font-size-sm;
-    letter-spacing: 0.2px;
-    color: $table-th-color;
-  }
-  thead tr th {
-    border-bottom-color: $table-header-bg-color;
-    padding-block: $table-head-padding-y;
-  }
+
   // heading background color except .table-dark and .table-light
-  &:not(.table-dark):not(.table-light) thead:not(.table-dark):not(.table-light) tr th {
-    background-color: $table-header-bg-color;
+  &:not(.table-dark, .table-light) {
+    thead:not(.table-dark, .table-light) tr th {
+      background-color: var(--#{$prefix}table-header-bg-color);
+    }
+    &:not(.dt-complex-header) thead:not(.table-dark, .table-light) tr th {
+      border-block-end-color: var(--#{$prefix}table-header-bg-color);
+    }
   }
-}
 
-// Style for table inside card
-.card {
-  .table {
-    margin-bottom: 0;
+  // Removed left padding from the first column and right padding from the last column
+  &.table-flush-spacing {
+    thead,
+    tbody {
+      tr > td:first-child {
+        padding-inline-start: 0;
+      }
+      tr > td:last-child {
+        padding-inline-end: 0;
+      }
+    }
   }
-}
-@supports (-moz-appearance: none) {
-  .table {
-    .dropdown-menu.show {
-      display: inline-table;
+
+  // Style for table inside card
+  .card & {
+    margin-block-end: 0;
+  }
+
+  &.table-dark,
+  .table-dark {
+    border-color: #{$border-color-dark};
+    th {
+      --#{$prefix}heading-color: #{$white};
+    }
+  }
+  &.table-light,
+  .table-light {
+    border-color: var(--#{$prefix}table-bg);
+    th {
+      --#{$prefix}heading-color: var(--#{$prefix}heading-color);
     }
   }
 }
 
-.table-dark th {
-  color: var(--#{$prefix}table-color);
-}
+/* class for to remove table border bottom */
 .table-border-bottom-0 {
   tr:last-child {
     td,
     th {
-      border-bottom-width: 0;
+      border-block-end-width: 0;
     }
   }
 }
 
-// Dark Table icon button
-.table.table-dark .btn.btn-icon {
-  color: $table-border-color;
-}
+// TODO: CheckInBS6 Review the `table-variants` mixin in Bootstrap 6 and update our overrides if needed to reflect any changes.
 
-// class for to remove table border bottom
-.table-border-bottom-0 {
-  tr:last-child {
-    td,
-    th {
-      border-bottom-width: 0;
+@each $state in map-keys($theme-colors) {
+  .table-#{$state} {
+    --#{$prefix}table-bg: rgba(var(--#{$prefix}#{$state}-rgb), .2);
+    --#{$prefix}table-hover-bg: color-mix(in sRGB, var(--#{$prefix}body-bg) #{$table-hover-bg-factor-amount}, var(--#{$prefix}table-bg));
+    --#{$prefix}table-striped-bg: color-mix(in sRGB, var(--#{$prefix}body-bg) #{$table-striped-bg-factor-amount}, var(--#{$prefix}table-bg));
+    --#{$prefix}table-border-color: color-mix(in sRGB, var(--#{$prefix}table-bg)  #{$table-border-factor-amount}, var(--#{$prefix}table-color));
+    --#{$prefix}table-active-bg: color-mix(in sRGB, var(--#{$prefix}body-bg) #{$table-active-bg-factor-amount}, var(--#{$prefix}table-bg));
+    @if $state == "dark" or $state == "light" {
+      --#{$prefix}table-bg: var(--#{$prefix}#{$state});
+      --#{$prefix}table-hover-bg: color-mix(in sRGB, var(--#{$prefix}table-color) 3.5%, var(--#{$prefix}table-bg));
+      --#{$prefix}table-striped-bg: color-mix(in sRGB, var(--#{$prefix}table-color) 2.9%, var(--#{$prefix}table-bg));
+      --#{$prefix}table-active-bg: color-mix(in sRGB, var(--#{$prefix}table-color) 4%, var(--#{$prefix}table-bg));
     }
-  }
-}
-
-// .table {
-//   .btn-group {
-//     display: block;
-//   }
-// }
-
-// Flush spacing of left from first column ans right from last column
-.table.table-flush-spacing {
-  thead,
-  tbody {
-    tr > td:first-child {
-      padding-left: 0;
-    }
-    tr > td:last-child {
-      padding-right: 0;
-    }
-  }
-}
-
-// * Table inside card
-// *******************************************************************************
-
-// .card,
-.nav-align-top,
-.nav-align-right,
-.nav-align-bottom,
-.nav-align-left {
-  .table:not(.table-dark),
-  .table:not(.table-dark) thead:not(.table-dark) th,
-  .table:not(.table-dark) tfoot:not(.table-dark) th,
-  .table:not(.table-dark) td {
-    border-color: $border-inner-color;
   }
 }

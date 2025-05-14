@@ -1,19 +1,18 @@
 // * Authentication
 // *******************************************************************************
 
-@use '../_bootstrap-extended/include' as light;
-@import '../_custom-variables/pages';
+@import "../_bootstrap-extended/include";
 
 $authentication-1-inner-max-width: 460px !default;
 
 .authentication-wrapper {
   display: flex;
   flex-basis: 100%;
-  min-height: 100vh;
-  width: 100%;
+  inline-size: 100%;
+  min-block-size: 100vh;
 
   .authentication-inner {
-    width: 100%;
+    inline-size: 100%;
   }
 
   &.authentication-basic {
@@ -28,80 +27,73 @@ $authentication-1-inner-max-width: 460px !default;
   .authentication-image-object {
     &-left {
       position: absolute;
-      bottom: 6%;
+      inset-block-end: 6%;
       inset-inline-start: 4%;
     }
     &-right {
       position: absolute;
-      bottom: 7%;
+      inset-block-end: 7%;
       inset-inline-end: 4%;
     }
   }
 
   .authentication-image {
+    position: absolute;
     z-index: -1;
     inline-size: 100%;
-    position: absolute;
+    inset-block-end: 0;
     inset-inline-start: 0;
-    bottom: 0;
   }
   .authentication-image-model {
-    width: 768px;
+    inline-size: 768px;
   }
 
   &.authentication-cover {
     align-items: flex-start;
     .authentication-inner {
-      min-height: 100vh;
       position: relative;
+      min-block-size: 100vh;
     }
     .authentication-image {
       inset-inline-start: unset;
     }
     .authentication-image-tree {
       position: absolute;
-      bottom: 4rem;
-      left: 3rem;
+      inset-block-end: 4rem;
+      inset-inline-start: 3rem;
     }
   }
 
   &.authentication-basic .authentication-inner {
-    max-width: $authentication-1-inner-max-width;
+    max-inline-size: $authentication-1-inner-max-width;
   }
 
   // For two-steps auth
   .auth-input-wrapper .auth-input {
-    max-width: 50px;
-    padding-left: 0.4rem;
-    padding-right: 0.4rem;
-    font-size: light.$large-font-size;
+    max-inline-size: 50px;
+    padding-inline: .4rem;
   }
 }
 
 // Two-steps auth responsive style
-@include light.media-breakpoint-down(sm) {
+@include media-breakpoint-down(sm) {
   .authentication-wrapper {
     .auth-input-wrapper .auth-input {
-      font-size: light.$h5-font-size;
+      font-size: $h5-font-size;
     }
   }
 }
 
 // Responsive style for cover mask
-@include light.media-breakpoint-down(xl) {
+@include media-breakpoint-down(xl) {
   .authentication-cover {
     .authentication-image-model {
       position: relative;
-      width: 575px;
-      top: 1rem;
+      inline-size: 575px;
+      inset-block-start: 1rem;
     }
   }
 }
-// Light Layout
-@if $enable-light-style {
-  .light-style {
-    .authentication-wrapper .authentication-bg {
-      background-color: light.$white;
-    }
-  }
+.authentication-wrapper .authentication-bg {
+  background-color: $white;
 }

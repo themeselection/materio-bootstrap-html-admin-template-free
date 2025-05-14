@@ -1,13 +1,14 @@
-// Progress
-// *******************************************************************************
+/* Progress
+******************************************************************************* */
 
-.progress {
-  .progress-bar:last-child {
-    border-top-right-radius: $progress-border-radius;
-    border-bottom-right-radius: $progress-border-radius;
-  }
-  .progress-bar:first-child {
-    border-top-left-radius: $progress-border-radius;
-    border-bottom-left-radius: $progress-border-radius;
-  }
+.progress-bar {
+  background-color: var(--#{$prefix}primary);
+  color: var(--#{$prefix}white);
+}
+
+.progress-bar:first-child {
+  @include border-start-radius($progress-border-radius);
+}
+.progress-bar:last-child {
+  @include border-end-radius($progress-border-radius);
 }

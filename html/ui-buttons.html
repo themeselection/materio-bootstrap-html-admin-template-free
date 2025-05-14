@@ -2,19 +2,17 @@
 
 <html
   lang="en"
-  class="light-style layout-menu-fixed layout-compact"
-  dir="ltr"
-  data-theme="theme-default"
+  class="layout-menu-fixed layout-compact"
   data-assets-path="../assets/"
-  data-template="vertical-menu-template-free"
-  data-style="light">
+  data-template="vertical-menu-template-free">
   <head>
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
 
-    <title>Buttons - UI elements | Materio - Bootstrap Material Design Admin Template</title>
+    <title>Demo: Buttons - UI elements | Materio - Bootstrap Dashboard FREE</title>
 
     <meta name="description" content="" />
 
@@ -28,25 +26,30 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&ampdisplay=swap"
       rel="stylesheet" />
 
-    <link rel="stylesheet" href="../assets/vendor/fonts/remixicon/remixicon.css" />
-
-    <!-- Menu waves for no-customizer fix -->
-    <link rel="stylesheet" href="../assets/vendor/libs/node-waves/node-waves.css" />
+    <link rel="stylesheet" href="../assets/vendor/fonts/iconify-icons.css" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <!-- build:css assets/vendor/css/theme.css -->
+
+    <link rel="stylesheet" href="../assets/vendor/libs/node-waves/node-waves.css" />
+
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" />
     <link rel="stylesheet" href="../assets/css/demo.css" />
 
     <!-- Vendors CSS -->
+
     <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <!-- endbuild -->
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
     <script src="../assets/vendor/js/helpers.js"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+
+    <!--? Config: Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file. -->
+
     <script src="../assets/js/config.js"></script>
   </head>
 
@@ -60,7 +63,7 @@
           <div class="app-brand demo">
             <a href="index.html" class="app-brand-link">
               <span class="app-brand-logo demo me-1">
-                <span style="color: var(--bs-primary)">
+                <span class="text-primary">
                   <svg width="30" height="24" viewBox="0 0 250 196" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       fill-rule="evenodd"
@@ -125,7 +128,7 @@
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
-              <i class="menu-toggle-icon d-xl-block align-middle"></i>
+              <i class="menu-toggle-icon d-xl-inline-block align-middle"></i>
             </a>
           </div>
 
@@ -135,9 +138,9 @@
             <!-- Dashboards -->
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-home-smile-line"></i>
+                <i class="menu-icon icon-base ri ri-home-smile-line"></i>
                 <div data-i18n="Dashboards">Dashboards</div>
-                <div class="badge bg-danger rounded-pill ms-auto">5</div>
+                <div class="badge text-bg-danger rounded-pill ms-auto">5</div>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
@@ -146,7 +149,7 @@
                     target="_blank"
                     class="menu-link">
                     <div data-i18n="CRM">CRM</div>
-                    <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+                    <div class="badge rounded-pill bg-label-primary fs-tiny ms-auto">Pro</div>
                   </a>
                 </li>
                 <li class="menu-item">
@@ -160,7 +163,7 @@
                     target="_blank"
                     class="menu-link">
                     <div data-i18n="eCommerce">eCommerce</div>
-                    <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+                    <div class="badge rounded-pill bg-label-primary fs-tiny ms-auto">Pro</div>
                   </a>
                 </li>
                 <li class="menu-item">
@@ -169,7 +172,7 @@
                     target="_blank"
                     class="menu-link">
                     <div data-i18n="Logistics">Logistics</div>
-                    <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+                    <div class="badge rounded-pill bg-label-primary fs-tiny ms-auto">Pro</div>
                   </a>
                 </li>
                 <li class="menu-item">
@@ -178,7 +181,7 @@
                     target="_blank"
                     class="menu-link">
                     <div data-i18n="Academy">Academy</div>
-                    <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+                    <div class="badge rounded-pill bg-label-primary fs-tiny ms-auto">Pro</div>
                   </a>
                 </li>
               </ul>
@@ -187,7 +190,7 @@
             <!-- Layouts -->
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-layout-2-line"></i>
+                <i class="menu-icon icon-base ri ri-layout-2-line"></i>
                 <div data-i18n="Layouts">Layouts</div>
               </a>
 
@@ -223,9 +226,9 @@
             <!-- Front Pages -->
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-file-copy-line"></i>
+                <i class="menu-icon icon-base ri ri-file-copy-line"></i>
                 <div data-i18n="Front Pages">Front Pages</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+                <div class="badge rounded-pill bg-label-primary fs-tiny ms-auto">Pro</div>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
@@ -271,18 +274,18 @@
               </ul>
             </li>
 
+            <!-- Apps & Pages -->
             <li class="menu-header mt-7">
               <span class="menu-header-text">Apps &amp; Pages</span>
             </li>
-            <!-- Apps -->
             <li class="menu-item">
               <a
                 href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-email.html"
                 target="_blank"
                 class="menu-link">
-                <i class="menu-icon tf-icons ri-mail-open-line"></i>
+                <i class="menu-icon icon-base ri ri-mail-open-line"></i>
                 <div data-i18n="Email">Email</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+                <div class="badge rounded-pill bg-label-primary fs-tiny ms-auto">Pro</div>
               </a>
             </li>
             <li class="menu-item">
@@ -290,9 +293,9 @@
                 href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-chat.html"
                 target="_blank"
                 class="menu-link">
-                <i class="menu-icon tf-icons ri-wechat-line"></i>
+                <i class="menu-icon icon-base ri ri-wechat-line"></i>
                 <div data-i18n="Chat">Chat</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+                <div class="badge rounded-pill bg-label-primary fs-tiny ms-auto">Pro</div>
               </a>
             </li>
             <li class="menu-item">
@@ -300,9 +303,9 @@
                 href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-calendar.html"
                 target="_blank"
                 class="menu-link">
-                <i class="menu-icon tf-icons ri-calendar-line"></i>
+                <i class="menu-icon icon-base ri ri-calendar-line"></i>
                 <div data-i18n="Calendar">Calendar</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+                <div class="badge rounded-pill bg-label-primary fs-tiny ms-auto">Pro</div>
               </a>
             </li>
             <li class="menu-item">
@@ -310,15 +313,15 @@
                 href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-kanban.html"
                 target="_blank"
                 class="menu-link">
-                <i class="menu-icon tf-icons ri-drag-drop-line"></i>
+                <i class="menu-icon icon-base ri ri-drag-drop-line"></i>
                 <div data-i18n="Kanban">Kanban</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+                <div class="badge rounded-pill bg-label-primary fs-tiny ms-auto">Pro</div>
               </a>
             </li>
             <!-- Pages -->
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-layout-left-line"></i>
+                <i class="menu-icon icon-base ri ri-layout-left-line"></i>
                 <div data-i18n="Account Settings">Account Settings</div>
               </a>
               <ul class="menu-sub">
@@ -341,7 +344,7 @@
             </li>
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-shield-keyhole-line"></i>
+                <i class="menu-icon icon-base ri ri-shield-keyhole-line"></i>
                 <div data-i18n="Authentications">Authentications</div>
               </a>
               <ul class="menu-sub">
@@ -364,17 +367,17 @@
             </li>
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-box-3-line"></i>
+                <i class="menu-icon icon-base ri ri-box-3-line"></i>
                 <div data-i18n="Misc">Misc</div>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="pages-misc-error.html" target="_blank" class="menu-link">
+                  <a href="pages-misc-error.html" class="menu-link" target="_blank">
                     <div data-i18n="Error">Error</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="pages-misc-under-maintenance.html" target="_blank" class="menu-link">
+                  <a href="pages-misc-under-maintenance.html" class="menu-link" target="_blank">
                     <div data-i18n="Under Maintenance">Under Maintenance</div>
                   </a>
                 </li>
@@ -385,14 +388,14 @@
             <!-- Cards -->
             <li class="menu-item">
               <a href="cards-basic.html" class="menu-link">
-                <i class="menu-icon tf-icons ri-bank-card-2-line"></i>
+                <i class="menu-icon icon-base ri ri-bank-card-2-line"></i>
                 <div data-i18n="Basic">Cards</div>
               </a>
             </li>
             <!-- User interface -->
             <li class="menu-item active open">
               <a href="javascript:void(0)" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-toggle-line"></i>
+                <i class="menu-icon icon-base ri ri-toggle-line"></i>
                 <div data-i18n="User interface">User interface</div>
               </a>
               <ul class="menu-sub">
@@ -497,7 +500,7 @@
             <!-- Extended components -->
             <li class="menu-item">
               <a href="javascript:void(0)" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-box-3-line"></i>
+                <i class="menu-icon icon-base ri ri-box-3-line"></i>
                 <div data-i18n="Extended UI">Extended UI</div>
               </a>
               <ul class="menu-sub">
@@ -517,17 +520,17 @@
             <!-- Icons -->
             <li class="menu-item">
               <a href="icons-ri.html" class="menu-link">
-                <i class="menu-icon tf-icons ri-remixicon-line"></i>
+                <i class="menu-icon icon-base ri ri-remixicon-line"></i>
                 <div data-i18n="Icons">Icons</div>
               </a>
             </li>
 
             <!-- Forms & Tables -->
-            <li class="menu-header fw-medium mt-4"><span class="menu-header-text">Forms &amp; Tables</span></li>
+            <li class="menu-header mt-7"><span class="menu-header-text">Forms &amp; Tables</span></li>
             <!-- Forms -->
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-radio-button-line"></i>
+                <i class="menu-icon icon-base ri ri-radio-button-line"></i>
                 <div data-i18n="Form Elements">Form Elements</div>
               </a>
               <ul class="menu-sub">
@@ -545,7 +548,7 @@
             </li>
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-box-3-line"></i>
+                <i class="menu-icon icon-base ri ri-box-3-line"></i>
                 <div data-i18n="Form Layouts">Form Layouts</div>
               </a>
               <ul class="menu-sub">
@@ -567,15 +570,15 @@
                 href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/form-validation.html"
                 target="_blank"
                 class="menu-link">
-                <i class="menu-icon tf-icons ri-checkbox-multiple-line"></i>
+                <i class="menu-icon icon-base ri ri-checkbox-multiple-line"></i>
                 <div data-i18n="Form Validation">Form Validation</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+                <div class="badge rounded-pill bg-label-primary fs-tiny ms-auto">Pro</div>
               </a>
             </li>
             <!-- Tables -->
             <li class="menu-item">
               <a href="tables-basic.html" class="menu-link">
-                <i class="menu-icon tf-icons ri-table-alt-line"></i>
+                <i class="menu-icon icon-base ri ri-table-alt-line"></i>
                 <div data-i18n="Tables">Tables</div>
               </a>
             </li>
@@ -585,9 +588,9 @@
                 href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/tables-datatables-basic.html"
                 target="_blank"
                 class="menu-link">
-                <i class="menu-icon tf-icons ri-grid-line"></i>
+                <i class="menu-icon icon-base ri ri-grid-line"></i>
                 <div data-i18n="Datatables">Datatables</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
+                <div class="badge rounded-pill bg-label-primary fs-tiny ms-auto">Pro</div>
               </a>
             </li>
             <!-- Misc -->
@@ -597,7 +600,7 @@
                 href="https://github.com/themeselection/materio-bootstrap-html-admin-template-free/issues"
                 target="_blank"
                 class="menu-link">
-                <i class="menu-icon tf-icons ri-lifebuoy-line"></i>
+                <i class="menu-icon icon-base ri ri-lifebuoy-line"></i>
                 <div data-i18n="Support">Support</div>
               </a>
             </li>
@@ -606,7 +609,7 @@
                 href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/documentation/"
                 target="_blank"
                 class="menu-link">
-                <i class="menu-icon tf-icons ri-article-line"></i>
+                <i class="menu-icon icon-base ri ri-article-line"></i>
                 <div data-i18n="Documentation">Documentation</div>
               </a>
             </li>
@@ -619,19 +622,19 @@
           <!-- Navbar -->
 
           <nav
-            class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+            class="layout-navbar container-xxl navbar-detached navbar navbar-expand-xl align-items-center bg-navbar-theme"
             id="layout-navbar">
             <div class="layout-menu-toggle navbar-nav align-items-xl-center me-4 me-xl-0 d-xl-none">
               <a class="nav-item nav-link px-0 me-xl-6" href="javascript:void(0)">
-                <i class="ri-menu-fill ri-24px"></i>
+                <i class="icon-base ri ri-menu-line icon-md"></i>
               </a>
             </div>
 
-            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+            <div class="navbar-nav-right d-flex align-items-center justify-content-end" id="navbar-collapse">
               <!-- Search -->
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
-                  <i class="ri-search-line ri-22px me-2"></i>
+                  <i class="icon-base ri ri-search-line icon-lg lh-0"></i>
                   <input
                     type="text"
                     class="form-control border-0 shadow-none"
@@ -641,7 +644,7 @@
               </div>
               <!-- /Search -->
 
-              <ul class="navbar-nav flex-row align-items-center ms-auto">
+              <ul class="navbar-nav flex-row align-items-center ms-md-auto">
                 <!-- Place this tag where you want the button to render. -->
                 <li class="nav-item lh-1 me-4">
                   <a
@@ -650,7 +653,7 @@
                     data-icon="octicon-star"
                     data-size="large"
                     data-show-count="true"
-                    aria-label="Star themeselection/materio-bootstrap-html-admin-template-free on GitHub"
+                    aria-label="Star themeselection/materio-html-admin-template-free on GitHub"
                     >Star</a
                   >
                 </li>
@@ -662,60 +665,57 @@
                     href="javascript:void(0);"
                     data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="../assets/img/avatars/1.png" alt="alt" class="rounded-circle" />
                     </div>
                   </a>
-                  <ul class="dropdown-menu dropdown-menu-end mt-3 py-2">
+                  <ul class="dropdown-menu dropdown-menu-end">
                     <li>
                       <a class="dropdown-item" href="#">
-                        <div class="d-flex align-items-center">
-                          <div class="flex-shrink-0 me-2">
+                        <div class="d-flex">
+                          <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="../assets/img/avatars/1.png" alt="alt" class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <h6 class="mb-0 small">John Doe</h6>
-                            <small class="text-muted">Admin</small>
+                            <h6 class="mb-0">John Doe</h6>
+                            <small class="text-body-secondary">Admin</small>
                           </div>
                         </div>
                       </a>
                     </li>
                     <li>
-                      <div class="dropdown-divider"></div>
+                      <div class="dropdown-divider my-1"></div>
                     </li>
                     <li>
                       <a class="dropdown-item" href="#">
-                        <i class="ri-user-3-line ri-22px me-2"></i>
-                        <span class="align-middle">My Profile</span>
+                        <i class="icon-base ri ri-user-line icon-md me-3"></i>
+                        <span>My Profile</span>
                       </a>
                     </li>
                     <li>
                       <a class="dropdown-item" href="#">
-                        <i class="ri-settings-4-line ri-22px me-2"></i>
-                        <span class="align-middle">Settings</span>
+                        <i class="icon-base ri ri-settings-4-line icon-md me-3"></i>
+                        <span>Settings</span>
                       </a>
                     </li>
                     <li>
                       <a class="dropdown-item" href="#">
                         <span class="d-flex align-items-center align-middle">
-                          <i class="flex-shrink-0 ri-file-text-line ri-22px me-3"></i>
-                          <span class="flex-grow-1 align-middle">Billing</span>
-                          <span
-                            class="flex-shrink-0 badge badge-center rounded-pill bg-danger h-px-20 d-flex align-items-center justify-content-center"
-                            >4</span
-                          >
+                          <i class="flex-shrink-0 icon-base ri ri-bank-card-line icon-md me-3"></i>
+                          <span class="flex-grow-1 align-middle ms-1">Billing Plan</span>
+                          <span class="flex-shrink-0 badge rounded-pill bg-danger">4</span>
                         </span>
                       </a>
                     </li>
                     <li>
-                      <div class="dropdown-divider"></div>
+                      <div class="dropdown-divider my-1"></div>
                     </li>
                     <li>
                       <div class="d-grid px-4 pt-2 pb-1">
                         <a class="btn btn-danger d-flex" href="javascript:void(0);">
                           <small class="align-middle">Logout</small>
-                          <i class="ri-logout-box-r-line ms-2 ri-16px"></i>
+                          <i class="ri ri-logout-box-r-line ms-2 ri-xs"></i>
                         </a>
                       </div>
                     </li>
@@ -731,16 +731,15 @@
           <!-- Content wrapper -->
           <div class="content-wrapper">
             <!-- Content -->
-
             <div class="container-xxl flex-grow-1 container-p-y">
-              <div class="row">
+              <div class="row g-6">
                 <!-- Basic Buttons -->
 
                 <div class="col-12">
-                  <div class="card mb-6">
+                  <div class="card">
                     <h5 class="card-header">Basic Buttons</h5>
                     <div class="card-body">
-                      <small class="text-light fw-medium">Default</small>
+                      <small class="fw-medium">Default</small>
                       <div class="demo-inline-spacing">
                         <button type="button" class="btn btn-primary">Primary</button>
                         <button type="button" class="btn btn-secondary">Secondary</button>
@@ -753,7 +752,7 @@
                     </div>
                     <hr class="m-0" />
                     <div class="card-body">
-                      <small class="text-light fw-medium">Rounded</small>
+                      <small class="fw-medium">Rounded</small>
                       <div class="demo-inline-spacing">
                         <button type="button" class="btn rounded-pill btn-primary">Primary</button>
                         <button type="button" class="btn rounded-pill btn-secondary">Secondary</button>
@@ -770,10 +769,10 @@
                 <!-- Outline Buttons -->
 
                 <div class="col-12">
-                  <div class="card mb-6">
+                  <div class="card">
                     <h5 class="card-header">Outline Buttons</h5>
                     <div class="card-body">
-                      <small class="text-light fw-medium">Default</small>
+                      <small class="fw-medium">Default</small>
                       <div class="demo-inline-spacing">
                         <button type="button" class="btn btn-outline-primary">Primary</button>
                         <button type="button" class="btn btn-outline-secondary">Secondary</button>
@@ -786,7 +785,7 @@
                     </div>
                     <hr class="m-0" />
                     <div class="card-body">
-                      <small class="text-light fw-medium">Rounded</small>
+                      <small class="fw-medium">Rounded</small>
                       <div class="demo-inline-spacing">
                         <button type="button" class="btn rounded-pill btn-outline-primary">Primary</button>
                         <button type="button" class="btn rounded-pill btn-outline-secondary">Secondary</button>
@@ -803,44 +802,44 @@
                 <!-- Buttons with Icons -->
 
                 <div class="col-12">
-                  <div class="card mb-6">
+                  <div class="card">
                     <h5 class="card-header">Buttons with Icons</h5>
                     <div class="row row-bordered g-0">
                       <div class="col-lg-4 p-6">
-                        <small class="text-light fw-medium">Basic</small>
+                        <small class="fw-medium">Basic</small>
                         <div class="demo-inline-spacing">
                           <button type="button" class="btn btn-primary">
-                            <span class="tf-icons ri-checkbox-circle-line ri-16px me-1_5"></span>Primary
+                            <span class="icon-base ri ri-checkbox-circle-line icon-16px me-1_5"></span>Primary
                           </button>
                           <button type="button" class="btn btn-secondary">
-                            <span class="tf-icons ri-notification-4-line ri-16px me-1_5"></span>Secondary
+                            <span class="icon-base ri ri-notification-4-line icon-16px me-1_5"></span>Secondary
                           </button>
                         </div>
                         <div class="demo-inline-spacing">
                           <button type="button" class="btn rounded-pill btn-primary">
-                            <span class="tf-icons ri-checkbox-circle-line ri-16px me-1_5"></span>Primary
+                            <span class="icon-base ri ri-checkbox-circle-line icon-16px me-1_5"></span>Primary
                           </button>
                           <button type="button" class="btn rounded-pill btn-secondary">
-                            <span class="tf-icons ri-notification-4-line ri-16px me-1_5"></span>Secondary
+                            <span class="icon-base ri ri-notification-4-line icon-16px me-1_5"></span>Secondary
                           </button>
                         </div>
                       </div>
                       <div class="col-lg-4 p-6">
-                        <small class="text-light fw-medium">Outline</small>
+                        <small class="fw-medium">Outline</small>
                         <div class="demo-inline-spacing">
                           <button type="button" class="btn btn-outline-primary">
-                            <span class="tf-icons ri-checkbox-circle-line ri-16px me-1_5"></span>Primary
+                            <span class="icon-base ri ri-checkbox-circle-line icon-16px me-1_5"></span>Primary
                           </button>
                           <button type="button" class="btn btn-outline-secondary">
-                            <span class="tf-icons ri-notification-4-line ri-16px me-1_5"></span>Secondary
+                            <span class="icon-base ri ri-notification-4-line icon-16px me-1_5"></span>Secondary
                           </button>
                         </div>
                         <div class="demo-inline-spacing">
                           <button type="button" class="btn rounded-pill btn-outline-primary">
-                            <span class="tf-icons ri-checkbox-circle-line ri-16px me-1_5"></span>Primary
+                            <span class="icon-base ri ri-checkbox-circle-line icon-16px me-1_5"></span>Primary
                           </button>
                           <button type="button" class="btn rounded-pill btn-outline-secondary">
-                            <span class="tf-icons ri-notification-4-line ri-16px me-1_5"></span>Secondary
+                            <span class="icon-base ri ri-notification-4-line icon-16px me-1_5"></span>Secondary
                           </button>
                         </div>
                       </div>
@@ -848,36 +847,36 @@
                     <hr class="m-0" />
                     <div class="row row-bordered g-0">
                       <div class="col-lg-4 p-6">
-                        <small class="text-light fw-medium">Basic</small>
+                        <small class="fw-medium">Basic</small>
                         <div class="demo-inline-spacing">
                           <button type="button" class="btn btn-icon btn-primary">
-                            <span class="tf-icons ri-check-double-line ri-22px"></span>
+                            <span class="icon-base ri ri-check-double-line icon-22px"></span>
                           </button>
                           <button type="button" class="btn btn-icon btn-secondary">
-                            <span class="tf-icons ri-notification-4-line ri-22px"></span>
+                            <span class="icon-base ri ri-notification-4-line icon-22px"></span>
                           </button>
                           <button type="button" class="btn rounded-pill btn-icon btn-primary">
-                            <span class="tf-icons ri-check-double-line ri-22px"></span>
+                            <span class="icon-base ri ri-check-double-line icon-22px"></span>
                           </button>
                           <button type="button" class="btn rounded-pill btn-icon btn-secondary">
-                            <span class="tf-icons ri-notification-4-line ri-22px"></span>
+                            <span class="icon-base ri ri-notification-4-line icon-22px"></span>
                           </button>
                         </div>
                       </div>
                       <div class="col-lg-4 p-6">
-                        <small class="text-light fw-medium">Outline</small>
+                        <small class="fw-medium">Outline</small>
                         <div class="demo-inline-spacing">
                           <button type="button" class="btn btn-icon btn-outline-primary">
-                            <span class="tf-icons ri-check-double-line ri-22px"></span>
+                            <span class="icon-base ri ri-check-double-line icon-22px"></span>
                           </button>
                           <button type="button" class="btn btn-icon btn-outline-secondary">
-                            <span class="tf-icons ri-notification-4-line ri-22px"></span>
+                            <span class="icon-base ri ri-notification-4-line icon-22px"></span>
                           </button>
                           <button type="button" class="btn rounded-pill btn-icon btn-outline-primary">
-                            <span class="tf-icons ri-check-double-line ri-22px"></span>
+                            <span class="icon-base ri ri-check-double-line icon-22px"></span>
                           </button>
                           <button type="button" class="btn rounded-pill btn-icon btn-outline-secondary">
-                            <span class="tf-icons ri-notification-4-line ri-22px"></span>
+                            <span class="icon-base ri ri-notification-4-line icon-22px"></span>
                           </button>
                         </div>
                       </div>
@@ -887,10 +886,10 @@
 
                 <!-- Button Options -->
                 <div class="col-12">
-                  <div class="card mb-6">
+                  <div class="card">
                     <h5 class="card-header">Button Options</h5>
                     <div class="card-body">
-                      <small class="text-light fw-medium">Sizes</small>
+                      <small class="fw-medium">Sizes</small>
                       <div class="demo-inline-spacing">
                         <button type="button" class="btn btn-xl btn-primary">Button xl</button>
                         <button type="button" class="btn btn-lg btn-primary">Button lg</button>
@@ -901,16 +900,16 @@
                     </div>
                     <hr class="m-0" />
                     <div class="card-body">
-                      <small class="text-light fw-medium">Buttons State</small>
+                      <small class="fw-medium">Buttons State</small>
                       <div class="demo-inline-spacing">
                         <button type="button" class="btn btn-primary">Normal</button>
                         <button type="button" class="btn btn-primary active">Active</button>
-                        <button type="button" class="btn btn-primary" disabled>Disabled</button>
+                        <button type="button" class="btn btn-primary" disabled="disabled">Disabled</button>
                       </div>
                     </div>
                     <hr class="m-0" />
                     <div class="card-body">
-                      <small class="text-light fw-medium">Block level buttons</small>
+                      <small class="fw-medium">Block level buttons</small>
                       <div class="row mt-4">
                         <div class="d-grid gap-2 col-lg-6 mx-auto">
                           <button class="btn btn-primary btn-lg" type="button">Button</button>
@@ -923,11 +922,11 @@
 
                 <!-- Button Plugin -->
                 <div class="col-12">
-                  <div class="card mb-6">
+                  <div class="card">
                     <h5 class="card-header">Button Plugin</h5>
                     <div class="row row-bordered g-0">
                       <div class="col-xl-3 p-6">
-                        <div class="text-light small fw-medium">Toggle states</div>
+                        <div class="small fw-medium">Toggle states</div>
                         <div class="demo-vertical-spacing">
                           <button type="button" class="btn btn-primary d-block" data-bs-toggle="button">
                             Toggle button
@@ -939,57 +938,67 @@
                             aria-pressed="true">
                             Active toggle button
                           </button>
-                          <button type="button" class="btn btn-primary d-block" disabled data-bs-toggle="button">
+                          <button
+                            type="button"
+                            class="btn btn-primary d-block"
+                            disabled="disabled"
+                            data-bs-toggle="button">
                             Disabled toggle button
                           </button>
                         </div>
                       </div>
                       <div class="col-xl-3 p-6">
-                        <div class="text-light small fw-medium">Checkbox toggle buttons</div>
+                        <div class="small fw-medium">Checkbox toggle buttons</div>
                         <div class="demo-vertical-spacing">
                           <div class="d-block">
                             <input type="checkbox" class="btn-check" id="btn-check" />
                             <label class="btn btn-primary" for="btn-check">Single toggle</label>
                           </div>
                           <div class="d-block">
-                            <input type="checkbox" class="btn-check" id="btn-check-2" checked />
+                            <input type="checkbox" class="btn-check" id="btn-check-2" checked="checked" />
                             <label class="btn btn-primary" for="btn-check-2">Checked</label>
                           </div>
                           <div class="d-block">
-                            <input type="checkbox" class="btn-check" id="btn-check-3" checked />
+                            <input type="checkbox" class="btn-check" id="btn-check-3" checked="checked" />
                             <label class="btn btn-primary" for="btn-check-3">Checked</label>
                           </div>
                         </div>
                       </div>
                       <div class="col-xl-6 p-6">
-                        <div class="text-light small fw-medium">Checkbox and radio</div>
+                        <div class="small fw-medium">Checkbox and radio</div>
 
                         <div class="demo-vertical-spacing">
                           <!-- Checkbox -->
 
                           <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                            <input type="checkbox" class="btn-check" id="btncheck1" checked />
-                            <label class="btn btn-outline-primary" for="btncheck1"
-                              ><span class="d-block d-sm-none"><i class="ri-home-4-line ri-20px"></i></span
-                              ><span class="d-none d-sm-block"> Checkbox 1(pre-checked)</span></label
-                            >
+                            <input type="checkbox" class="btn-check" id="btncheck1" checked="checked" />
+                            <label class="btn btn-outline-primary" for="btncheck1">
+                              <span class="d-block d-sm-none">
+                                <i class="icon-base ri ri-home-4-line icon-20px"></i>
+                              </span>
+                              <span class="d-none d-sm-block"> Checkbox 1(pre-checked)</span>
+                            </label>
 
                             <input type="checkbox" class="btn-check" id="btncheck2" />
-                            <label class="btn btn-outline-primary" for="btncheck2"
-                              ><span class="d-block d-sm-none"><i class="ri-flight-takeoff-line ri-20px"></i></span
-                              ><span class="d-none d-sm-block">Checkbox 2</span></label
-                            >
+                            <label class="btn btn-outline-primary" for="btncheck2">
+                              <span class="d-block d-sm-none">
+                                <i class="icon-base ri ri-flight-takeoff-line icon-20px"></i>
+                              </span>
+                              <span class="d-none d-sm-block">Checkbox 2</span>
+                            </label>
 
                             <input type="checkbox" class="btn-check" id="btncheck3" />
-                            <label class="btn btn-outline-primary" for="btncheck3"
-                              ><span class="d-block d-sm-none"><i class="ri-notification-4-line ri-20px"></i></span
-                              ><span class="d-none d-sm-block">Checkbox 3</span></label
-                            >
+                            <label class="btn btn-outline-primary" for="btncheck3">
+                              <span class="d-block d-sm-none">
+                                <i class="icon-base ri ri-notification-4-line icon-20px"></i>
+                              </span>
+                              <span class="d-none d-sm-block">Checkbox 3</span>
+                            </label>
                           </div>
                           <br />
                           <!-- Radio -->
                           <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked />
+                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked="checked" />
                             <label class="btn btn-outline-primary" for="btnradio1">Radio 1</label>
                             <input type="radio" class="btn-check" name="btnradio" id="btnradio2" />
                             <label class="btn btn-outline-primary" for="btnradio2">Radio 2</label>
@@ -1009,7 +1018,7 @@
                     <div class="card-body">
                       <div class="row g-4">
                         <div class="col-md-6 col-lg-4">
-                          <small class="text-light fw-medium">Basic</small>
+                          <small class="fw-medium">Basic</small>
                           <div class="mt-4">
                             <div class="btn-group" role="group" aria-label="Basic example">
                               <button type="button" class="btn btn-secondary">Left</button>
@@ -1019,7 +1028,7 @@
                           </div>
                         </div>
                         <div class="col-md-6 col-lg-4">
-                          <small class="text-light fw-medium">Outline</small>
+                          <small class="fw-medium">Outline</small>
                           <div class="mt-4">
                             <div class="btn-group" role="group" aria-label="Basic example">
                               <button type="button" class="btn btn-outline-secondary">Left</button>
@@ -1034,55 +1043,55 @@
                     <div class="card-body">
                       <div class="row">
                         <div class="col-xl-6 mb-xl-0 mb-4">
-                          <small class="text-light fw-medium">Button Toolbar</small>
+                          <small class="fw-medium">Button Toolbar</small>
                           <div
                             class="btn-toolbar demo-inline-spacing gap-2"
                             role="toolbar"
                             aria-label="Toolbar with button groups">
                             <div class="btn-group" role="group" aria-label="First group">
                               <button type="button" class="btn btn-outline-secondary">
-                                <i class="tf-icons ri-notification-4-line"></i>
+                                <i class="icon-base ri ri-notification-4-line"></i>
                               </button>
                               <button type="button" class="btn btn-outline-secondary">
-                                <i class="tf-icons ri-calendar-line"></i>
+                                <i class="icon-base ri ri-calendar-line"></i>
                               </button>
                               <button type="button" class="btn btn-outline-secondary">
-                                <i class="tf-icons ri-shield-check-line"></i>
+                                <i class="icon-base ri ri-shield-check-line"></i>
                               </button>
                               <button type="button" class="btn btn-outline-secondary">
-                                <i class="tf-icons ri-message-2-line"></i>
+                                <i class="icon-base ri ri-message-2-line"></i>
                               </button>
                             </div>
                             <div class="btn-group" role="group" aria-label="Second group">
                               <button type="button" class="btn btn-outline-secondary">
-                                <i class="tf-icons ri-bold"></i>
+                                <i class="icon-base ri ri-bold"></i>
                               </button>
                               <button type="button" class="btn btn-outline-secondary">
-                                <i class="tf-icons ri-italic"></i>
+                                <i class="icon-base ri ri-italic"></i>
                               </button>
                               <button type="button" class="btn btn-outline-secondary">
-                                <i class="tf-icons ri-underline"></i>
+                                <i class="icon-base ri ri-underline"></i>
                               </button>
                             </div>
                             <div class="btn-group" role="group" aria-label="Third group">
                               <button type="button" class="btn btn-outline-secondary">
-                                <i class="tf-icons ri-volume-up-line"></i>
+                                <i class="icon-base ri ri-volume-up-line"></i>
                               </button>
                             </div>
                           </div>
                         </div>
                         <div class="col-xl-6">
-                          <small class="text-light fw-medium">Button Nesting</small>
+                          <small class="fw-medium">Button Nesting</small>
                           <div class="mt-4">
                             <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                               <button type="button" class="btn btn-outline-secondary">
-                                <i class="tf-icons ri-car-line"></i>
+                                <i class="icon-base ri ri-car-line"></i>
                               </button>
                               <button type="button" class="btn btn-outline-secondary">
-                                <i class="tf-icons ri-rocket-2-line"></i>
+                                <i class="icon-base ri ri-rocket-2-line"></i>
                               </button>
                               <button type="button" class="btn btn-outline-secondary">
-                                <i class="tf-icons ri-lightbulb-line"></i>
+                                <i class="icon-base ri ri-lightbulb-line"></i>
                               </button>
                               <div class="btn-group" role="group">
                                 <button
@@ -1092,7 +1101,8 @@
                                   data-bs-toggle="dropdown"
                                   aria-haspopup="true"
                                   aria-expanded="false">
-                                  <i class="ri-more-2-line ri-20px"></i><span class="d-none d-sm-block">Dropdown</span>
+                                  <i class="icon-base ri ri-more-2-line icon-20px"></i>
+                                  <span class="d-none d-sm-block">Dropdown</span>
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                                   <a class="dropdown-item" href="javascript:void(0);">Dropdown link</a>
@@ -1115,18 +1125,32 @@
               <div class="container-xxl">
                 <div
                   class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
-                  <div class="text-body mb-2 mb-md-0">
-                    ©
+                  <div class="mb-2 mb-md-0">
+                    &#169;
                     <script>
                       document.write(new Date().getFullYear());
                     </script>
-                    , made with <span class="text-danger"><i class="tf-icons ri-heart-fill"></i></span> by
-                    <a href="https://themeselection.com" target="_blank" class="footer-link">ThemeSelection</a>
+                    , made with ❤️ by
+                    <a href="https://themeselection.com" target="_blank" class="footer-link fw-medium"
+                      >ThemeSelection</a
+                    >
                   </div>
                   <div class="d-none d-lg-inline-block">
-                    <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                    <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
+                    <a
+                      href="https://themeselection.com/item/category/admin-templates/"
+                      target="_blank"
+                      class="footer-link me-4"
+                      >Admin Templates</a
+                    >
 
+                    <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
+
+                    <a
+                      href="https://themeselection.com/item/category/bootstrap-templates/"
+                      target="_blank"
+                      class="footer-link me-4"
+                      >Bootstrap Templates</a
+                    >
                     <a
                       href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/documentation/"
                       target="_blank"
@@ -1160,7 +1184,7 @@
 
     <div class="buy-now">
       <a
-        href="https://themeselection.com/item/materio-bootstrap-html-admin-template/"
+        href="https://themeselection.com/item/materio-dashboard-pro-bootstrap/"
         target="_blank"
         class="btn btn-danger btn-buy-now"
         >Upgrade to Pro</a
@@ -1168,12 +1192,15 @@
     </div>
 
     <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
+
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+
     <script src="../assets/vendor/libs/popper/popper.js"></script>
     <script src="../assets/vendor/js/bootstrap.js"></script>
     <script src="../assets/vendor/libs/node-waves/node-waves.js"></script>
+
     <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
     <script src="../assets/vendor/js/menu.js"></script>
 
     <!-- endbuild -->
@@ -1181,11 +1208,12 @@
     <!-- Vendors JS -->
 
     <!-- Main JS -->
+
     <script src="../assets/js/main.js"></script>
 
     <!-- Page JS -->
 
     <!-- Place this tag before closing body tag for github widget button. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
   </body>
 </html>

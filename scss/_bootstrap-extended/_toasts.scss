@@ -1,34 +1,46 @@
-// Toasts
-// *******************************************************************************
+/* Toasts
+******************************************************************************* */
 
-.bs-toast[class^='bg-'],
-.bs-toast[class*=' bg-'] {
-  border: none;
+.bs-toast[class^="bg-"],
+.bs-toast[class*=" bg-"] {
+  --#{$prefix}toast-header-color: var(--#{$prefix}white);
+  --#{$prefix}toast-color: var(--#{$prefix}white);
 }
 
 .toast.bs-toast {
   z-index: $zindex-toast;
-}
-.toast-header {
-  border-bottom: $border-width solid $toast-header-border-color;
-  .btn-close {
-    background-image: str-replace(str-replace($btn-close-bg, '#{$btn-close-color}', $text-muted), '#', '%23');
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-left: 0.875rem;
-    background-size: 0.75rem;
-  }
+  background-color: var(--#{$prefix}toast-bg) !important;
 }
 .toast-container {
-  --#{$prefix}toast-zindex: 9;
+  --#{$prefix}toast-zindex: 8;
 }
-// Bootstrap Toasts Example
+
+.toast-header {
+  border-block-end: $border-width solid $toast-header-border-color;
+  .btn-close {
+    background-image: str-replace(str-replace($btn-close-bg, "#{$btn-close-color}", $body-secondary-color), "#", "%23");
+    margin-inline: $toast-padding-x $toast-padding-x * -.5;
+  }
+}
+
+/* Bootstrap Toasts Example */
 .toast-ex {
   position: fixed;
-  top: 4.1rem;
-  right: 0.5rem;
+  inset-block-start: 4.1rem;
+  inset-inline: auto .5rem;
 }
-// Placement Toast example
+
+/* Placement Toast example */
 .toast-placement-ex {
   position: fixed;
+}
+
+/* Generate contextual modifier classes for colorizing the alert */
+@each $state in map-keys($theme-colors) {
+  .bs-toast{
+    &.bg-#{$state} {
+      --#{$prefix}toast-bg: rgba(var(--#{$prefix}#{$state}-rgb), .85);
+      --#{$prefix}toast-box-shadow: 0 .25rem 1rem rgba(var(--#{$prefix}#{$state}-rgb), .4);
+    }
+  }
 }

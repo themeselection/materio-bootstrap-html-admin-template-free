@@ -1,5 +1,5 @@
 .api-key-actions {
   position: absolute !important;
-  top: 0.75rem;
-  right: 0.5rem;
+  inset-block-start: 0.75rem;
+  inset-inline-end: 0.5rem;
 }

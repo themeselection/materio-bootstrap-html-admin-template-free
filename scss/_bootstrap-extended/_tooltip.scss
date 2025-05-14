@@ -1,10 +1,42 @@
-// Tooltips
-// *******************************************************************************
+/* Tooltips
+******************************************************************************* */
 
-// Open modal tooltip z-index
+
+/* Open modal tooltip z-index */
 .modal-open .tooltip {
   z-index: $zindex-modal + 2;
 }
-.tooltip.bs-tooltip-auto {
+
+.tooltip-inner {
   font-weight: $font-weight-medium;
 }
+
+[class^="tooltip-"],
+[class^="tooltip-"] > .tooltip{
+  &.bs-tooltip-auto {
+    &[data-popper-placement="top"] .tooltip-arrow::before {
+      border-block-start-color: var(--#{$prefix}tooltip-arrow-bg);
+    }
+    &[data-popper-placement="left"] .tooltip-arrow::before {
+      border-inline-start-color: var(--#{$prefix}tooltip-arrow-bg);
+    }
+    &[data-popper-placement="bottom"] .tooltip-arrow::before {
+      border-block-end-color: var(--#{$prefix}tooltip-arrow-bg);
+    }
+
+    &[data-popper-placement="right"] .tooltip-arrow::before {
+      border-inline-end-color: var(--#{$prefix}tooltip-arrow-bg);
+    }
+  }
+}
+
+// scss-docs-start tooltip-modifiers
+
+@each $state in map-keys($theme-colors) {
+  .tooltip.tooltip-#{$state}, .tooltip-#{$state} > .tooltip {
+    --#{$prefix}tooltip-bg: var(--#{$prefix}#{$state});
+    --#{$prefix}tooltip-color: var(--#{$prefix}#{$state}-contrast);
+  }
+}
+
+// scss-docs-end tooltip-modifiers
